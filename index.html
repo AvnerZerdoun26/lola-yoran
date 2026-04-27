@@ -13,26 +13,29 @@
             overflow: hidden;
             background-color: #faf8f5;
         }
- 
+
         .full-screen-container {
             width: 100vw;
             height: 100vh;
             position: relative;
         }
- 
+
         .breathing-logo {
             width: 100%;
             height: 100%;
-            /* 'cover' force l'image à remplir tout l'espace en coupant les bords si nécessaire */
             object-fit: cover;
-        
+            animation: heartbeat 1.4s ease-in-out infinite;
         }
- 
-        @keyframes breathe {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+        @keyframes heartbeat {
+            0%   { transform: scale(1); }
+            14%  { transform: scale(1.04); }
+            28%  { transform: scale(1); }
+            42%  { transform: scale(1.04); }
+            70%  { transform: scale(1); }
+            100% { transform: scale(1); }
         }
- 
+
         .btn-container {
             position: absolute;
             bottom: 50px;
@@ -41,7 +44,7 @@
             justify-content: center;
             z-index: 10;
         }
- 
+
         .btn-invite {
             padding: 15px 40px;
             background-color: white;
@@ -52,22 +55,21 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: transform 0.2s;
         }
- 
+
         .btn-invite:active {
             transform: scale(0.95);
         }
     </style>
 </head>
 <body>
- 
+
     <div class="full-screen-container">
         <img src="logo.png" alt="Enveloppe" class="breathing-logo">
-       
+        
         <div class="btn-container">
             <a href="invitation.html" class="btn-invite">Ouvrir</a>
         </div>
     </div>
- 
+
 </body>
 </html>
- 
