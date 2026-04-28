@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lola & Yoran — 7 Juin 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Great+Vibes&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap%22 rel="stylesheet">
+<title>Lola & Yoran — 2 Juin 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Great+Vibes&family=Cinzel:wght@400;600&family=Lato:wght@300;400&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root {
   --gold: #C9A84C;
@@ -20,7 +20,7 @@
   --purple-light: #C4B8DC;
   --purple-pale: #EDE8F5;
 }
- 
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -31,8 +31,7 @@ body {
   overflow-x: hidden;
   cursor: none;
 }
- 
-/* CUSTOM CURSOR */
+
 .cursor {
   width: 12px; height: 12px;
   background: var(--purple);
@@ -53,8 +52,7 @@ body {
   transition: transform 0.4s ease, opacity 0.3s;
   opacity: 0.5;
 }
- 
-/* PARTICLES */
+
 #particles {
   position: fixed; inset: 0; pointer-events: none; z-index: 0;
   overflow: hidden;
@@ -73,7 +71,7 @@ body {
   90% { opacity: 0.2; }
   100% { opacity: 0; transform: translateY(-10vh) scale(1); }
 }
- 
+
 /* ===== HERO ===== */
 #hero {
   min-height: 100vh;
@@ -84,29 +82,25 @@ body {
   overflow: hidden;
   background: linear-gradient(180deg, #FAF6EE 0%, #F0EBF8 50%, #F5EDD8 100%);
 }
- 
-.hero-botanical {
-  position: absolute; inset: 0; pointer-events: none;
-  overflow: hidden;
-}
- 
+
+.hero-botanical { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+
 .botanical-tl, .botanical-tr, .botanical-bl, .botanical-br {
-  position: absolute;
-  opacity: 0;
-  animation: botanicalReveal 2s ease forwards;
+  position: absolute; opacity: 0; animation: botanicalReveal 2s ease forwards;
 }
 .botanical-tl { top: -20px; left: -20px; animation-delay: 0.3s; }
-.botanical-tr { top: -20px; right: -20px; transform: scaleX(-1); animation-delay: 0.5s; }
-.botanical-bl { bottom: -20px; left: -20px; transform: scaleY(-1); animation-delay: 0.7s; }
-.botanical-br { bottom: -20px; right: -20px; transform: scale(-1); animation-delay: 0.9s; }
- 
+.botanical-tr { top: -20px; right: -20px; animation-delay: 0.5s; }
+.botanical-bl { bottom: -20px; left: -20px; animation-delay: 0.7s; }
+.botanical-br { bottom: -20px; right: -20px; animation-delay: 0.9s; }
+
+.botanical-tr { animation: botanicalRevealR 2s ease 0.5s forwards; }
+.botanical-br { animation: botanicalRevealBR 2s ease 0.9s forwards; }
+.botanical-bl { animation: botanicalRevealBL 2s ease 0.7s forwards; }
+
 @keyframes botanicalReveal {
   from { opacity: 0; transform: scale(0.8); }
   to { opacity: 1; transform: scale(1); }
 }
-.botanical-tr { animation: botanicalRevealR 2s ease 0.5s forwards; }
-.botanical-br { animation: botanicalRevealBR 2s ease 0.9s forwards; }
-.botanical-bl { animation: botanicalRevealBL 2s ease 0.7s forwards; }
 @keyframes botanicalRevealR {
   from { opacity: 0; transform: scaleX(-1) scale(0.8); }
   to { opacity: 1; transform: scaleX(-1) scale(1); }
@@ -119,144 +113,136 @@ body {
   from { opacity: 0; transform: scale(-1) scale(0.8); }
   to { opacity: 1; transform: scale(-1); }
 }
- 
+
 .bsm {
   font-family: 'Cinzel', serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  color: var(--gold-deep);
-  opacity: 0;
-  animation: fadeUp 1s ease 0.2s forwards;
-  margin-bottom: 20px;
+  font-size: 0.65rem; letter-spacing: 0.3em; color: var(--gold-deep);
+  opacity: 0; animation: fadeUp 1s ease 0.2s forwards; margin-bottom: 20px;
 }
- 
+
 .parents-line {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 0.8rem;
-  color: var(--taupe);
-  letter-spacing: 0.1em;
-  display: flex; gap: 40px; justify-content: center;
-  flex-wrap: wrap;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 0.8rem; color: var(--taupe); letter-spacing: 0.1em;
+  display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
   opacity: 0; animation: fadeUp 1s ease 0.4s forwards;
-  margin-bottom: 40px;
-  max-width: 600px;
-  padding: 0 20px;
+  margin-bottom: 40px; max-width: 600px; padding: 0 20px;
 }
- 
-.hero-names {
-  position: relative; z-index: 2;
+
+.hero-names { position: relative; z-index: 2; }
+
+.names-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1em;
+  direction: rtl;
+  flex-wrap: nowrap;
+  padding: 0 16px;
 }
- 
+
 .name-lola {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(5rem, 15vw, 10rem);
-  color: var(--dark);
-  line-height: 0.9;
+  display: none;
+}
+
+.name-heb {
+  font-family: 'Frank Ruhl Libre', 'Cormorant Garamond', serif;
+  font-size: clamp(3.2rem, 11vw, 8rem);
+  font-weight: 300;
+  color: transparent;
+  background: linear-gradient(135deg, #9B8DC0 0%, #7B6BA8 30%, #C4B8DC 55%, #8B7BAD 75%, #6B5B8A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: nameReveal 1.4s cubic-bezier(0.16,1,0.3,1) 0.5s forwards, nameSweep 6s ease-in-out 2s infinite;
   opacity: 0;
-  animation: fadeDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
-  text-shadow: 2px 4px 20px rgba(139,123,173,0.2);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  filter: drop-shadow(0 4px 24px rgba(139,123,173,0.35));
+  direction: rtl;
 }
- 
+
+@keyframes nameReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes nameSweep {
+  0%,100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
 .name-sub-fr {
-  font-family: 'Cinzel', serif;
-  font-size: 0.6rem;
-  letter-spacing: 0.5em;
-  color: var(--purple);
-  text-transform: uppercase;
-  opacity: 0; animation: fadeUp 1s ease 0.9s forwards;
-  margin: 4px 0 8px;
+  font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.5em;
+  color: var(--purple); text-transform: uppercase;
+  opacity: 0; animation: fadeUp 1s ease 0.9s forwards; margin: 4px 0 8px;
 }
- 
+
 .ampersand-wrap {
-  display: flex; align-items: center; gap: 20px;
-  justify-content: center; margin: 10px 0;
-  opacity: 0; animation: fadeIn 1.5s ease 1s forwards;
+  display: flex; align-items: center; gap: 20px; justify-content: center;
+  margin: 10px 0; opacity: 0; animation: fadeIn 1.5s ease 1s forwards;
 }
 .amp-line { flex: 1; max-width: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(--purple-light)); }
 .amp-line.right { background: linear-gradient(90deg, var(--purple-light), transparent); }
-.ampersand {
+.ampersand { font-family: 'Great Vibes', cursive; font-size: clamp(2rem, 6vw, 4rem); color: var(--purple); opacity: 0; animation: fadeIn 1.5s ease 1s forwards; }
+
+.name-amp {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  color: var(--purple);
-}
- 
-.name-yoran {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(5rem, 15vw, 10rem);
-  color: var(--dark);
-  line-height: 0.9;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  color: #A094C8;
   opacity: 0;
-  animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
-  text-shadow: 2px 4px 20px rgba(139,123,173,0.2);
+  animation: nameReveal 1.4s cubic-bezier(0.16,1,0.3,1) 0.8s forwards;
+  line-height: 1;
+  padding: 0 0.15em;
+  text-shadow: 0 2px 20px rgba(139,123,173,0.3);
 }
- 
+
+.name-yoran {
+  display: none;
+}
+
 .heb-names {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--purple);
-  letter-spacing: 0.3em;
-  margin: 20px 0 6px;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
+  color: var(--purple); letter-spacing: 0.3em; margin: 20px 0 6px;
   opacity: 0; animation: fadeUp 1s ease 1.1s forwards;
 }
- 
+
 .divider-ornament {
   opacity: 0; animation: fadeIn 1s ease 1.3s forwards;
-  margin: 20px auto;
-  display: flex; align-items: center; gap: 12px; justify-content: center;
+  margin: 20px auto; display: flex; align-items: center; gap: 12px; justify-content: center;
 }
- 
+
 .date-main {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: clamp(1.1rem, 3vw, 1.6rem);
-  color: var(--dark);
-  letter-spacing: 0.05em;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: clamp(1.1rem, 3vw, 1.6rem); color: var(--dark); letter-spacing: 0.05em;
   opacity: 0; animation: fadeUp 1s ease 1.4s forwards;
 }
 .date-heb {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.9rem;
-  color: var(--purple);
-  letter-spacing: 0.1em;
-  margin-top: 4px;
+  font-family: 'Cormorant Garamond', serif; font-size: 0.9rem;
+  color: var(--purple); letter-spacing: 0.1em; margin-top: 4px;
   opacity: 0; animation: fadeUp 1s ease 1.5s forwards;
 }
- 
+
 .in-memoriam {
-  margin-top: 40px;
-  padding: 20px 30px;
-  border: 1px solid var(--purple-light);
-  max-width: 420px;
+  margin-top: 40px; padding: 20px 30px;
+  border: 1px solid var(--purple-light); max-width: 460px;
   background: rgba(255,255,255,0.4);
   opacity: 0; animation: fadeUp 1s ease 1.7s forwards;
 }
 .in-memoriam-title {
-  font-family: 'Cinzel', serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.3em;
-  color: var(--purple);
-  text-transform: uppercase;
-  margin-bottom: 10px;
+  font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em;
+  color: var(--purple); text-transform: uppercase; margin-bottom: 10px;
 }
 .in-memoriam p {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 0.82rem;
-  color: var(--taupe);
-  line-height: 1.8;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 0.82rem; color: var(--taupe); line-height: 1.8;
 }
- 
+
 .scroll-hint {
-  position: absolute; bottom: 30px;
-  left: 50%; transform: translateX(-50%);
+  position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 8px;
   opacity: 0; animation: fadeIn 2s ease 2.5s forwards;
-  font-family: 'Cinzel', serif;
-  font-size: 0.5rem;
-  letter-spacing: 0.4em;
-  color: var(--purple);
-  text-transform: uppercase;
+  font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.4em;
+  color: var(--purple); text-transform: uppercase;
 }
 .scroll-line {
   width: 1px; height: 50px;
@@ -267,361 +253,191 @@ body {
   0%,100% { transform: scaleY(1); opacity: 0.6; }
   50% { transform: scaleY(1.3); opacity: 1; }
 }
- 
+
 /* ===== COUNTDOWN ===== */
 #countdown {
   background: linear-gradient(135deg, #F5F0FA 0%, #EDE8F5 100%);
-  padding: 80px 20px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  padding: 60px 20px; text-align: center; position: relative; overflow: hidden;
 }
 #countdown::before {
-  content: '';
-  position: absolute; inset: 0;
+  content: ''; position: absolute; inset: 0;
   background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%238B7BAD' stroke-width='0.3' opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3Ccircle cx='30' cy='30' r='10'/%3E%3C/g%3E%3C/svg%3E") repeat;
   opacity: 0.5;
 }
 .countdown-label {
-  font-family: 'Cinzel', serif;
-  font-size: 0.6rem;
-  letter-spacing: 0.4em;
-  color: var(--purple);
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  position: relative; z-index: 1;
+  font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.4em;
+  color: var(--purple); text-transform: uppercase; margin-bottom: 12px; position: relative; z-index: 1;
 }
 .countdown-script {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(2rem, 8vw, 4rem);
-  color: var(--dark);
-  margin-bottom: 40px;
-  position: relative; z-index: 1;
+  font-family: 'Great Vibes', cursive; font-size: clamp(1.8rem, 6vw, 3rem);
+  color: var(--dark); margin-bottom: 28px; position: relative; z-index: 1;
 }
 .countdown-grid {
-  display: flex; gap: 20px; justify-content: center; align-items: center;
-  position: relative; z-index: 1;
+  display: flex; gap: clamp(8px, 2vw, 20px); justify-content: center;
+  align-items: flex-end; position: relative; z-index: 1; flex-wrap: nowrap;
 }
-.count-block {
-  display: flex; flex-direction: column; align-items: center;
-}
+.count-block { display: flex; flex-direction: column; align-items: center; }
 .count-number {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 10vw, 6rem);
-  font-weight: 300;
-  color: var(--purple);
-  line-height: 1;
-  min-width: 90px;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 300; color: var(--purple); line-height: 1;
+  min-width: clamp(48px, 12vw, 80px); text-align: center;
 }
 .count-unit {
-  font-family: 'Cinzel', serif;
-  font-size: 0.5rem;
-  letter-spacing: 0.35em;
-  color: var(--taupe);
-  opacity: 0.9;
-  margin-top: 8px;
+  font-family: 'Cinzel', serif; font-size: clamp(0.38rem, 1vw, 0.5rem);
+  letter-spacing: 0.25em; color: var(--taupe); opacity: 0.9; margin-top: 6px;
 }
 .count-sep {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  color: var(--purple);
-  opacity: 0.4;
-  align-self: flex-start;
-  margin-top: 10px;
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--purple); opacity: 0.4; align-self: flex-start; margin-top: 6px;
 }
- 
-/* ===== COUPLE ILLUSTRATION ===== */
+
+/* ===== COUPLE ===== */
 #couple-section {
-  padding: 80px 20px;
-  text-align: center;
-  background: var(--warm-white);
-  position: relative;
-}
- 
-/* ===== PROGRAMME ===== */
-#programme {
-  padding: 80px 20px;
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
-.section-tag {
-  font-family: 'Cinzel', serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.45em;
-  color: var(--purple);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.section-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(2.5rem, 8vw, 4rem);
-  color: var(--dark);
-  margin-bottom: 8px;
-}
-.section-venue {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.1rem;
-  color: var(--purple);
-  margin-bottom: 6px;
-}
-.section-address {
-  font-family: 'Lato', sans-serif;
-  font-size: 0.8rem;
-  color: var(--taupe);
-  letter-spacing: 0.05em;
-  margin-bottom: 16px;
-}
-.maps-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-family: 'Cinzel', serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.25em;
-  color: var(--purple);
-  text-decoration: none;
-  border-bottom: 1px solid var(--purple-light);
-  padding-bottom: 2px;
-  text-transform: uppercase;
-  transition: color 0.3s;
-}
-.maps-link:hover { color: var(--purple); opacity: 0.7; }
- 
-/* Timeline */
-.timeline {
-  margin-top: 50px;
-  position: relative;
-  padding: 0 20px;
-}
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%; top: 0; bottom: 0;
-  width: 1px;
-  background: linear-gradient(180deg, transparent, var(--purple-light) 20%, var(--purple-light) 80%, transparent);
-  transform: translateX(-50%);
-}
-.timeline-item {
-  display: grid;
-  grid-template-columns: 1fr 60px 1fr;
-  gap: 0 10px;
-  align-items: center;
-  margin-bottom: 50px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.timeline-item.visible { opacity: 1; transform: translateY(0); }
-.timeline-time { text-align: right; }
-.timeline-hour {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 2.2rem;
-  color: var(--purple);
-  line-height: 1;
-}
-.timeline-type {
-  font-family: 'Cinzel', serif;
-  font-size: 0.45rem;
-  letter-spacing: 0.3em;
-  color: var(--taupe);
-  text-transform: uppercase;
-}
-.timeline-dot-wrap {
-  display: flex; flex-direction: column; align-items: center; gap: 4px;
-}
-.timeline-dot {
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  background: var(--purple);
-  position: relative;
-  box-shadow: 0 0 0 4px var(--warm-white), 0 0 0 5px var(--purple-light);
-}
-.timeline-info { text-align: left; }
-.timeline-event {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.1rem;
-  color: var(--dark);
-  margin-bottom: 4px;
-}
-.timeline-desc {
-  font-family: 'Lato', sans-serif;
-  font-size: 0.75rem;
-  color: var(--taupe);
-  line-height: 1.5;
-}
- 
-/* ===== WAX SEAL DIVIDER ===== */
-.wax-divider {
-  text-align: center;
-  padding: 40px;
+  padding: 80px 20px; text-align: center; background: var(--warm-white); position: relative;
 }
 .wax-seal-svg {
-  width: 80px; height: 80px;
-  animation: sealPulse 3s ease-in-out infinite;
+  width: 80px; height: 80px; animation: sealPulse 3s ease-in-out infinite;
 }
 @keyframes sealPulse {
   0%,100% { transform: scale(1) rotate(0deg); }
   50% { transform: scale(1.05) rotate(3deg); }
 }
- 
+
+/* ===== PROGRAMME ===== */
+#programme {
+  padding: 80px 20px; max-width: 700px; margin: 0 auto; text-align: center;
+}
+.section-tag {
+  font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.45em;
+  color: var(--purple); text-transform: uppercase; margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Great Vibes', cursive; font-size: clamp(2.5rem, 8vw, 4rem);
+  color: var(--dark); margin-bottom: 8px;
+}
+.section-venue {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 1.1rem; color: var(--purple); margin-bottom: 4px;
+}
+.section-address {
+  font-family: 'Lato', sans-serif; font-size: 0.8rem; color: var(--taupe);
+  letter-spacing: 0.05em; margin-bottom: 16px;
+}
+.maps-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.25em;
+  color: var(--purple); text-decoration: none;
+  border-bottom: 1px solid var(--purple-light); padding-bottom: 2px;
+  text-transform: uppercase; transition: opacity 0.3s;
+}
+.maps-link:hover { opacity: 0.7; }
+
+.timeline { margin-top: 50px; position: relative; padding: 0 20px; }
+.timeline::before {
+  content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px;
+  background: linear-gradient(180deg, transparent, var(--purple-light) 20%, var(--purple-light) 80%, transparent);
+  transform: translateX(-50%);
+}
+.timeline-item {
+  display: grid; grid-template-columns: 1fr 60px 1fr; gap: 0 10px;
+  align-items: center; margin-bottom: 50px; opacity: 0; transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.timeline-item.visible { opacity: 1; transform: translateY(0); }
+.timeline-time { text-align: right; }
+.timeline-hour {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 2.2rem; color: var(--purple); line-height: 1;
+}
+.timeline-type {
+  font-family: 'Cinzel', serif; font-size: 0.45rem; letter-spacing: 0.3em;
+  color: var(--taupe); text-transform: uppercase;
+}
+.timeline-dot-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.timeline-dot {
+  width: 14px; height: 14px; border-radius: 50%; background: var(--purple);
+  box-shadow: 0 0 0 4px var(--warm-white), 0 0 0 5px var(--purple-light);
+}
+.timeline-info { text-align: left; }
+.timeline-event {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 1.1rem; color: var(--dark); margin-bottom: 4px;
+}
+.timeline-desc { font-family: 'Lato', sans-serif; font-size: 0.75rem; color: var(--taupe); line-height: 1.5; }
+
+.wax-divider { text-align: center; padding: 40px; }
+
 /* ===== RSVP ===== */
 #rsvp {
-  background: var(--parchment);
-  padding: 80px 20px;
-  position: relative;
-  overflow: hidden;
+  background: var(--parchment); padding: 80px 20px; position: relative; overflow: hidden;
 }
 #rsvp::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 1px;
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
   background: linear-gradient(90deg, transparent, var(--purple-light), transparent);
 }
 #rsvp::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 1px;
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
   background: linear-gradient(90deg, transparent, var(--purple-light), transparent);
 }
-.rsvp-inner {
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: center;
-}
+.rsvp-inner { max-width: 500px; margin: 0 auto; text-align: center; }
 .rsvp-subtitle {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.95rem;
-  color: var(--taupe);
-  margin-bottom: 40px;
-  font-style: italic;
+  font-family: 'Cormorant Garamond', serif; font-size: 0.95rem;
+  color: var(--taupe); margin-bottom: 40px; font-style: italic;
 }
-.form-group {
-  margin-bottom: 20px;
-  text-align: left;
-}
+.form-group { margin-bottom: 20px; text-align: left; }
 .form-label {
-  display: block;
-  font-family: 'Cinzel', serif;
-  font-size: 0.5rem;
-  letter-spacing: 0.3em;
-  color: var(--purple);
-  text-transform: uppercase;
-  margin-bottom: 8px;
+  display: block; font-family: 'Cinzel', serif; font-size: 0.5rem;
+  letter-spacing: 0.3em; color: var(--purple); text-transform: uppercase; margin-bottom: 8px;
 }
 .form-input {
-  width: 100%;
-  padding: 14px 16px;
-  background: rgba(255,255,255,0.6);
-  border: 1px solid var(--purple-light);
-  border-radius: 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
-  color: var(--dark);
-  outline: none;
-  transition: border-color 0.3s, background 0.3s;
+  width: 100%; padding: 14px 16px; background: rgba(255,255,255,0.6);
+  border: 1px solid var(--purple-light); border-radius: 0;
+  font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--dark);
+  outline: none; transition: border-color 0.3s, background 0.3s;
 }
-.form-input:focus {
-  border-color: var(--purple);
-  background: rgba(255,255,255,0.9);
-}
+.form-input:focus { border-color: var(--purple); background: rgba(255,255,255,0.9); }
 .form-input::placeholder { color: var(--taupe); opacity: 0.6; }
 textarea.form-input { min-height: 100px; resize: vertical; }
- 
-.attendance-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-}
+
+.attendance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .attendance-btn {
-  padding: 14px;
-  background: transparent;
-  border: 1px solid var(--purple-light);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
-  color: var(--taupe);
-  cursor: pointer;
-  transition: all 0.3s;
-  border-radius: 30px;
+  padding: 14px; background: transparent; border: 1px solid var(--purple-light);
+  font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--taupe);
+  cursor: pointer; transition: all 0.3s; border-radius: 30px;
 }
 .attendance-btn.active, .attendance-btn:hover {
-  background: var(--purple);
-  border-color: var(--purple);
-  color: white;
+  background: var(--purple); border-color: var(--purple); color: white;
 }
- 
+
 .submit-btn {
-  width: 100%;
-  padding: 18px;
-  margin-top: 30px;
+  width: 100%; padding: 18px; margin-top: 30px;
   background: linear-gradient(135deg, #6B5B8A, var(--purple), #6B5B8A);
-  background-size: 200% 100%;
-  border: none;
-  border-radius: 40px;
-  font-family: 'Cinzel', serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  color: white;
-  text-transform: uppercase;
-  cursor: pointer;
+  background-size: 200% 100%; border: none; border-radius: 40px;
+  font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em;
+  color: white; text-transform: uppercase; cursor: pointer;
   transition: background-position 0.5s, transform 0.2s;
 }
-.submit-btn:hover {
-  background-position: 100% 0;
-  transform: translateY(-2px);
-}
+.submit-btn:hover { background-position: 100% 0; transform: translateY(-2px); }
 .submit-btn:active { transform: translateY(0); }
- 
+
 .deadline-note {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 0.8rem;
-  color: var(--taupe);
-  margin-top: 16px;
-  opacity: 0.7;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 0.8rem; color: var(--taupe); margin-top: 16px; opacity: 0.7;
 }
- 
-.success-msg {
-  display: none;
-  text-align: center;
-  padding: 40px 20px;
-}
+
+.success-msg { display: none; text-align: center; padding: 40px 20px; }
 .success-msg.show { display: block; }
 .success-icon { font-size: 3rem; margin-bottom: 16px; }
-.success-text {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  color: var(--purple);
-}
-.success-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1rem;
-  color: var(--taupe);
-  margin-top: 8px;
-}
- 
-/* ===== FOOTER ===== */
+.success-text { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--purple); }
+.success-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--taupe); margin-top: 8px; }
+
 footer {
-  background: var(--dark);
-  padding: 50px 20px;
-  text-align: center;
-  position: relative;
+  background: var(--dark); padding: 50px 20px; text-align: center; position: relative;
 }
-.footer-names {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
-  color: var(--purple-light);
-  margin-bottom: 10px;
-}
-.footer-date {
-  font-family: 'Cinzel', serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.4em;
-  color: var(--taupe);
-  opacity: 0.8;
-}
- 
-/* ANIMATIONS */
+.footer-names { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--purple-light); margin-bottom: 10px; }
+.footer-date { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.4em; color: var(--taupe); opacity: 0.8; }
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -631,23 +447,19 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; } to { opacity: 1; }
 }
- 
+
 .shimmer {
   background: linear-gradient(90deg, var(--dark) 0%, #6B5B8A 40%, var(--purple-light) 60%, #6B5B8A 80%, var(--dark) 100%);
   background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   animation: shimmer 4s linear infinite;
 }
 @keyframes shimmer {
-  from { background-position: 0% center; }
-  to { background-position: 200% center; }
+  from { background-position: 0% center; } to { background-position: 200% center; }
 }
- 
+
 @media (max-width: 600px) {
   .parents-line { flex-direction: column; gap: 4px; }
   .timeline::before { left: 30px; transform: none; }
@@ -658,48 +470,15 @@ footer {
 </style>
 </head>
 <body>
- 
+
 <div class="cursor" id="cursor"></div>
 <div class="cursor-follower" id="cursorFollower"></div>
 <div id="particles"></div>
- 
+
 <!-- ===== HERO ===== -->
 <section id="hero">
   <div class="hero-botanical">
-    <!-- Top Left botanical - wisteria & eucalyptus -->
-    <svg class="botanical-tl" width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g opacity="0.6">
-        <!-- Main branch -->
-        <path d="M10,10 Q55,45 85,90 Q115,135 95,185" stroke="#8B7BAD" stroke-width="1.5" fill="none"/>
-        <path d="M85,90 Q125,80 155,100 Q185,120 175,160" stroke="#8B7BAD" stroke-width="1.2" fill="none"/>
-        <path d="M55,45 Q35,85 55,115" stroke="#8B7BAD" stroke-width="1" fill="none"/>
-        <!-- Wisteria clusters -->
-        <ellipse cx="100" cy="195" rx="5" ry="8" fill="#C4B8DC" opacity="0.7"/>
-        <ellipse cx="112" cy="188" rx="4" ry="7" fill="#8B7BAD" opacity="0.5"/>
-        <ellipse cx="88" cy="182" rx="4.5" ry="7" fill="#C4B8DC" opacity="0.6"/>
-        <ellipse cx="105" cy="178" rx="4" ry="6" fill="#8B7BAD" opacity="0.4"/>
-        <ellipse cx="118" cy="200" rx="3.5" ry="6" fill="#C4B8DC" opacity="0.55"/>
-        <!-- Leaves -->
-        <ellipse cx="72" cy="60" rx="14" ry="8" fill="#7A8C6E" opacity="0.45" transform="rotate(-30 72 60)"/>
-        <ellipse cx="105" cy="100" rx="16" ry="9" fill="#7A8C6E" opacity="0.5" transform="rotate(20 105 100)"/>
-        <ellipse cx="140" cy="108" rx="18" ry="10" fill="#8B7BAD" opacity="0.25" transform="rotate(-10 140 108)"/>
-        <ellipse cx="160" cy="135" rx="14" ry="8" fill="#7A8C6E" opacity="0.4" transform="rotate(40 160 135)"/>
-        <ellipse cx="55" cy="125" rx="12" ry="7" fill="#7A8C6E" opacity="0.4" transform="rotate(-20 55 125)"/>
-        <!-- White roses -->
-        <circle cx="170" cy="165" r="12" fill="white" opacity="0.7"/>
-        <circle cx="165" cy="160" r="7" fill="#F5F0FA" opacity="0.8"/>
-        <circle cx="170" cy="165" r="4" fill="white" opacity="0.9"/>
-        <circle cx="185" cy="170" r="9" fill="white" opacity="0.6"/>
-        <!-- Eucalyptus sprigs -->
-        <path d="M32,65 Q22,95 32,125" stroke="#7A8C6E" stroke-width="1" fill="none" opacity="0.7"/>
-        <ellipse cx="27" cy="82" rx="8" ry="5" fill="#7A8C6E" opacity="0.4" transform="rotate(-40 27 82)"/>
-        <ellipse cx="30" cy="102" rx="8" ry="5" fill="#7A8C6E" opacity="0.4" transform="rotate(30 30 102)"/>
-        <ellipse cx="33" cy="120" rx="7" ry="4" fill="#7A8C6E" opacity="0.4" transform="rotate(-10 33 120)"/>
-      </g>
-    </svg>
- 
-    <!-- Top Right -->
-    <svg class="botanical-tr" width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="botanical-tl" width="300" height="300" viewBox="0 0 300 300" fill="none">
       <g opacity="0.6">
         <path d="M10,10 Q55,45 85,90 Q115,135 95,185" stroke="#8B7BAD" stroke-width="1.5" fill="none"/>
         <path d="M85,90 Q125,80 155,100 Q185,120 175,160" stroke="#8B7BAD" stroke-width="1.2" fill="none"/>
@@ -724,19 +503,40 @@ footer {
         <ellipse cx="33" cy="120" rx="7" ry="4" fill="#7A8C6E" opacity="0.4" transform="rotate(-10 33 120)"/>
       </g>
     </svg>
- 
-    <!-- Bottom Left -->
-    <svg class="botanical-bl" width="280" height="220" viewBox="0 0 280 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="botanical-tr" width="300" height="300" viewBox="0 0 300 300" fill="none">
+      <g opacity="0.6">
+        <path d="M10,10 Q55,45 85,90 Q115,135 95,185" stroke="#8B7BAD" stroke-width="1.5" fill="none"/>
+        <path d="M85,90 Q125,80 155,100 Q185,120 175,160" stroke="#8B7BAD" stroke-width="1.2" fill="none"/>
+        <path d="M55,45 Q35,85 55,115" stroke="#8B7BAD" stroke-width="1" fill="none"/>
+        <ellipse cx="100" cy="195" rx="5" ry="8" fill="#C4B8DC" opacity="0.7"/>
+        <ellipse cx="112" cy="188" rx="4" ry="7" fill="#8B7BAD" opacity="0.5"/>
+        <ellipse cx="88" cy="182" rx="4.5" ry="7" fill="#C4B8DC" opacity="0.6"/>
+        <ellipse cx="105" cy="178" rx="4" ry="6" fill="#8B7BAD" opacity="0.4"/>
+        <ellipse cx="118" cy="200" rx="3.5" ry="6" fill="#C4B8DC" opacity="0.55"/>
+        <ellipse cx="72" cy="60" rx="14" ry="8" fill="#7A8C6E" opacity="0.45" transform="rotate(-30 72 60)"/>
+        <ellipse cx="105" cy="100" rx="16" ry="9" fill="#7A8C6E" opacity="0.5" transform="rotate(20 105 100)"/>
+        <ellipse cx="140" cy="108" rx="18" ry="10" fill="#8B7BAD" opacity="0.25" transform="rotate(-10 140 108)"/>
+        <ellipse cx="160" cy="135" rx="14" ry="8" fill="#7A8C6E" opacity="0.4" transform="rotate(40 160 135)"/>
+        <ellipse cx="55" cy="125" rx="12" ry="7" fill="#7A8C6E" opacity="0.4" transform="rotate(-20 55 125)"/>
+        <circle cx="170" cy="165" r="12" fill="white" opacity="0.7"/>
+        <circle cx="165" cy="160" r="7" fill="#F5F0FA" opacity="0.8"/>
+        <circle cx="170" cy="165" r="4" fill="white" opacity="0.9"/>
+        <circle cx="185" cy="170" r="9" fill="white" opacity="0.6"/>
+        <path d="M32,65 Q22,95 32,125" stroke="#7A8C6E" stroke-width="1" fill="none" opacity="0.7"/>
+        <ellipse cx="27" cy="82" rx="8" ry="5" fill="#7A8C6E" opacity="0.4" transform="rotate(-40 27 82)"/>
+        <ellipse cx="30" cy="102" rx="8" ry="5" fill="#7A8C6E" opacity="0.4" transform="rotate(30 30 102)"/>
+        <ellipse cx="33" cy="120" rx="7" ry="4" fill="#7A8C6E" opacity="0.4" transform="rotate(-10 33 120)"/>
+      </g>
+    </svg>
+    <svg class="botanical-bl" width="280" height="220" viewBox="0 0 280 220" fill="none">
       <g opacity="0.55">
         <path d="M10,210 Q65,175 110,155 Q165,135 215,145" stroke="#8B7BAD" stroke-width="1.5" fill="none"/>
         <ellipse cx="65" cy="170" rx="18" ry="10" fill="#7A8C6E" opacity="0.4" transform="rotate(-10 65 170)"/>
         <ellipse cx="110" cy="152" rx="15" ry="9" fill="#7A8C6E" opacity="0.45" transform="rotate(15 110 152)"/>
         <ellipse cx="165" cy="138" rx="20" ry="11" fill="#7A8C6E" opacity="0.35" transform="rotate(-5 165 138)"/>
-        <!-- Wisteria clusters bottom -->
         <ellipse cx="200" cy="148" rx="5" ry="8" fill="#C4B8DC" opacity="0.65"/>
         <ellipse cx="213" cy="141" rx="4" ry="7" fill="#8B7BAD" opacity="0.5"/>
         <ellipse cx="190" cy="140" rx="4.5" ry="7" fill="#C4B8DC" opacity="0.55"/>
-        <!-- White roses -->
         <circle cx="220" cy="150" r="11" fill="white" opacity="0.65"/>
         <circle cx="215" cy="145" r="6" fill="#F5F0FA" opacity="0.8"/>
         <path d="M32,205 Q22,180 40,158" stroke="#7A8C6E" stroke-width="1" fill="none" opacity="0.6"/>
@@ -744,9 +544,7 @@ footer {
         <ellipse cx="37" cy="165" rx="8" ry="5" fill="#7A8C6E" opacity="0.35" transform="rotate(-15 37 165)"/>
       </g>
     </svg>
- 
-    <!-- Bottom Right -->
-    <svg class="botanical-br" width="280" height="220" viewBox="0 0 280 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="botanical-br" width="280" height="220" viewBox="0 0 280 220" fill="none">
       <g opacity="0.55">
         <path d="M10,210 Q65,175 110,155 Q165,135 215,145" stroke="#8B7BAD" stroke-width="1.5" fill="none"/>
         <ellipse cx="65" cy="170" rx="18" ry="10" fill="#7A8C6E" opacity="0.4" transform="rotate(-10 65 170)"/>
@@ -763,51 +561,42 @@ footer {
       </g>
     </svg>
   </div>
- 
-  <!-- Content -->
+
   <p class="bsm">בס"ד</p>
- 
+
   <div class="parents-line">
     <span>Monsieur Patrick Journo &amp; Madame Judith Journo</span>
     <span>Thierry Hayoun &amp; Michelle Hayoun</span>
   </div>
- 
+
   <div class="hero-names">
-    <div class="name-lola shimmer">Lola</div>
-    <div class="name-sub-fr">Haya Mouchka</div>
- 
-    <div class="ampersand-wrap">
-      <span class="amp-line"></span>
-      <span class="ampersand">&amp;</span>
-      <span class="amp-line right"></span>
+    <div class="names-inline">
+      <span class="name-heb">לולה</span>
+      <span class="name-amp">&amp;</span>
+      <span class="name-heb">יורן</span>
     </div>
- 
-    <div class="name-yoran">Lola & Yoran</div>
   </div>
- 
-  <div class="heb-names">לולה ♦ יורן</div>
- 
+
   <div class="divider-ornament">
     <svg width="60" height="1" viewBox="0 0 60 1"><line x1="0" y1="0.5" x2="60" y2="0.5" stroke="#8B7BAD" stroke-width="0.8"/></svg>
     <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 0L7.5 4.5L12 6L7.5 7.5L6 12L4.5 7.5L0 6L4.5 4.5Z" fill="#8B7BAD"/></svg>
     <svg width="60" height="1" viewBox="0 0 60 1"><line x1="0" y1="0.5" x2="60" y2="0.5" stroke="#8B7BAD" stroke-width="0.8"/></svg>
   </div>
- 
+
   <p class="date-main">Dimanche 7 Juin 2026</p>
   <p class="date-heb">12 Sivan 5786</p>
- 
+
   <div class="in-memoriam">
     <div class="in-memoriam-title">En mémoire de nos grands-parents bien-aimés</div>
-    <p>Simi Bensimon ז"ל — grand-mère du Hatan<br>
-    À jamais dans nos cœurs</p>
+    <p>Une pensée émue pour nos grands-parents,<br>qui nous manquent tellement en ces moments<br>importants de nos vies.</p>
   </div>
- 
+
   <div class="scroll-hint">
     <div class="scroll-line"></div>
     <span>Le grand jour approche</span>
   </div>
 </section>
- 
+
 <!-- ===== COUNTDOWN ===== -->
 <section id="countdown">
   <p class="countdown-label">Le grand jour approche dans…</p>
@@ -834,10 +623,9 @@ footer {
     </div>
   </div>
 </section>
- 
-<!-- ===== COUPLE ILLUSTRATION ===== -->
+
+<!-- ===== COUPLE ===== -->
 <section id="couple-section">
-  <!-- Wax seal -->
   <svg class="wax-seal-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <radialGradient id="waxGrad" cx="40%" cy="35%">
@@ -853,18 +641,15 @@ footer {
     <text x="50" y="56" text-anchor="middle" font-family="Cinzel, serif" font-size="22" fill="#FAF6EE" opacity="0.95" font-weight="600">LY</text>
     <path d="M50 64 L48 62 Q46 60 48 58 Q50 56 50 58 Q50 56 52 58 Q54 60 52 62 Z" fill="#FAF6EE" opacity="0.8"/>
   </svg>
- 
+
   <div style="margin: 40px auto 0; max-width: 500px; padding: 0 20px;">
-    <!-- Houppa illustration -->
     <svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:340px;display:block;margin:0 auto;">
       <defs>
         <linearGradient id="dressGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#FAF6EE"/>
-          <stop offset="100%" stop-color="#E8D5A3"/>
+          <stop offset="0%" stop-color="#FAF6EE"/><stop offset="100%" stop-color="#E8D5A3"/>
         </linearGradient>
         <linearGradient id="suitGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#4A3F35"/>
-          <stop offset="100%" stop-color="#2C2416"/>
+          <stop offset="0%" stop-color="#4A3F35"/><stop offset="100%" stop-color="#2C2416"/>
         </linearGradient>
         <linearGradient id="canopyGrad" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#8B7BAD"/>
@@ -872,125 +657,79 @@ footer {
           <stop offset="100%" stop-color="#8B7BAD"/>
         </linearGradient>
       </defs>
-      <!-- Houppa poles -->
       <rect x="80" y="80" width="4" height="180" fill="#7A8C6E" rx="2"/>
       <rect x="276" y="80" width="4" height="180" fill="#7A8C6E" rx="2"/>
       <rect x="120" y="100" width="3" height="160" fill="#7A8C6E" rx="1.5"/>
       <rect x="237" y="100" width="3" height="160" fill="#7A8C6E" rx="1.5"/>
-      <!-- Canopy -->
       <path d="M75 82 Q180 60 285 82 L285 105 Q180 88 75 105 Z" fill="url(#canopyGrad)" opacity="0.85"/>
       <path d="M75 100 Q180 85 285 100" stroke="#8B7BAD" stroke-width="1.5" fill="none" opacity="0.6"/>
-      <!-- Wisteria clusters hanging from canopy -->
       <ellipse cx="130" cy="112" rx="5" ry="9" fill="#C4B8DC" opacity="0.7"/>
       <ellipse cx="142" cy="108" rx="4" ry="7" fill="#8B7BAD" opacity="0.6"/>
       <ellipse cx="175" cy="100" rx="6" ry="10" fill="#C4B8DC" opacity="0.65"/>
       <ellipse cx="188" cy="105" rx="4" ry="8" fill="#8B7BAD" opacity="0.55"/>
       <ellipse cx="228" cy="110" rx="5" ry="9" fill="#C4B8DC" opacity="0.7"/>
       <ellipse cx="216" cy="107" rx="4" ry="7" fill="#8B7BAD" opacity="0.6"/>
-      <!-- White roses on canopy -->
       <circle cx="155" cy="88" r="7" fill="white" opacity="0.8"/>
       <circle cx="155" cy="88" r="4" fill="#F5F0FA" opacity="0.9"/>
       <circle cx="205" cy="85" r="8" fill="white" opacity="0.75"/>
       <circle cx="205" cy="85" r="4.5" fill="#F5F0FA" opacity="0.9"/>
-      <!-- Greenery hanging -->
       <path d="M130 118 Q125 138 130 158" stroke="#7A8C6E" stroke-width="1.2" fill="none"/>
       <ellipse cx="122" cy="132" rx="7" ry="4" fill="#7A8C6E" opacity="0.5" transform="rotate(-20 122 132)"/>
       <ellipse cx="128" cy="150" rx="6" ry="3.5" fill="#7A8C6E" opacity="0.5" transform="rotate(15 128 150)"/>
       <path d="M230 118 Q235 138 230 158" stroke="#7A8C6E" stroke-width="1.2" fill="none"/>
       <ellipse cx="238" cy="132" rx="7" ry="4" fill="#7A8C6E" opacity="0.5" transform="rotate(20 238 132)"/>
       <ellipse cx="232" cy="150" rx="6" ry="3.5" fill="#7A8C6E" opacity="0.5" transform="rotate(-15 232 150)"/>
-      <!-- Ground -->
       <rect x="60" y="255" width="240" height="3" fill="#E8D5A3" rx="1.5" opacity="0.5"/>
-      <!-- Bride body (white dress) -->
       <path d="M155 145 Q150 165 145 200 Q140 230 145 258 L175 258 Q175 230 170 200 Q165 165 160 145 Z" fill="url(#dressGrad)" stroke="#E8D5A3" stroke-width="0.5"/>
-      <!-- Bride torso -->
       <rect x="153" y="120" width="22" height="30" rx="4" fill="#FAF6EE"/>
-      <!-- Bride arms -->
       <path d="M153 130 Q140 145 145 160" stroke="#FAF6EE" stroke-width="8" stroke-linecap="round" fill="none"/>
       <path d="M175 130 Q188 145 183 160" stroke="#FAF6EE" stroke-width="8" stroke-linecap="round" fill="none"/>
-      <!-- Bouquet (wisteria tones) -->
       <circle cx="142" cy="163" r="12" fill="#C4B8DC" opacity="0.7"/>
       <circle cx="145" cy="158" r="5" fill="white" opacity="0.9"/>
       <circle cx="137" cy="160" r="4" fill="#8B7BAD" opacity="0.6"/>
       <circle cx="148" cy="166" r="4" fill="#C4B8DC" opacity="0.8"/>
-      <!-- Bride head -->
       <circle cx="164" cy="110" r="14" fill="#F5D5B0"/>
-      <!-- Bride veil -->
       <path d="M155 105 Q145 130 148 180" stroke="#FAF6EE" stroke-width="3" fill="none" opacity="0.7"/>
       <path d="M152 105 Q140 140 145 195" stroke="#FAF6EE" stroke-width="2" fill="none" opacity="0.4"/>
-      <!-- Bride hair -->
       <path d="M158 100 Q164 95 170 100 Q172 108 164 110 Q156 108 158 100 Z" fill="#8B6014"/>
-      <!-- Groom body -->
       <rect x="180" y="150" width="28" height="108" rx="3" fill="url(#suitGrad)"/>
       <rect x="181" y="120" width="26" height="35" rx="4" fill="url(#suitGrad)"/>
       <rect x="191" y="122" width="8" height="30" rx="2" fill="#FAF6EE" opacity="0.9"/>
       <path d="M195 125 L195 148" stroke="#8B7BAD" stroke-width="2.5" stroke-linecap="round"/>
-      <!-- Groom kippa -->
       <ellipse cx="194" cy="103" rx="10" ry="4" fill="#2C2416" opacity="0.8"/>
-      <!-- Groom head -->
       <circle cx="194" cy="110" r="13" fill="#D4A882"/>
-      <!-- Holding hands -->
       <path d="M175 165 Q180 170 180 175" stroke="#D4A882" stroke-width="5" stroke-linecap="round" fill="none"/>
       <path d="M180 165 Q175 170 175 175" stroke="#F5D5B0" stroke-width="5" stroke-linecap="round" fill="none"/>
     </svg>
   </div>
 </section>
- 
+
 <!-- ===== PROGRAMME ===== -->
 <section id="programme">
   <p class="section-tag">Programme</p>
   <h2 class="section-title">Le déroulé du jour</h2>
- 
-  <!-- Pas de lieu spécifié — à compléter -->
-  <!-- <p class="section-venue">Nom du lieu</p> -->
-  <!-- <p class="section-address">Adresse · Ville</p> -->
-  <!-- <a class="maps-link" href="#" target="_blank">Voir sur Google Maps ↗</a> -->
- 
+
+  <p class="section-venue">Les Salons Hoche</p>
+  <p class="section-address">Terrasse · Rooftop</p>
+  <a class="maps-link" href="https://waze.com/ul?q=Les+Salons+Hoche+Paris&navigate=yes" target="_blank">Voir sur Waze ↗️</a>
+
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-time">
-        <div class="timeline-hour">16h</div>
-        <div class="timeline-type">Réception</div>
-      </div>
-      <div class="timeline-dot-wrap">
-        <div class="timeline-dot"></div>
-      </div>
-      <div class="timeline-info">
-        <div class="timeline-event">Réception des invités</div>
-        <div class="timeline-desc">Cocktail de bienvenue</div>
-      </div>
-    </div>
- 
-    <div class="timeline-item">
-      <div class="timeline-time">
         <div class="timeline-hour">17h30</div>
-        <div class="timeline-type">Cérémonie</div>
+        <div class="timeline-type">Houppa</div>
       </div>
       <div class="timeline-dot-wrap">
-        <div class="timeline-dot" style="background: #6B5B8A;"></div>
+        <div class="timeline-dot" style="background:#6B5B8A;"></div>
       </div>
       <div class="timeline-info">
         <div class="timeline-event">Cérémonie de la Houppa</div>
-        <div class="timeline-desc">Cérémonie religieuse<br>Sous le baldaquin nuptial</div>
-      </div>
-    </div>
- 
-    <div class="timeline-item">
-      <div class="timeline-time">
-        <div class="timeline-hour">19h</div>
-        <div class="timeline-type">Soirée</div>
-      </div>
-      <div class="timeline-dot-wrap">
-        <div class="timeline-dot" style="background: var(--sage);"></div>
-      </div>
-      <div class="timeline-info">
-        <div class="timeline-event">Cocktail &amp; Soirée</div>
-        <div class="timeline-desc">Musique et célébration</div>
+        <div class="timeline-desc">Cérémonie religieuse suivie de la soirée</div>
       </div>
     </div>
   </div>
 </section>
- 
+
 <!-- WAX SEAL DIVIDER -->
 <div class="wax-divider">
   <svg class="wax-seal-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="opacity:0.7">
@@ -1007,14 +746,14 @@ footer {
     <path d="M50 64 L48 62 Q46 60 48 58 Q50 56 50 58 Q50 56 52 58 Q54 60 52 62 Z" fill="#FAF6EE" opacity="0.8"/>
   </svg>
 </div>
- 
+
 <!-- ===== RSVP ===== -->
 <section id="rsvp">
   <div class="rsvp-inner">
     <p class="section-tag">RSVP</p>
     <h2 class="section-title">Confirmez votre présence</h2>
     <p class="rsvp-subtitle">Nous espérons vous compter parmi nous</p>
- 
+
     <div id="formWrap">
       <div class="form-group">
         <label class="form-label">Prénom *</label>
@@ -1038,7 +777,7 @@ footer {
       <button class="submit-btn" onclick="submitRSVP()">Confirmer ma présence</button>
       <p class="deadline-note">Merci de répondre avant le 1er mai 2026</p>
     </div>
- 
+
     <div class="success-msg" id="successMsg">
       <div class="success-icon">✦</div>
       <div class="success-text">Merci !</div>
@@ -1046,40 +785,38 @@ footer {
     </div>
   </div>
 </section>
- 
+
 <!-- ===== FOOTER ===== -->
 <footer>
   <div style="margin-bottom:30px;opacity:0.3;">
     <svg width="200" height="1" viewBox="0 0 200 1"><line x1="0" y1="0.5" x2="200" y2="0.5" stroke="#8B7BAD" stroke-width="0.8"/></svg>
   </div>
   <div class="footer-names">Lola &amp; Yoran</div>
-  <div class="footer-date">7 Juin 2026 · 12 Sivan 5786 · Marolles-en-Brie</div>
+  <div class="footer-date">2 Juin 2026 · 12 Sivan 5786 · Les Salons Hoche</div>
   <div style="margin-top:30px;opacity:0.3;">
     <svg width="200" height="1" viewBox="0 0 200 1"><line x1="0" y1="0.5" x2="200" y2="0.5" stroke="#8B7BAD" stroke-width="0.8"/></svg>
   </div>
 </footer>
- 
+
 <script>
-// ===== CURSOR =====
+// CURSOR
 const cursor = document.getElementById('cursor');
 const follower = document.getElementById('cursorFollower');
 let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
 document.addEventListener('mousemove', e => {
   mouseX = e.clientX; mouseY = e.clientY;
-  cursor.style.left = mouseX + 'px';
-  cursor.style.top = mouseY + 'px';
+  cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
 });
 function animateFollower() {
   followerX += (mouseX - followerX) * 0.12;
   followerY += (mouseY - followerY) * 0.12;
-  follower.style.left = followerX + 'px';
-  follower.style.top = followerY + 'px';
+  follower.style.left = followerX + 'px'; follower.style.top = followerY + 'px';
   requestAnimationFrame(animateFollower);
 }
 animateFollower();
- 
-// ===== PARTICLES =====
-const particleContainer = document.getElementById('particles');
+
+// PARTICLES
+const pc = document.getElementById('particles');
 for (let i = 0; i < 35; i++) {
   const p = document.createElement('div');
   p.className = 'particle';
@@ -1087,104 +824,80 @@ for (let i = 0; i < 35; i++) {
   p.style.width = p.style.height = (Math.random() * 3 + 1) + 'px';
   p.style.animationDuration = (Math.random() * 15 + 10) + 's';
   p.style.animationDelay = (Math.random() * 15) + 's';
-  particleContainer.appendChild(p);
+  pc.appendChild(p);
 }
- 
-// ===== COUNTDOWN =====
+
+// COUNTDOWN
 const weddingDate = new Date('2026-06-07T17:30:00');
 function updateCountdown() {
-  const now = new Date();
-  const diff = weddingDate - now;
+  const diff = weddingDate - new Date();
   if (diff <= 0) return;
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor((diff % 86400000) / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('days').textContent = String(d).padStart(2,'0');
-  document.getElementById('hours').textContent = String(h).padStart(2,'0');
-  document.getElementById('minutes').textContent = String(m).padStart(2,'0');
-  document.getElementById('seconds').textContent = String(s).padStart(2,'0');
+  document.getElementById('days').textContent    = String(Math.floor(diff / 86400000)).padStart(2,'0');
+  document.getElementById('hours').textContent   = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,'0');
+  document.getElementById('minutes').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
+  document.getElementById('seconds').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
 }
-updateCountdown();
-setInterval(updateCountdown, 1000);
- 
-// ===== SCROLL REVEAL =====
+updateCountdown(); setInterval(updateCountdown, 1000);
+
+// SCROLL REVEAL
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.2 });
 document.querySelectorAll('.timeline-item').forEach(el => observer.observe(el));
- 
-// ===== RSVP — Google Sheets =====
-// 1. Créer un Google Apps Script (Extensions > Apps Script dans Google Sheets)
-// 2. Coller le code Apps Script ci-dessous, déployer comme "Web App" (accès : Anyone)
-// 3. Remplacer l'URL ci-dessous par celle générée lors du déploiement
- 
+
+// RSVP
+// =====================================================
+// CODE GOOGLE APPS SCRIPT à coller dans ton projet :
+//
+// function doGet(e) {
+//   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+//   sheet.appendRow([
+//     e.parameter.timestamp,
+//     e.parameter.prenom,
+//     e.parameter.nom,
+//     e.parameter.presence,
+//     e.parameter.message
+//   ]);
+//   return ContentService.createTextOutput('OK');
+// }
+// =====================================================
+
 const SCRIPT_URL = 'https://script.google.com/macros/s/VOTRE_SCRIPT_ID_ICI/exec';
- 
-/*
-===== CODE À COLLER DANS GOOGLE APPS SCRIPT =====
- 
-function doGet(e) {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  sheet.appendRow([
-    e.parameter.timestamp,
-    e.parameter.prenom,
-    e.parameter.nom,
-    e.parameter.presence,
-    e.parameter.message
-  ]);
-  return ContentService.createTextOutput('OK');
-}
- 
-=================================================
-*/
- 
+
 let attendance = null;
 function selectAttendance(choice) {
   attendance = choice;
   document.getElementById('btn-yes').classList.toggle('active', choice === 'yes');
   document.getElementById('btn-no').classList.toggle('active', choice === 'no');
 }
- 
+
 async function submitRSVP() {
   const prenom = document.getElementById('prenom').value.trim();
   const nom = document.getElementById('nom').value.trim();
   const message = document.getElementById('message').value.trim();
-  if (!prenom || !nom || !attendance) {
-    alert('Merci de remplir tous les champs obligatoires.');
-    return;
-  }
+  if (!prenom || !nom || !attendance) { alert('Merci de remplir tous les champs obligatoires.'); return; }
   const btn = document.querySelector('.submit-btn');
-  btn.textContent = 'Envoi en cours…';
-  btn.disabled = true;
+  btn.textContent = 'Envoi en cours…'; btn.disabled = true;
   try {
-    const params = new URLSearchParams({
-      prenom, nom,
-      presence: attendance === 'yes' ? 'Oui' : 'Non',
-      message,
-      timestamp: new Date().toLocaleString('fr-FR')
-    });
+    const params = new URLSearchParams({ prenom, nom, presence: attendance === 'yes' ? 'Oui' : 'Non', message, timestamp: new Date().toLocaleString('fr-FR') });
     await fetch(SCRIPT_URL + '?' + params.toString(), { method: 'GET', mode: 'no-cors' });
-  } catch (e) {
-    // mode no-cors always throws — traité comme succès
-  }
+  } catch(e) {}
   document.getElementById('formWrap').style.display = 'none';
   document.getElementById('successMsg').classList.add('show');
 }
- 
-// ===== PARALLAX =====
+
+// PARALLAX
 window.addEventListener('scroll', () => {
   const sy = window.scrollY;
   const tl = document.querySelector('.botanical-tl');
   const tr = document.querySelector('.botanical-tr');
   const bl = document.querySelector('.botanical-bl');
   const br = document.querySelector('.botanical-br');
-  if (tl) tl.style.transform = `translateY(${sy * 0.15}px)`;
-  if (tr) tr.style.transform = `scaleX(-1) translateY(${sy * 0.15}px)`;
-  if (bl) bl.style.transform = `scaleY(-1) translateY(${-sy * 0.08}px)`;
-  if (br) br.style.transform = `scale(-1) translateY(${-sy * 0.08}px)`;
+  if (tl) tl.style.transform = translateY(${sy * 0.15}px);
+  if (tr) tr.style.transform = scaleX(-1) translateY(${sy * 0.15}px);
+  if (bl) bl.style.transform = scaleY(-1) translateY(${-sy * 0.08}px);
+  if (br) br.style.transform = scale(-1) translateY(${-sy * 0.08}px);
 });
 </script>
 </body>
 </html>
- 
