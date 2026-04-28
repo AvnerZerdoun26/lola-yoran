@@ -325,7 +325,12 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
   <p class="date-main">Dimanche 7 Juin 2026</p>
   <p class="date-heb">כ״ב סיון תשפ״ו</p>
  
-  <p>Une pensée émue pour nos grands-parents,<br>qui nous manquent tellement en ces moments<br>importants de nos vies.</p>
+ 
+  </div>
+ 
+  <div class="in-memoriam" style="margin-top:32px;padding:16px 24px;border:1px solid var(--purple-light);max-width:420px;background:rgba(255,255,255,.4);backdrop-filter:blur(4px);opacity:0;animation:fU 1s ease 1.7s forwards;">
+    <div class="in-memoriam-title" style="font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.28em;color:var(--purple);text-transform:uppercase;margin-bottom:8px;">En mémoire de nos grands-parents bien-aimés</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.8rem;color:var(--taupe);line-height:1.8;">Une pensée émue pour nos grands-parents,<br>qui nous manquent tellement en ces moments<br>importants de nos vies.</p>
   </div>
  
   <div class="scroll-hint">
@@ -351,20 +356,7 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
  
 <!-- ══════════════ HOTEL + SCEAU ══════════════ -->
 <section id="couple-section">
-  <svg class="wax-seal-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="wg" cx="40%" cy="35%">
-        <stop offset="0%" stop-color="#C4B8DC"/>
-        <stop offset="50%" stop-color="#8B7BAD"/>
-        <stop offset="100%" stop-color="#5A4B7A"/>
-      </radialGradient>
-    </defs>
-    <circle cx="50" cy="50" r="46" fill="url(#wg)"/>
-    <circle cx="50" cy="50" r="40" fill="none" stroke="#5A4B7A" stroke-width=".5" opacity=".4"/>
-    <circle cx="50" cy="50" r="33" fill="none" stroke="#DDD5EE" stroke-width=".3" opacity=".3"/>
-    <text x="50" y="57" text-anchor="middle" font-family="Cinzel,serif" font-size="22" fill="#FAF6EE" opacity=".95" font-weight="600">YL</text>
-    <path d="M50 64 L48 62 Q46 60 48 58 Q50 56 50 58 Q50 56 52 58 Q54 60 52 62 Z" fill="#FAF6EE" opacity=".8"/>
-  </svg>
+  <img src="logo.png" alt="Logo LY" class="wax-seal-svg" style="width:110px;height:110px;object-fit:contain;background:transparent;border-radius:0;mix-blend-mode:multiply;"/>
  
   <div class="hotel-wrap">
     <div class="hotel-photo-wrap">
@@ -382,30 +374,18 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
   <p class="section-venue">Les Salons Hoche</p>
   <p class="section-address">Terrasse · Rooftop</p>
   <a class="maps-link" href="https://waze.com/ul?q=Les+Salons+Hoche+Paris&navigate=yes" target="_blank">Voir sur Waze ↗</a>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-time">
-        <div class="timeline-hour">17h30</div>
-        <div class="timeline-type">Houppa</div>
-      </div>
-      <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
-      <div class="timeline-info">
-        <div class="timeline-event">Cérémonie de la Houppa</div>
-        <div class="timeline-desc">Suivi d'un cocktail et d'une fête<br>pour célébrer les mariés</div>
-      </div>
-    </div>
+  <div style="margin-top:44px;max-width:420px;margin-left:auto;margin-right:auto;text-align:center;padding:28px 32px;border:1px solid var(--purple-light);background:rgba(255,255,255,.35);backdrop-filter:blur(4px);">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2.8vw,1.2rem);color:var(--dark);line-height:2;">
+      La Houppa sera à <span style="color:var(--purple);font-weight:400;">17h30</span>,<br>
+      suivie du cocktail et d'une fête<br>
+      pour célébrer le mariage des mariés.
+    </p>
   </div>
 </section>
  
 <!-- WAX DIVIDER -->
 <div class="wax-divider">
-  <svg class="wax-seal-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="opacity:.65">
-    <defs><radialGradient id="wg2" cx="40%" cy="35%"><stop offset="0%" stop-color="#C4B8DC"/><stop offset="50%" stop-color="#8B7BAD"/><stop offset="100%" stop-color="#5A4B7A"/></radialGradient></defs>
-    <circle cx="50" cy="50" r="46" fill="url(#wg2)"/>
-    <circle cx="50" cy="50" r="40" fill="none" stroke="#5A4B7A" stroke-width=".5" opacity=".4"/>
-    <text x="50" y="57" text-anchor="middle" font-family="Cinzel,serif" font-size="22" fill="#FAF6EE" opacity=".95" font-weight="600">YL</text>
-    <path d="M50 64 L48 62 Q46 60 48 58 Q50 56 50 58 Q50 56 52 58 Q54 60 52 62 Z" fill="#FAF6EE" opacity=".8"/>
-  </svg>
+  <img src="logo.png" alt="Logo LY" class="wax-seal-svg" style="width:100px;height:100px;object-fit:contain;background:transparent;border-radius:0;mix-blend-mode:multiply;opacity:.8;"/>
 </div>
  
 <!-- ══════════════ RSVP ══════════════ -->
@@ -449,7 +429,7 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
       </div>
  
       <button class="submit-btn" onclick="submitRSVP()">Confirmer ma présence</button>
-      <p class="deadline-note">Merci de répondre avant le 1er mai 2026</p>
+      <p class="deadline-note">Merci de répondre avant le 8 mai 2026</p>
     </div>
  
     <div class="success-msg" id="successMsg">
