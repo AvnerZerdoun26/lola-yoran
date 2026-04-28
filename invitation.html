@@ -65,7 +65,7 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   opacity:0;
   animation:nReveal 1.4s cubic-bezier(.16,1,.3,1) .5s forwards, nSweep 7s ease-in-out 2s infinite;
-  line-height:1;filter:drop-shadow(0 4px 28px rgba(139,123,173,.3));direction:rtl;
+  line-height:1;filter:drop-shadow(0 4px 28px rgba(139,123,173,.3));
 }
 @keyframes nReveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes nSweep{0%,100%{background-position:0% center}50%{background-position:100% center}}
@@ -294,11 +294,15 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     <span>Thierry Hayoun &amp; Michelle Hayoun</span>
   </div>
  
+  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.85rem,2.2vw,1rem);color:var(--taupe);letter-spacing:.08em;opacity:0;animation:fU 1s ease .6s forwards;margin-bottom:28px;">
+    ont la joie de vous faire part du mariage de :
+  </p>
+ 
   <div class="hero-names">
     <div class="names-inline">
-      <span class="name-heb">לולה</span>
+      <span class="name-heb">Lola</span>
       <span class="name-amp">&amp;</span>
-      <span class="name-heb">יורן</span>
+      <span class="name-heb">Yoran</span>
     </div>
     <div class="names-subtitles">
       <div class="name-subtitle-block">
@@ -321,9 +325,7 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
   <p class="date-main">Dimanche 7 Juin 2026</p>
   <p class="date-heb">כ״ב סיון תשפ״ו</p>
  
-  <div class="in-memoriam">
-    <div class="in-memoriam-title">En mémoire de nos grands-parents bien-aimés</div>
-    <p>Une pensée émue pour nos grands-parents,<br>qui nous manquent tellement en ces moments<br>importants de nos vies.</p>
+  <p>Une pensée émue pour nos grands-parents,<br>qui nous manquent tellement en ces moments<br>importants de nos vies.</p>
   </div>
  
   <div class="scroll-hint">
