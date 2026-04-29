@@ -50,10 +50,58 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 /* ── BSM ── */
 .bsm{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.35em;color:var(--gold-deep);opacity:0;animation:fU 1s ease .2s forwards;margin-bottom:14px}
 
-/* ── PARENTS ── */
-.parents-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.8rem;color:var(--taupe);letter-spacing:.08em;display:flex;flex-direction:column;gap:4px;justify-content:center;align-items:center;opacity:0;animation:fU 1s ease .4s forwards;margin-bottom:6px;max-width:560px;padding:0 24px}
-.parents-line span{display:block;text-align:center}
-.simi-line{font-family:'Cinzel',serif !important;font-style:normal !important;font-size:.62rem !important;letter-spacing:.18em;color:var(--gold-deep) !important;margin-bottom:4px}
+/* ── PARENTS FAMILIES ── */
+.parents-families{
+  display:flex;
+  align-items:stretch;
+  gap:0;
+  max-width:560px;
+  width:100%;
+  opacity:0;
+  animation:fU 1s ease .4s forwards;
+  margin-bottom:6px;
+  padding:0 24px;
+}
+.parents-families .family-block{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+  padding:0 20px;
+}
+.parents-families .family-block span{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.8rem;
+  color:var(--taupe);
+  text-align:center;
+  letter-spacing:.05em;
+  line-height:1.75;
+  display:block;
+}
+.family-sep{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  flex-shrink:0;
+  padding:0 4px;
+}
+.family-sep .sep-line{
+  width:1px;
+  flex:1;
+  min-height:14px;
+  background:linear-gradient(180deg,transparent,var(--gold-lt) 35%,var(--gold-lt) 65%,transparent);
+}
+.family-sep .sep-diamond{
+  width:6px;
+  height:6px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
 
 /* ── PHRASE ── */
 .mariage-phrase{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.82rem,2vw,.95rem);color:var(--taupe);letter-spacing:.08em;opacity:0;animation:fU 1s ease .6s forwards;margin:18px 0 28px}
@@ -187,7 +235,9 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 @keyframes fIn{from{opacity:0}to{opacity:1}}
 
 @media(max-width:600px){
-  .parents-line{gap:3px}
+  .parents-families{flex-direction:column;align-items:center;gap:12px}
+  .family-sep{flex-direction:row;width:100%;max-width:200px}
+  .family-sep .sep-line{flex:1;height:1px;min-height:0;width:auto;background:linear-gradient(90deg,transparent,var(--gold-lt) 35%,var(--gold-lt) 65%,transparent)}
   .names-subtitles{gap:22px}
   .attendance-grid{grid-template-columns:1fr}
 }
@@ -278,13 +328,22 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 
   <p class="bsm">בס"ד</p>
 
-  <div class="parents-line">
-    
-    <span>Monsieur Patrick Journo &amp; Madame Judith Journo</span>
-    
-    <span class="simi-line">Madame Simi Bensimon</span>
-    
-    <span>Thierry Hayoun &amp; Michelle Hayoun</span>
+  <!-- ══ PARENTS — deux familles côte à côte ══ -->
+  <div class="parents-families">
+    <div class="family-block">
+      <span>Monsieur Thierry Hayoun</span>
+      <span>&amp; Madame Michelle Hayoun</span>
+    </div>
+    <div class="family-sep">
+      <div class="sep-line"></div>
+      <div class="sep-diamond"></div>
+      <div class="sep-line"></div>
+    </div>
+    <div class="family-block">
+      <span>Madame Simi Bensimon</span>
+      <span>Monsieur Patrick Journo</span>
+      <span>&amp; Madame Judith Journo</span>
+    </div>
   </div>
 
   <p class="mariage-phrase">ont la joie de vous faire part du mariage de :</p>
