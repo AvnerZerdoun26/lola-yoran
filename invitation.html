@@ -39,6 +39,13 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 
 /* ── HERO ── */
 #hero{min-height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:linear-gradient(170deg,#F7F5EE 0%,#F2F4E8 50%,#EDE9D8 100%)}
+.hero-botanical{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.botanical-tl,.botanical-tr{position:absolute;opacity:0}
+.botanical-tl{top:-10px;left:-10px;animation:bIn 2s ease .3s forwards}
+.botanical-tr{top:-10px;right:-10px;animation:bInR 2s ease .5s forwards}
+@keyframes bIn {from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes bInR {from{opacity:0;transform:scaleX(-1) scale(.85)}to{opacity:1;transform:scaleX(-1) scale(1)}}
+
 .bsm{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.35em;color:var(--gold-deep);opacity:0;animation:fU 1s ease .2s forwards;margin-bottom:14px}
 
 .parents-families{display:flex;max-width:560px;width:100%;opacity:0;animation:fU 1s ease .4s forwards;margin-bottom:6px;padding:0 24px;}
@@ -50,7 +57,7 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 
 .mariage-phrase{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.82rem,2vw,.95rem);color:var(--taupe);letter-spacing:.08em;opacity:0;animation:fU 1s ease .6s forwards;margin:18px 0 28px}
 
-.hero-names{display:flex;align-items:center;justify-content:center;gap:.02em;}
+.names-inline{display:flex;align-items:center;justify-content:center;gap:.02em;}
 .name-heb{
   font-family:'Frank Ruhl Libre',serif;
   font-size:clamp(2.8rem,11vw,8rem);
@@ -68,64 +75,67 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 /* ── COUNTDOWN ── */
 #countdown{background:linear-gradient(135deg,#F2F4E8,#E8EDCC);padding:56px 20px;text-align:center;}
 .countdown-script{font-family:'Great Vibes',cursive;font-size:clamp(1.6rem,5vw,2.8rem);color:var(--dark);margin-bottom:24px;}
-.count-grid{display:flex;justify-content:center;gap:20px;}
-.count-number{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,6vw,4rem);color:var(--gold-mid);}
+.countdown-grid{display:flex;gap:18px;justify-content:center;align-items:flex-end;}
+.count-number{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,6vw,4rem);font-weight:300;color:var(--gold-mid);line-height:1;}
+.count-unit{font-family:'Cinzel',serif;font-size:.44rem;letter-spacing:.22em;color:var(--taupe);margin-top:5px;}
 
-/* ── PROGRAMME (MIS À JOUR) ── */
+/* ── PROGRAMME (AUGMENTÉ) ── */
 #programme{padding:90px 20px;max-width:800px;margin:0 auto;text-align:center}
 .section-tag{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.42em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:15px}
 
 .section-title {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(3.2rem, 10vw, 4.8rem); /* Taille augmentée */
+  font-size: clamp(3.2rem, 10vw, 4.8rem); 
   color: var(--dark);
   margin-bottom: 15px;
 }
 .section-venue {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 1.5rem; /* Taille augmentée */
+  font-size: 1.5rem; 
   color: var(--gold-mid);
   margin-bottom: 10px;
 }
 .section-address {
   font-family: 'Lato', sans-serif;
-  font-size: 1rem; /* Taille augmentée */
+  font-size: 1rem; 
   color: var(--taupe);
   letter-spacing: .05em;
   margin-bottom: 30px;
 }
-
 .prog-box{max-width:520px;margin:0 auto;padding:35px;border:1px solid var(--gold-lt);background:rgba(255,255,255,.45);backdrop-filter:blur(5px)}
 .prog-box p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;line-height:2.2;margin-bottom:1.2em;}
 
-/* ── RSVP (MIS À JOUR) ── */
-#rsvp{background:var(--cream2);padding:90px 20px;text-align:center;}
+/* ── RSVP (TITRE MANUSCRIT) ── */
+#rsvp{background:var(--cream2);padding:90px 20px;text-align:center;position:relative;overflow:hidden;}
+.rsvp-inner{max-width:480px;margin:0 auto;}
+
 .rsvp-title-gold {
-  font-family: 'Great Vibes', cursive; /* Même police que le compte à rebours */
-  font-size: clamp(3rem, 9vw, 4.5rem); /* Taille augmentée pour le style manuscrit */
+  font-family: 'Great Vibes', cursive; 
+  font-size: clamp(3rem, 9vw, 4.5rem); 
   font-weight: 400;
   color: var(--gold-classic);
   margin-bottom: 15px;
 }
 .rsvp-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--taupe);margin-bottom:40px;font-style:italic}
 
-.form-group{max-width:400px;margin:0 auto 20px;text-align:left}
-.form-label{display:block;font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.2em;color:var(--gold-deep);margin-bottom:8px}
-.form-input{width:100%;padding:15px;border:1px solid var(--gold-lt);background:#fff;font-family:'Cormorant Garamond',serif;font-size:1.1rem;}
-.attendance-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-.attendance-btn{padding:15px;border:1px solid var(--gold-lt);background:transparent;cursor:pointer;border-radius:30px;transition:0.3s;}
+.form-group{margin-bottom:18px;text-align:left}
+.form-label{display:block;font-family:'Cinzel',serif;font-size:.46rem;letter-spacing:.26em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:7px}
+.form-input{width:100%;padding:13px 15px;background:rgba(255,255,255,.65);border:1px solid var(--gold-lt);font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--dark);outline:none;}
+.attendance-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.attendance-btn{padding:13px 8px;background:transparent;border:1px solid var(--gold-lt);font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--taupe);cursor:pointer;border-radius:28px;transition:all .25s;}
 .attendance-btn.active{background:var(--gold-mid);color:#fff;border-color:transparent;}
-.submit-btn{width:100%;max-width:400px;padding:20px;background:var(--gold-deep);color:#fff;border:none;border-radius:40px;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;margin-top:20px;}
 
-/* ── ANIMATIONS ── */
-@keyframes fU{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.guests-panel{overflow:hidden;max-height:0;opacity:0;transition:all .5s ease;}
+.guests-panel.open{max-height:180px;opacity:1;margin-top:16px}
+
+.submit-btn{width:100%;padding:17px;margin-top:26px;background:var(--gold-deep);border:none;border-radius:40px;font-family:'Cinzel',serif;font-size:.63rem;letter-spacing:.26em;color:#fff;text-transform:uppercase;cursor:pointer;transition:0.3s;}
+.success-msg{display:none;padding:40px 20px;font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--gold-mid)}
+
+@keyframes fU{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes sPulse{0%,100%{opacity:.4}50%{opacity:1}}
 @keyframes nReveal{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes nSweep{0%,100%{background-position:0% center}50%{background-position:100% center}}
-@keyframes sPulse{0%,100%{opacity:.4}50%{opacity:1}}
-
-footer{background:var(--dark);padding:60px 20px;text-align:center;color:var(--gold-lt);}
-.footer-names{font-family:'Great Vibes',cursive;font-size:3rem;margin-bottom:10px;}
 </style>
 </head>
 <body>
@@ -144,13 +154,14 @@ footer{background:var(--dark);padding:60px 20px;text-align:center;color:var(--go
   
   <p class="mariage-phrase">ont la joie de vous faire part du mariage de :</p>
   
-  <div class="hero-names">
+  <div class="names-inline">
     <span class="name-heb">Lola</span>
     <span class="name-amp">&amp;</span>
     <span class="name-heb">Yoran</span>
   </div>
   
   <p class="date-main">Dimanche 7 Juin 2026</p>
+  <p style="font-family:'Frank Ruhl Libre',serif; color:var(--gold-mid); margin-top:10px;">כ״ב סיון תשפ״ו</p>
   
   <div class="scroll-hint">
     <div class="scroll-line"></div>
@@ -160,10 +171,10 @@ footer{background:var(--dark);padding:60px 20px;text-align:center;color:var(--go
 
 <section id="countdown">
   <div class="countdown-script">Le grand jour approche dans…</div>
-  <div class="count-grid">
-    <div class="count-block"><div class="count-number" id="days">00</div><div style="font-family:Cinzel; font-size:0.5rem;">JOURS</div></div>
-    <div class="count-block"><div class="count-number" id="hours">00</div><div style="font-family:Cinzel; font-size:0.5rem;">HEURES</div></div>
-    <div class="count-block"><div class="count-number" id="minutes">00</div><div style="font-family:Cinzel; font-size:0.5rem;">MINUTES</div></div>
+  <div class="countdown-grid">
+    <div class="count-block"><div class="count-number" id="days">00</div><div class="count-unit">Jours</div></div>
+    <div class="count-block"><div class="count-number" id="hours">00</div><div class="count-unit">Heures</div></div>
+    <div class="count-block"><div class="count-number" id="minutes">00</div><div class="count-unit">Minutes</div></div>
   </div>
 </section>
 
@@ -182,31 +193,36 @@ footer{background:var(--dark);padding:60px 20px;text-align:center;color:var(--go
 
 <section id="rsvp">
   <div class="rsvp-inner">
-    <p class="section-tag">Réponse souhaitée</p>
     <h2 class="rsvp-title-gold">Dites-nous oui 🎉</h2>
     <p class="rsvp-subtitle">Nous espérons vous compter parmi nous</p>
     
-    <div class="form-group">
-      <label class="form-label">Prénom & Nom *</label>
-      <input type="text" class="form-input" placeholder="Votre nom">
-    </div>
-    
-    <div class="form-group">
-      <label class="form-label">Serez-vous présent ? *</label>
-      <div class="attendance-grid">
-        <button class="attendance-btn active" onclick="this.classList.toggle('active')">Je viens ✦</button>
-        <button class="attendance-btn">Absence</button>
+    <div id="formWrap">
+      <div class="form-group">
+        <label class="form-label">Prénom & Nom *</label>
+        <input type="text" class="form-input" id="nom" placeholder="Votre réponse">
       </div>
+      
+      <div class="form-group">
+        <label class="form-label">Serez-vous présent ? *</label>
+        <div class="attendance-grid">
+          <button class="attendance-btn" id="btn-yes" onclick="selectAttendance('yes')">Je viens ✦</button>
+          <button class="attendance-btn" id="btn-no" onclick="selectAttendance('no')">Absence</button>
+        </div>
+      </div>
+
+      <div class="guests-panel" id="guestsPanel">
+        <div class="form-group">
+          <label class="form-label">Nombre d'adultes</label>
+          <input type="number" id="nb-adultes" min="1" value="1" class="form-input">
+        </div>
+      </div>
+      
+      <button class="submit-btn" onclick="submitRSVP()">Confirmer ma présence</button>
     </div>
     
-    <button class="submit-btn">Confirmer ma présence</button>
+    <div class="success-msg" id="successMsg">Merci ! À très bientôt.</div>
   </div>
 </section>
-
-<footer>
-  <div class="footer-names">Lola & Yoran</div>
-  <div style="font-family:Cinzel; font-size:0.5rem; letter-spacing:0.3em;">7 JUIN 2026 • PARIS</div>
-</footer>
 
 <script>
 /* CURSOR */
@@ -217,14 +233,14 @@ document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.le
 
 /* PARTICLES */
 const pc=document.getElementById('particles');
-for(let i=0;i<35;i++){
+for(let i=0;i<30;i++){
   const p=document.createElement('div');p.className='particle';
   const s=Math.random()*4;
-  p.style.cssText=`left:${Math.random()*100}vw;width:${s}px;height:${s}px;background:#7A8C52;animation-duration:${Math.random()*10+7}s;animation-delay:${Math.random()*5}s`;
+  p.style.cssText=`left:${Math.random()*100}vw;width:${s}px;height:${s}px;background:#7A8C52;animation-duration:${Math.random()*10+5}s;animation-delay:${Math.random()*5}s`;
   pc.appendChild(p);
 }
 
-/* COUNTDOWN LOGIC */
+/* COUNTDOWN */
 const target = new Date('June 7, 2026 17:30:00').getTime();
 setInterval(() => {
   const now = new Date().getTime();
@@ -233,7 +249,30 @@ setInterval(() => {
   document.getElementById('hours').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   document.getElementById('minutes').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 }, 1000);
-</script>
 
+/* RSVP LOGIC */
+let att=null;
+function selectAttendance(c){
+  att=c;
+  document.getElementById('btn-yes').classList.toggle('active',c==='yes');
+  document.getElementById('btn-no').classList.toggle('active',c==='no');
+  document.getElementById('guestsPanel').classList.toggle('open',c==='yes');
+}
+
+async function submitRSVP(){
+  const nom=document.getElementById('nom').value;
+  if(!nom || !att){alert('Champs obligatoires manquants'); return;}
+  const btn=document.querySelector('.submit-btn');
+  btn.textContent='Envoi...'; btn.disabled=true;
+  
+  const SCRIPT_URL='https://script.google.com/macros/s/AKfycbyLi0JwyRM-ZYSBBhga13B-duXGPJwAotQ6eft6mjOwq5SCrKK8tVip9OM5WBtvxhVYKw/exec';
+  try {
+    const p = new URLSearchParams({nom: nom, presence: att, adultes: document.getElementById('nb-adultes').value});
+    await fetch(SCRIPT_URL+'?'+p.toString(), {mode:'no-cors'});
+    document.getElementById('formWrap').style.display='none';
+    document.getElementById('successMsg').style.display='block';
+  } catch(e) { alert('Erreur lors de l\'envoi'); btn.disabled=false; }
+}
+</script>
 </body>
 </html>
