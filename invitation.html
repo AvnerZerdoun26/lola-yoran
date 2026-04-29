@@ -25,19 +25,20 @@
 html{scroll-behavior:smooth}
 body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
 
-/* ── DORÉ CLASSIQUE (ENCADRÉ ET RSVP) ── */
+/* ── DORÉ CLASSIQUE (ENCADRÉ) ── */
 .gold-text-plain {
   color: var(--gold-classic);
   font-weight: 600;
 }
 
-/* ── POLICE GRAVÉE DORÉE (Même police que le bouton RSVP/compte à rebours) ── */
-.cinzel-gold {
-  font-family: 'Cinzel', serif;
-  font-weight: 600;
+/* ── TITRE RSVP (Même police que Lola & Yoran) ── */
+.rsvp-title-gold {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 300;
   color: var(--gold-classic);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
 }
 
 /* ── CURSOR ── */
@@ -116,7 +117,8 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 .mariage-phrase{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.82rem,2vw,.95rem);color:var(--taupe);letter-spacing:.08em;opacity:0;animation:fU 1s ease .6s forwards;margin:18px 0 28px}
 
 .hero-names{position:relative;z-index:2}
-.names-inline{display:flex;align-items:center;justify-content:center;gap:.1em;flex-wrap:wrap;padding:8px 20px;overflow:visible}
+.names-inline{display:flex;align-items:center;justify-content:center;gap:.02em;flex-wrap:nowrap;padding:8px 20px;overflow:visible}
+
 .name-heb{
   font-family:'Frank Ruhl Libre',serif;
   font-size:clamp(2.8rem,11vw,8rem);
@@ -217,8 +219,6 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 .deadline-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.76rem;color:var(--taupe);margin-top:14px;opacity:.7}
 .success-msg{display:none;text-align:center;padding:40px 20px}
 .success-msg.show{display:block;animation:fIn .6s ease forwards}
-.success-icon{font-size:2.6rem;margin-bottom:12px;animation:popIn .5s cubic-bezier(.16,1,.3,1) .1s both}
-@keyframes popIn{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
 .success-text{font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--gold-mid)}
 
 /* ── FOOTER ── */
@@ -283,9 +283,9 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 
   <div class="hero-names">
     <div class="names-inline">
-      <span class="cinzel-gold" style="font-size:clamp(1.8rem, 6vw, 3.5rem);">Lola</span>
-      <span class="name-amp" style="font-size:clamp(1.5rem, 5vw, 3rem);">&</span>
-      <span class="cinzel-gold" style="font-size:clamp(1.8rem, 6vw, 3.5rem);">Yoran</span>
+      <span class="name-heb">Lola</span>
+      <span class="name-amp">&amp;</span>
+      <span class="name-heb">Yoran</span>
     </div>
     <div class="names-subtitles">
       <div class="name-subtitle-block">
@@ -365,7 +365,7 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 <section id="rsvp">
   <div class="rsvp-inner">
     <p class="section-tag">RSVP</p>
-    <h2 class="cinzel-gold" style="font-size:clamp(1.5rem, 5vw, 2.8rem); margin-bottom: 20px;">Dites-nous OUI 🎉</h2>
+    <h2 class="rsvp-title-gold">Dites-nous OUI 🎉</h2>
     <p class="rsvp-subtitle">Nous espérons vous compter parmi nous</p>
     <div id="formWrap">
       <div class="form-group">
@@ -400,14 +400,14 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     </div>
     <div class="success-msg" id="successMsg">
       <div class="success-icon">✦</div>
-      <div class="success-text cinzel-gold" style="font-size: 2.2rem;">Merci !</div>
+      <div class="success-text">Merci !</div>
       <p class="success-sub">Votre présence a bien été confirmée.<br>À très bientôt pour ce grand jour.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-names cinzel-gold" style="font-size: 2.2rem; margin-bottom: 15px;">Lola & Yoran</div>
+  <div class="footer-names">Lola &amp; Yoran</div>
   <div class="footer-date">7 Juin 2026 · כ״ב סיון תשפ״ו · Les Salons Hoche</div>
 </footer>
 
