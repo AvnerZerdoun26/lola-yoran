@@ -11,13 +11,13 @@
 :root {
   --cream:    #F7F5EE;
   --cream2:   #EDE9D8;
-  --gold:      #7A8C52;
+  --gold:     #7A8C52;
   --gold-mid: #6B7A45;
   --gold-deep:#4A5630;
   --gold-lt:  #BDC89A;
   --gold-pale:#F2F4E8;
   --taupe:    #7A7660;
-  --dark:      #1E2010;
+  --dark:     #1E2010;
   --gold-classic: #C5A059;
   --khaki-bg: linear-gradient(135deg,#F2F4E8,#E8EDCC);
 }
@@ -100,8 +100,6 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 .prog-box{margin-top:40px;max-width:480px;margin-left:auto;margin-right:auto;text-align:center;padding:26px 30px;border:1px solid var(--gold-lt);background:rgba(255,255,255,0.45);backdrop-filter:blur(6px)}
 .prog-box p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.98rem,2.6vw,1.15rem);color:var(--dark);line-height:2.1}
 .wax-divider{text-align:center;padding:32px;background:var(--khaki-bg)}
-
-/* --- SECTION RSVP ET NOUVEAU COMPTEUR --- */
 #rsvp{background:var(--cream2);padding:72px 20px;position:relative;overflow:hidden}
 #rsvp::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-lt),transparent)}
 #rsvp::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-lt),transparent)}
@@ -116,44 +114,6 @@ textarea.form-input{min-height:90px;resize:vertical}
 .attendance-btn{padding:13px 8px;background:transparent;border:1px solid var(--gold-lt);font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--taupe);cursor:pointer;transition:all .25s;border-radius:28px}
 .attendance-btn:hover{border-color:var(--gold);color:var(--gold-deep)}
 .attendance-btn.active{background:linear-gradient(135deg,var(--gold-mid),var(--gold));border-color:transparent;color:#fff;box-shadow:0 4px 18px rgba(122,140,82,.3)}
-
-/* Styles pour les bulles de compteur beige */
-.counter-ui {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 10px;
-}
-.counter-bubble {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 1px solid var(--gold-lt);
-  background-color: #EDE9D8; /* Beige */
-  color: var(--gold-deep);
-  font-size: 1.4rem;
-  font-family: 'Cormorant Garamond', serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none;
-}
-.counter-bubble:hover {
-  background-color: var(--gold-lt);
-  transform: scale(1.1);
-}
-.counter-number-display {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
-  min-width: 30px;
-  text-align: center;
-  color: var(--dark);
-}
-#guest-count-real { display: none; } /* Cache l'input original */
-
 .guests-panel{overflow:hidden;max-height:0;opacity:0;transition:max-height .5s cubic-bezier(.16,1,.3,1),opacity .4s ease,transform .4s ease;transform:translateY(-8px);margin-top:0}
 .guests-panel.open{max-height:180px;opacity:1;transform:translateY(0);margin-top:16px}
 .guests-panel-inner{background:rgba(255,255,255,.7);border:1px solid var(--gold-lt);border-radius:8px;padding:16px 20px;backdrop-filter:blur(4px)}
@@ -165,11 +125,9 @@ textarea.form-input{min-height:90px;resize:vertical}
 .success-msg.show{display:block;animation:fIn .6s ease forwards}
 .success-text{font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--gold-mid)}
 .success-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;color:var(--taupe);margin-top:8px}
-
 footer{background:var(--dark);padding:48px 20px;text-align:center}
 .footer-names{font-family:'Great Vibes',cursive;font-size:2.8rem;color:var(--gold-lt);margin-bottom:8px}
 .footer-date{font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.36em;color:var(--taupe);opacity:.7}
-
 @keyframes fU{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fIn{from{opacity:0}to{opacity:1}}
 @media(max-width:600px){
@@ -186,19 +144,190 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 
 <section id="hero">
   <div class="hero-botanical">
+
+    <!-- ══ COIN HAUT GAUCHE — roses dorées ══ -->
     <svg class="botanical-tl" width="300" height="300" viewBox="0 0 300 300" fill="none">
       <path d="M-10,10 Q42,62 75,135 Q105,205 88,285" stroke="#C5A059" stroke-width="1.6" fill="none" opacity="0.75"/>
+      <path d="M12,-5 Q58,42 95,95" stroke="#B8924A" stroke-width="1.2" fill="none" opacity="0.6"/>
+      <path d="M75,135 Q125,118 165,140 Q200,158 190,205" stroke="#C5A059" stroke-width="1.1" fill="none" opacity="0.65"/>
+      <path d="M42,70 Q22,112 38,155" stroke="#B8924A" stroke-width="0.9" fill="none" opacity="0.5"/>
+      <path d="M95,95 Q116,82 138,92" stroke="#D4B06A" stroke-width="0.8" fill="none" opacity="0.5"/>
+      <path d="M165,140 Q180,124 198,130" stroke="#D4B06A" stroke-width="0.8" fill="none" opacity="0.5"/>
+      <path d="M28,115 Q12,100 18,82" stroke="#C5A059" stroke-width="0.7" fill="none" opacity="0.45"/>
       <g transform="translate(66,55)">
         <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#D4B870" opacity="0.5" transform="rotate(-20)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#C8A855" opacity="0.5" transform="rotate(20)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#D4B870" opacity="0.45" transform="rotate(65)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#C8A855" opacity="0.45" transform="rotate(110)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#D4B870" opacity="0.45" transform="rotate(155)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#C8A855" opacity="0.45" transform="rotate(-65)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#E2C47A" opacity="0.65" transform="rotate(-10)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B063" opacity="0.65" transform="rotate(30)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#E2C47A" opacity="0.6" transform="rotate(80)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B063" opacity="0.6" transform="rotate(130)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#E2C47A" opacity="0.6" transform="rotate(-110)"/>
+        <ellipse cx="0" cy="-7" rx="6" ry="8" fill="#EDD07A" opacity="0.82" transform="rotate(5)"/>
+        <ellipse cx="0" cy="-5" rx="4.5" ry="6" fill="#F0D888" opacity="0.9"/>
         <circle cx="0" cy="-4" r="2.8" fill="#E8CC70" opacity="0.95"/>
       </g>
+      <g transform="translate(162,150)" opacity="0.88">
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#C8A855" opacity="0.52" transform="rotate(-20)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B870" opacity="0.52" transform="rotate(25)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#C8A855" opacity="0.48" transform="rotate(70)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B870" opacity="0.48" transform="rotate(115)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#C8A855" opacity="0.48" transform="rotate(-75)"/>
+        <ellipse cx="0" cy="-8" rx="6" ry="8" fill="#EDD07A" opacity="0.78" transform="rotate(10)"/>
+        <circle cx="0" cy="-5" r="2.2" fill="#E8CC70" opacity="0.9"/>
+      </g>
+      <g transform="translate(38,152)" opacity="0.72">
+        <ellipse cx="0" cy="0" rx="5.5" ry="9" fill="#C8A855" opacity="0.58"/>
+        <ellipse cx="0" cy="-2" rx="3.8" ry="6" fill="#DDB86A" opacity="0.72"/>
+        <ellipse cx="0" cy="-5" rx="2.5" ry="3.5" fill="#EDD07A" opacity="0.8"/>
+      </g>
+      <g transform="translate(50,85)" opacity="0.78">
+        <ellipse cx="-13" cy="0" rx="15" ry="7.5" fill="#A89040" opacity="0.52" transform="rotate(-38 -13 0)"/>
+        <ellipse cx="17" cy="4" rx="14" ry="7" fill="#C5A840" opacity="0.48" transform="rotate(22 17 4)"/>
+        <ellipse cx="0" cy="-17" rx="11" ry="6.5" fill="#B89840" opacity="0.42" transform="rotate(-5 0 -17)"/>
+      </g>
+      <g transform="translate(135,112)" opacity="0.72">
+        <ellipse cx="-11" cy="0" rx="14" ry="6.5" fill="#B89840" opacity="0.5" transform="rotate(-28 -11 0)"/>
+        <ellipse cx="15" cy="2" rx="13" ry="6" fill="#C5A840" opacity="0.45" transform="rotate(30 15 2)"/>
+      </g>
+      <g transform="translate(182,180)" opacity="0.65">
+        <ellipse cx="-9" cy="0" rx="13" ry="6" fill="#A89040" opacity="0.52" transform="rotate(-18)"/>
+        <ellipse cx="11" cy="3" rx="12" ry="5.5" fill="#B89840" opacity="0.48" transform="rotate(36 11 3)"/>
+      </g>
+      <ellipse cx="13" cy="88" rx="7.5" ry="4.5" fill="#B89840" opacity="0.35" transform="rotate(-42 13 88)"/>
+      <ellipse cx="20" cy="104" rx="7" ry="4" fill="#B89840" opacity="0.35" transform="rotate(28 20 104)"/>
+      <circle cx="195" cy="202" r="4.5" fill="#C5A059" opacity="0.6"/>
+      <circle cx="204" cy="193" r="3.5" fill="#D4B063" opacity="0.55"/>
+      <circle cx="186" cy="198" r="4" fill="#C5A059" opacity="0.52"/>
+      <line x1="195" y1="202" x2="195" y2="190" stroke="#B89840" stroke-width="0.7" opacity="0.4"/>
+      <line x1="204" y1="193" x2="200" y2="183" stroke="#B89840" stroke-width="0.7" opacity="0.4"/>
+      <line x1="186" y1="198" x2="188" y2="186" stroke="#B89840" stroke-width="0.7" opacity="0.4"/>
     </svg>
-    </div>
+
+    <!-- ══ COIN HAUT DROITE — miroir TL ══ -->
+    <svg class="botanical-tr" width="300" height="300" viewBox="0 0 300 300" fill="none">
+      <path d="M-10,10 Q42,62 75,135 Q105,205 88,285" stroke="#C5A059" stroke-width="1.6" fill="none" opacity="0.7"/>
+      <path d="M12,-5 Q58,42 95,95" stroke="#B8924A" stroke-width="1.2" fill="none" opacity="0.55"/>
+      <path d="M75,135 Q125,118 165,140 Q200,158 190,205" stroke="#C5A059" stroke-width="1.1" fill="none" opacity="0.6"/>
+      <path d="M42,70 Q22,112 38,155" stroke="#B8924A" stroke-width="0.9" fill="none" opacity="0.48"/>
+      <path d="M95,95 Q116,82 138,92" stroke="#D4B06A" stroke-width="0.8" fill="none" opacity="0.45"/>
+      <g transform="translate(66,55)">
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#D4B870" opacity="0.48" transform="rotate(-20)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#C8A855" opacity="0.48" transform="rotate(20)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#D4B870" opacity="0.42" transform="rotate(65)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#C8A855" opacity="0.42" transform="rotate(110)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#D4B870" opacity="0.42" transform="rotate(155)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#C8A855" opacity="0.42" transform="rotate(-65)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#E2C47A" opacity="0.62" transform="rotate(-10)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B063" opacity="0.62" transform="rotate(30)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#E2C47A" opacity="0.58" transform="rotate(80)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B063" opacity="0.58" transform="rotate(130)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#E2C47A" opacity="0.58" transform="rotate(-110)"/>
+        <ellipse cx="0" cy="-7" rx="6" ry="8" fill="#EDD07A" opacity="0.8" transform="rotate(5)"/>
+        <ellipse cx="0" cy="-5" rx="4.5" ry="6" fill="#F0D888" opacity="0.88"/>
+        <circle cx="0" cy="-4" r="2.8" fill="#E8CC70" opacity="0.92"/>
+      </g>
+      <g transform="translate(162,150)" opacity="0.82">
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#C8A855" opacity="0.5" transform="rotate(-20)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B870" opacity="0.5" transform="rotate(25)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#C8A855" opacity="0.45" transform="rotate(70)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B870" opacity="0.45" transform="rotate(115)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#C8A855" opacity="0.45" transform="rotate(-75)"/>
+        <ellipse cx="0" cy="-8" rx="6" ry="8" fill="#EDD07A" opacity="0.75"/>
+        <circle cx="0" cy="-5" r="2.2" fill="#E8CC70" opacity="0.87"/>
+      </g>
+      <g transform="translate(50,85)" opacity="0.72">
+        <ellipse cx="-13" cy="0" rx="15" ry="7.5" fill="#A89040" opacity="0.48" transform="rotate(-38 -13 0)"/>
+        <ellipse cx="17" cy="4" rx="14" ry="7" fill="#C5A840" opacity="0.44" transform="rotate(22 17 4)"/>
+      </g>
+      <g transform="translate(135,112)" opacity="0.65">
+        <ellipse cx="-11" cy="0" rx="14" ry="6.5" fill="#B89840" opacity="0.46" transform="rotate(-28 -11 0)"/>
+        <ellipse cx="15" cy="2" rx="13" ry="6" fill="#C5A840" opacity="0.42" transform="rotate(30 15 2)"/>
+      </g>
+      <circle cx="195" cy="202" r="4.5" fill="#C5A059" opacity="0.55"/>
+      <circle cx="204" cy="193" r="3.5" fill="#D4B063" opacity="0.5"/>
+      <circle cx="186" cy="198" r="4" fill="#C5A059" opacity="0.48"/>
+    </svg>
+
+    <!-- ══ COIN BAS GAUCHE ══ -->
+    <svg class="botanical-bl" width="260" height="220" viewBox="0 0 260 220" fill="none">
+      <path d="M-10,215 Q55,182 100,158 Q158,132 215,142" stroke="#C5A059" stroke-width="1.5" fill="none" opacity="0.68"/>
+      <path d="M30,218 Q42,195 55,178" stroke="#B8924A" stroke-width="1" fill="none" opacity="0.5"/>
+      <path d="M100,158 Q95,138 110,124" stroke="#D4B06A" stroke-width="0.9" fill="none" opacity="0.48"/>
+      <g transform="translate(75,148)" opacity="0.82">
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#D4B870" opacity="0.48" transform="rotate(-18)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#C8A855" opacity="0.48" transform="rotate(22)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#D4B870" opacity="0.44" transform="rotate(68)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#C8A855" opacity="0.44" transform="rotate(115)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#D4B870" opacity="0.44" transform="rotate(-68)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="10" fill="#E2C47A" opacity="0.65" transform="rotate(5)"/>
+        <circle cx="0" cy="-5" r="3" fill="#E8CC70" opacity="0.88"/>
+      </g>
+      <g transform="translate(192,136)" opacity="0.72">
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#C8A855" opacity="0.5" transform="rotate(-15)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#D4B870" opacity="0.5" transform="rotate(25)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#C8A855" opacity="0.45" transform="rotate(75)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#D4B870" opacity="0.45" transform="rotate(-75)"/>
+        <ellipse cx="0" cy="-6" rx="5" ry="7" fill="#EDD07A" opacity="0.72"/>
+        <circle cx="0" cy="-4" r="2" fill="#E8CC70" opacity="0.85"/>
+      </g>
+      <g transform="translate(56,170)" opacity="0.68">
+        <ellipse cx="-12" cy="0" rx="14" ry="6.5" fill="#B89840" opacity="0.5" transform="rotate(-12 -12 0)"/>
+        <ellipse cx="14" cy="3" rx="13" ry="6" fill="#C5A840" opacity="0.45" transform="rotate(28 14 3)"/>
+      </g>
+      <g transform="translate(148,148)" opacity="0.62">
+        <ellipse cx="-10" cy="0" rx="13" ry="6" fill="#A89040" opacity="0.48" transform="rotate(-22)"/>
+        <ellipse cx="12" cy="2" rx="12" ry="5.5" fill="#B89840" opacity="0.44" transform="rotate(32 12 2)"/>
+      </g>
+      <g transform="translate(30,188)" opacity="0.65">
+        <ellipse cx="0" cy="0" rx="5" ry="8" fill="#C8A855" opacity="0.55"/>
+        <ellipse cx="0" cy="-2" rx="3.5" ry="5" fill="#DDB86A" opacity="0.7"/>
+      </g>
+      <circle cx="220" cy="143" r="4" fill="#C5A059" opacity="0.55"/>
+      <circle cx="228" cy="135" r="3" fill="#D4B063" opacity="0.5"/>
+      <line x1="220" y1="143" x2="222" y2="132" stroke="#B89840" stroke-width="0.6" opacity="0.38"/>
+    </svg>
+
+    <!-- ══ COIN BAS DROITE — miroir BL ══ -->
+    <svg class="botanical-br" width="260" height="220" viewBox="0 0 260 220" fill="none">
+      <path d="M-10,215 Q55,182 100,158 Q158,132 215,142" stroke="#C5A059" stroke-width="1.5" fill="none" opacity="0.62"/>
+      <path d="M30,218 Q42,195 55,178" stroke="#B8924A" stroke-width="1" fill="none" opacity="0.46"/>
+      <path d="M100,158 Q95,138 110,124" stroke="#D4B06A" stroke-width="0.9" fill="none" opacity="0.44"/>
+      <g transform="translate(75,148)" opacity="0.75">
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#D4B870" opacity="0.44" transform="rotate(-18)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#C8A855" opacity="0.44" transform="rotate(22)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#D4B870" opacity="0.4" transform="rotate(68)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#C8A855" opacity="0.4" transform="rotate(115)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#D4B870" opacity="0.4" transform="rotate(-68)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="10" fill="#E2C47A" opacity="0.6" transform="rotate(5)"/>
+        <circle cx="0" cy="-5" r="3" fill="#E8CC70" opacity="0.82"/>
+      </g>
+      <g transform="translate(192,136)" opacity="0.65">
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#C8A855" opacity="0.46" transform="rotate(-15)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#D4B870" opacity="0.46" transform="rotate(25)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#C8A855" opacity="0.42" transform="rotate(75)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#D4B870" opacity="0.42" transform="rotate(-75)"/>
+        <ellipse cx="0" cy="-6" rx="5" ry="7" fill="#EDD07A" opacity="0.68"/>
+        <circle cx="0" cy="-4" r="2" fill="#E8CC70" opacity="0.8"/>
+      </g>
+      <g transform="translate(56,170)" opacity="0.62">
+        <ellipse cx="-12" cy="0" rx="14" ry="6.5" fill="#B89840" opacity="0.46" transform="rotate(-12 -12 0)"/>
+        <ellipse cx="14" cy="3" rx="13" ry="6" fill="#C5A840" opacity="0.42" transform="rotate(28 14 3)"/>
+      </g>
+      <circle cx="220" cy="143" r="4" fill="#C5A059" opacity="0.5"/>
+      <circle cx="228" cy="135" r="3" fill="#D4B063" opacity="0.45"/>
+    </svg>
+
+  </div>
 
   <p class="bsm">בס"ד</p>
   <div class="parents-families">
     <div class="family-block">
       <span>M. et Mme Thierry Hayoun</span>
+      <span></span>
     </div>
     <div class="family-sep">
       <div class="sep-line"></div>
@@ -208,6 +337,7 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     <div class="family-block">
       <span>Madame Simi Bensimon</span>
       <span>M. et Mme Patrick Journo</span>
+      <span></span>
     </div>
   </div>
   <p class="mariage-phrase">ont la joie de vous faire part du mariage de : </p>
@@ -219,7 +349,7 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     </div>
     <div class="names-subtitles">
       <div class="name-subtitle-block"><span class="name-hiv">חיה מושקא</span></div>
-      <div class="name-subtitle-block"><span class="name-hiv">יעקב סעдия</span></div>
+      <div class="name-subtitle-block"><span class="name-hiv">יעקב סעדיה</span></div>
     </div>
   </div>
   <div class="divider-ornament">
@@ -234,6 +364,7 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
   </div>
   <div class="scroll-hint">
     <div class="scroll-line"></div>
+    <span></span>
   </div>
 </section>
 
@@ -251,6 +382,10 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
   </div>
 </section>
 
+<section id="couple-section">
+  <img src="logo.png" alt="Logo LY" class="logo-img"/>
+</section>
+
 <div id="programme-wrapper">
   <section id="programme">
     <h2 class="section-title">Programme</h2>
@@ -259,110 +394,151 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     <a class="maps-link" href="https://waze.com/ul?q=Les+Salons+Hoche+Paris&navigate=yes" target="_blank">Voir sur Waze ↗</a>
     <div class="prog-box">
       <p>Lola et Yoran seraient heureux de vous recevoir sur le rooftop des <span class="gold-text-plain">Salons Hoche</span> pour la Houppa à <span class="gold-text-plain">17h30</span>.</p>
+      <p style="margin-top:1.4em">La cérémonie religieuse sera suivie d'un cocktail dans le <span class="gold-text-plain">Salon Vendôme</span>.</p>
+      <p style="margin-top:1.4em">La soirée se poursuivra dans le <span class="gold-text-plain">Salon Élysée</span>.</p>
     </div>
   </section>
 </div>
 
+<div class="wax-divider">
+  <img src="logo.png" alt="Logo LY" class="logo-img" style="width:90px;height:90px;opacity:.75;"/>
+</div>
+
 <section id="rsvp">
   <div class="rsvp-inner">
-    <div class="rsvp-title-gold">RSVP</div>
-    <p class="rsvp-subtitle">Merci de confirmer votre présence avant le 1er Mai 2026</p>
-    <form id="rsvp-form">
+    <p class="section-tag">Réponse souhaitée</p>
+    <h2 class="rsvp-title-gold">Dites-nous oui 🎉</h2>
+    <p class="rsvp-subtitle">Nous espérons vous compter parmi nous</p>
+    <div id="formWrap">
       <div class="form-group">
-        <label class="form-label">Nom & Prénom</label>
-        <input type="text" class="form-input" required>
+        <label class="form-label">Prénom *</label>
+        <input type="text" class="form-input" id="prenom" placeholder="Votre prénom">
       </div>
       <div class="form-group">
-        <label class="form-label">Présence</label>
+        <label class="form-label">Nom *</label>
+        <input type="text" class="form-input" id="nom" placeholder="Votre nom">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Serez-vous présent(e) ? *</label>
         <div class="attendance-grid">
-          <button type="button" class="attendance-btn" onclick="selectPresence(true)">Je serai présent</button>
-          <button type="button" class="attendance-btn" onclick="selectPresence(false)">Je serai absent</button>
+          <button class="attendance-btn" id="btn-yes" onclick="selectAttendance('yes')">Assisterons ✦</button>
+          <button class="attendance-btn" id="btn-no" onclick="selectAttendance('no')">N'assisterons pas</button>
         </div>
       </div>
-      
-      <div id="guests-panel" class="guests-panel">
+      <div class="guests-panel" id="guestsPanel">
         <div class="guests-panel-inner">
-          <label class="form-label">Nombre de personnes</label>
-          <div class="counter-ui">
-            <div class="counter-bubble" onclick="changeCount(-1)">–</div>
-            <div class="counter-number-display" id="guest-display">1</div>
-            <div class="counter-bubble" onclick="changeCount(1)">+</div>
+          <div class="guests-panel-title">Nombre d'adultes</div>
+          <div style="max-width:150px;margin:0 auto">
+            <input type="number" id="nb-adultes" min="1" max="30" value="1" class="form-input" style="text-align:center;font-size:1.15rem;padding:11px">
           </div>
-          <input type="number" id="guest-count-real" value="1">
         </div>
       </div>
-
-      <div class="form-group" style="margin-top:20px">
-        <label class="form-label">Message (Optionnel)</label>
-        <textarea class="form-input"></textarea>
+      <div class="form-group" style="margin-top:18px">
+        <label class="form-label">Un mot pour les mariés</label>
+        <textarea class="form-input" id="message" placeholder="Votre message (optionnel)"></textarea>
       </div>
-      <button type="submit" class="submit-btn">Confirmer</button>
-    </form>
+      <button class="submit-btn" onclick="submitRSVP()">Confirmer ma présence</button>
+      <p class="deadline-note">Merci de répondre avant le 8 mai 2026</p>
+    </div>
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">✦</div>
+      <div class="success-text">Merci !</div>
+      <p class="success-sub">Votre présence a bien été confirmée.<br>À très bientôt pour ce grand jour.</p>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-names">Lola & Yoran</div>
-  <p class="footer-date">7 Juin 2026</p>
+  <div class="footer-names">Lola &amp; Yoran</div>
+  <div class="footer-date">7 Juin 2026 · כ״ב סיון תשפ״ו · Les Salons Hoche</div>
 </footer>
 
 <script>
-// --- GESTION DU COMPTEUR ---
-function changeCount(delta) {
-  const display = document.getElementById('guest-display');
-  const input = document.getElementById('guest-count-real');
-  let current = parseInt(input.value);
-  let next = current + delta;
-  
-  if (next >= 1 && next <= 10) { // Limite entre 1 et 10
-    input.value = next;
-    display.textContent = next;
-  }
+/* ── CURSOR ── */
+const cur=document.getElementById('cursor'),fol=document.getElementById('cursorFollower');
+let mx=0,my=0,fx=0,fy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function a(){fx+=(mx-fx)*.12;fy+=(my-fy)*.12;fol.style.left=fx+'px';fol.style.top=fy+'px';requestAnimationFrame(a)})();
+
+/* ── PARTICLES ── */
+const pc=document.getElementById('particles');
+const gc=['#C5A059','#D4B870','#B8924A','#E2C47A','#A89040'];
+for(let i=0;i<38;i++){
+  const p=document.createElement('div');p.className='particle';
+  const s=Math.random()*3.5+1;
+  p.style.cssText=`left:${Math.random()*100}vw;width:${s}px;height:${s}px;background:${gc[Math.floor(Math.random()*gc.length)]};animation-duration:${Math.random()*13+9}s;animation-delay:${Math.random()*13}s`;
+  pc.appendChild(p);
 }
 
-function selectPresence(present) {
-  const btns = document.querySelectorAll('.attendance-btn');
-  const panel = document.getElementById('guests-panel');
-  if(present) {
-    btns[0].classList.add('active');
-    btns[1].classList.remove('active');
-    panel.classList.add('open');
-  } else {
-    btns[0].classList.remove('active');
-    btns[1].classList.add('active');
-    panel.classList.remove('open');
-  }
+/* ── COUNTDOWN ── */
+const wd=new Date('2026-06-07T17:30:00');
+const el={d:document.getElementById('days'),h:document.getElementById('hours'),m:document.getElementById('minutes'),s:document.getElementById('seconds')};
+let pv={d:'',h:'',m:'',s:''};
+function tick(){
+  const df=wd-new Date();if(df<=0)return;
+  const v={d:String(Math.floor(df/86400000)).padStart(2,'0'),h:String(Math.floor(df%86400000/3600000)).padStart(2,'0'),m:String(Math.floor(df%3600000/60000)).padStart(2,'0'),s:String(Math.floor(df%60000/1000)).padStart(2,'0')};
+  for(const k in v){if(v[k]!==pv[k]){el[k].textContent=v[k];el[k].classList.remove('flip');void el[k].offsetWidth;el[k].classList.add('flip');}}
+  pv=v;
+}
+tick();setInterval(tick,1000);
+
+/* ── RSVP ── */
+let att=null;
+function selectAttendance(c){
+  att=c;
+  document.getElementById('btn-yes').classList.toggle('active',c==='yes');
+  document.getElementById('btn-no').classList.toggle('active',c==='no');
+  const p=document.getElementById('guestsPanel');
+  c==='yes'?p.classList.add('open'):p.classList.remove('open');
+}
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbyLi0JwyRM-ZYSBBhga13B-duXGPJwAotQ6eft6mjOwq5SCrKK8tVip9OM5WBtvxhVYKw/exec';
+async function submitRSVP(){
+  const pr=document.getElementById('prenom').value.trim();
+  const no=document.getElementById('nom').value.trim();
+  const ms=document.getElementById('message').value.trim();
+  const nb=document.getElementById('nb-adultes').value;
+  if(!pr||!no||!att){alert('Merci de remplir tous les champs obligatoires.');return;}
+  const btn=document.querySelector('.submit-btn');
+  btn.textContent='Envoi en cours…';btn.disabled=true;
+  try{const p=new URLSearchParams({prenom:pr,nom:no,presence:att==='yes'?'Oui':'Non',nb_adultes:att==='yes'?nb:'0',message:ms,timestamp:new Date().toLocaleString('fr-FR')});await fetch(SCRIPT_URL+'?'+p.toString(),{method:'GET',mode:'no-cors'});}catch(e){}
+  document.getElementById('formWrap').style.display='none';
+  document.getElementById('successMsg').classList.add('show');
 }
 
-// --- CURSEUR ---
-const cursor = document.getElementById('cursor');
-const follower = document.getElementById('cursorFollower');
-document.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-  follower.style.left = e.clientX + 'px';
-  follower.style.top = e.clientY + 'px';
+/* ── MUSIC ── */
+const audio = new Audio('musique.mp3');
+audio.loop = true;
+audio.volume = 0.45;
+audio.play().catch(() => {
+  const unlock = () => {
+    audio.play().catch(() => {});
+    document.removeEventListener('touchstart', unlock);
+    document.removeEventListener('click', unlock);
+  };
+  document.addEventListener('touchstart', unlock, { once: true, passive: true });
+  document.addEventListener('click', unlock, { once: true });
 });
+const muteBtn = document.createElement('button');
+muteBtn.innerHTML = '🎵';
+muteBtn.title = 'Couper / relancer la musique';
+muteBtn.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:1000;width:44px;height:44px;border-radius:50%;border:1px solid rgba(197,160,89,.4);background:rgba(255,255,255,.88);backdrop-filter:blur(8px);font-size:18px;cursor:pointer;box-shadow:0 4px 16px rgba(197,160,89,.2);transition:transform .2s;';
+muteBtn.onclick = () => { audio.muted = !audio.muted; muteBtn.innerHTML = audio.muted ? '🔇' : '🎵'; };
+muteBtn.onmouseenter = () => muteBtn.style.transform = 'scale(1.1)';
+muteBtn.onmouseleave = () => muteBtn.style.transform = 'scale(1)';
+document.body.appendChild(muteBtn);
 
-// --- COUNTDOWN ---
-const target = new Date("June 7, 2026 17:30:00").getTime();
-function updateTimer() {
-  const now = new Date().getTime();
-  const diff = target - now;
-  document.getElementById('days').innerText = Math.floor(diff / (1000*60*60*24));
-  document.getElementById('hours').innerText = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-  document.getElementById('minutes').innerText = Math.floor((diff % (1000*60*60)) / (1000*60));
-  document.getElementById('seconds').innerText = Math.floor((diff % (1000*60)) / 1000);
-}
-setInterval(updateTimer, 1000);
-
-// --- MUSIQUE (Lyria intégrée) ---
-const musicData = {
-  title: "Lola & Yoran - Wedding Theme",
-  url: "https://example.com/wedding-song.mp3" // Remplace par ton lien réel
-};
-console.log("Musique Lyria active pour :", musicData.title);
+/* ── PARALLAX BOTANICAL ── */
+window.addEventListener('scroll', () => {
+  const sy = window.scrollY;
+  const tl = document.querySelector('.botanical-tl');
+  const tr = document.querySelector('.botanical-tr');
+  const bl = document.querySelector('.botanical-bl');
+  const br = document.querySelector('.botanical-br');
+  if(tl) tl.style.transform = `translateY(${sy * .12}px)`;
+  if(tr) tr.style.transform = `scaleX(-1) translateY(${sy * .12}px)`;
+  if(bl) bl.style.transform = `scaleY(-1) translateY(${-sy * .06}px)`;
+  if(br) br.style.transform = `scale(-1) translateY(${-sy * .06}px)`;
+}, { passive: true });
 </script>
-
 </body>
 </html>
