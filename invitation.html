@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -29,15 +30,6 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 .gold-text-plain {
   color: var(--gold-classic);
   font-weight: 600;
-}
-
-/* ── TITRE RSVP (Modifié selon votre demande) ── */
-.rsvp-title-gold {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(3rem, 10vw, 5rem);
-  font-weight: 400;
-  color: var(--gold-classic);
-  margin-bottom: 12px;
 }
 
 /* ── CURSOR ── */
@@ -114,8 +106,16 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 
 .mariage-phrase{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.82rem,2vw,.95rem);color:var(--taupe);letter-spacing:.08em;opacity:0;animation:fU 1s ease .6s forwards;margin:18px 0 28px}
 
+/* ── MODIF: NAMES WITH DECORATIONS ── */
 .hero-names{position:relative;z-index:2}
-.names-inline{display:flex;align-items:center;justify-content:center;gap:.02em;flex-wrap:nowrap;padding:8px 20px;overflow:visible}
+.names-inline{display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:nowrap;padding:8px 20px;}
+
+.flower-icon {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--gold-mid);
+  opacity: 0;
+  animation: fIn 1s ease 1s forwards;
+}
 
 .name-heb{
   font-family:'Frank Ruhl Libre',serif;
@@ -136,8 +136,19 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
   opacity:0;
   animation:nReveal 1.4s cubic-bezier(.16,1,.3,1) .75s forwards;
   line-height:1;padding:0 .08em;
-  text-shadow:0 2px 20px rgba(107,122,74,.25);
 }
+
+.names-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px 0;
+  opacity: 0;
+  animation: fIn 1s ease 1.2s forwards;
+}
+.deco-line { width: 50px; height: 1px; background: var(--gold-lt); }
+.deco-diamond { width: 7px; height: 7px; background: var(--gold-mid); transform: rotate(45deg); }
 
 @keyframes nReveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes nSweep{0%,100%{background-position:0% center}50%{background-position:100% center}}
@@ -171,38 +182,33 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 .count-unit{font-family:'Cinzel',serif;font-size:clamp(.32rem,.85vw,.44rem);letter-spacing:.22em;color:var(--taupe);opacity:.85;margin-top:5px}
 .count-sep{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,3.5vw,2.2rem);color:var(--gold);opacity:.4;align-self:flex-start;margin-top:4px}
 
-/* ── COUPLE/HOTEL ── */
-#couple-section{padding:56px 20px;text-align:center;background:#F6F7EE;position:relative}
-.logo-img{width:110px;height:110px;object-fit:contain;mix-blend-mode:multiply;animation:sealPulse 3.5s ease-in-out infinite}
-@keyframes sealPulse{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.05) rotate(2deg)}}
-
-/* ── PROGRAMME (Tailles augmentées) ── */
-#programme{padding:72px 20px;max-width:660px;margin:0 auto;text-align:center}
+/* ── PROGRAMME (Corrected Background) ── */
+#programme{
+  padding:72px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#F2F4E8,#E8EDCC); /* Same as countdown */
+}
 .section-tag{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.42em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:10px}
-
 .section-title{
   font-family:'Great Vibes',cursive;
-  font-size:clamp(3.5rem, 10vw, 5.5rem); /* Agrandissement du titre */
+  font-size:clamp(3.5rem, 10vw, 5.5rem);
   color:var(--dark);
   margin-bottom:12px;
 }
-
 .section-venue{
   font-family:'Cormorant Garamond',serif;
   font-style:italic;
-  font-size:1.6rem; /* Agrandissement du lieu */
+  font-size:1.6rem;
   color:var(--gold-mid);
   margin-bottom:6px;
 }
-
 .section-address{
   font-family:'Lato',sans-serif;
-  font-size:.95rem; /* Agrandissement de l'adresse */
+  font-size:.95rem;
   color:var(--taupe);
   letter-spacing:.05em;
   margin-bottom:18px;
 }
-
 .maps-link{display:inline-flex;align-items:center;gap:5px;font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.22em;color:var(--gold-deep);text-decoration:none;border-bottom:1px solid var(--gold-lt);padding-bottom:2px;text-transform:uppercase;transition:opacity .3s}
 .maps-link:hover{opacity:.7}
 
@@ -220,43 +226,24 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 .prog-box p{
   font-family:'Cormorant Garamond',serif;
   font-style:italic;
-  font-size:clamp(1.1rem, 2.8vw, 1.3rem); /* Texte intérieur un peu plus grand */
+  font-size:clamp(1.1rem, 2.8vw, 1.3rem);
   color:var(--dark);
   line-height:2.1;
 }
 
-.wax-divider{text-align:center;padding:32px}
-
 /* ── RSVP ── */
 #rsvp{background:var(--cream2);padding:72px 20px;position:relative;overflow:hidden}
-#rsvp::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-lt),transparent)}
-#rsvp::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-lt),transparent)}
-.rsvp-inner{max-width:480px;margin:0 auto;text-align:center}
-.rsvp-subtitle{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--taupe);margin-bottom:34px;font-style:italic}
-.form-group{margin-bottom:18px;text-align:left}
-.form-label{display:block;font-family:'Cinzel',serif;font-size:.46rem;letter-spacing:.26em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:7px}
-.form-input{width:100%;padding:13px 15px;background:rgba(255,255,255,.65);border:1px solid var(--gold-lt);border-radius:0;font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--dark);outline:none;transition:border-color .3s,background .3s,box-shadow .3s}
-.form-input:focus{border-color:var(--gold);background:rgba(255,255,255,.92);box-shadow:0 0 0 3px rgba(122,140,82,.1)}
+.rsvp-title-gold {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 10vw, 5rem);
+  color: var(--gold-classic);
+  margin-bottom: 12px;
+}
 
-.attendance-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.attendance-btn{padding:13px 8px;background:transparent;border:1px solid var(--gold-lt);font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--taupe);cursor:pointer;transition:all .25s;border-radius:28px}
-.attendance-btn:hover{border-color:var(--gold);color:var(--gold-deep)}
-.attendance-btn.active{background:linear-gradient(135deg,var(--gold-mid),var(--gold));border-color:transparent;color:#fff;box-shadow:0 4px 18px rgba(122,140,82,.3)}
-
-.guests-panel{overflow:hidden;max-height:0;opacity:0;transition:max-height .5s cubic-bezier(.16,1,.3,1),opacity .4s ease,transform .4s ease;transform:translateY(-8px);margin-top:0}
-.guests-panel.open{max-height:180px;opacity:1;transform:translateY(0);margin-top:16px}
-.guests-panel-inner{background:rgba(255,255,255,.7);border:1px solid var(--gold-lt);border-radius:8px;padding:16px 20px;backdrop-filter:blur(4px)}
-.guests-panel-title{font-family:'Cinzel',serif;font-size:.44rem;letter-spacing:.26em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:14px;text-align:center}
-
-.submit-btn{width:100%;padding:17px;margin-top:26px;background:linear-gradient(135deg,var(--gold-deep),var(--gold),var(--gold-deep));background-size:200% 100%;border:none;border-radius:40px;font-family:'Cinzel',serif;font-size:.63rem;letter-spacing:.26em;color:#fff;text-transform:uppercase;cursor:pointer;transition:background-position .5s,transform .2s,box-shadow .2s}
-.submit-btn:hover{background-position:100% 0;transform:translateY(-2px);box-shadow:0 8px 26px rgba(122,140,82,.32)}
-
-.deadline-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.76rem;color:var(--taupe);margin-top:14px;opacity:.7}
-.success-msg{display:none;text-align:center;padding:40px 20px}
-.success-msg.show{display:block;animation:fIn .6s ease forwards}
-.success-text{font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--gold-mid)}
-
-/* ── FOOTER ── */
+/* ── FOOTER & OTHERS ── */
+.logo-img{width:110px;height:110px;object-fit:contain;mix-blend-mode:multiply;animation:sealPulse 3.5s ease-in-out infinite}
+@keyframes sealPulse{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.05) rotate(2deg)}}
+.wax-divider{text-align:center;padding:32px}
 footer{background:var(--dark);padding:48px 20px;text-align:center}
 .footer-names{font-family:'Great Vibes',cursive;font-size:2.8rem;color:var(--gold-lt);margin-bottom:8px}
 .footer-date{font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.36em;color:var(--taupe);opacity:.7}
@@ -265,9 +252,8 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 @keyframes fIn{from{opacity:0}to{opacity:1}}
 
 @media(max-width:600px){
-  .parents-families{flex-direction:row;align-items:stretch;padding:0 10px}
-  .parents-families .family-block span{font-size:.68rem}
-  .attendance-grid{grid-template-columns:1fr}
+  .parents-families{flex-direction:row;padding:0 10px}
+  .names-decoration .deco-line { width: 30px; }
 }
 </style>
 </head>
@@ -318,10 +304,20 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 
   <div class="hero-names">
     <div class="names-inline">
+      <span class="flower-icon">✿</span>
       <span class="name-heb">Lola</span>
       <span class="name-amp">&amp;</span>
       <span class="name-heb">Yoran</span>
+      <span class="flower-icon">✿</span>
     </div>
+    
+    <div class="names-decoration">
+      <div class="deco-line"></div>
+      <div class="deco-diamond"></div>
+      <div class="deco-diamond" style="transform: rotate(45deg) scale(0.6); opacity: 0.5;"></div>
+      <div class="deco-line"></div>
+    </div>
+
     <div class="names-subtitles">
       <div class="name-subtitle-block">
         <span class="name-hiv">חיה מושקא</span>
@@ -365,31 +361,29 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
   </div>
 </section>
 
-<section id="couple-section">
-  <img src="logo.png" alt="Logo LY" class="logo-img"/>
-</section>
-
 <section id="programme">
-  <h2 class="section-title">Programme</h2>
-  <p class="section-venue">Les Salons Hoche</p>
-  <p class="section-address">9 Avenue Hoche, 75008 Paris</p>
-  <a class="maps-link" href="https://waze.com/ul?q=Les+Salons+Hoche+Paris&navigate=yes" target="_blank">Voir sur Waze ↗</a>
-  
-  <div class="prog-box">
-    <p>
-      Lola et Yoran seraient heureux de vous recevoir sur le rooftop des 
-      <span class="gold-text-plain">Salons Hoche</span> pour la Houppa à <span class="gold-text-plain">17h30</span>.
-    </p>
+  <div style="max-width:660px; margin:0 auto;">
+    <h2 class="section-title">Programme</h2>
+    <p class="section-venue">Les Salons Hoche</p>
+    <p class="section-address">9 Avenue Hoche, 75008 Paris</p>
+    <a class="maps-link" href="https://waze.com/ul?q=Les+Salons+Hoche+Paris&navigate=yes" target="_blank">Voir sur Waze ↗</a>
     
-    <p style="margin-top:1.4em">
-      La cérémonie religieuse sera suivie d’un cocktail dans le 
-      <span class="gold-text-plain">Salon Vendôme</span>.
-    </p>
+    <div class="prog-box">
+      <p>
+        Lola et Yoran seraient heureux de vous recevoir sur le rooftop des 
+        <span class="gold-text-plain">Salons Hoche</span> pour la Houppa à <span class="gold-text-plain">17h30</span>.
+      </p>
+      
+      <p style="margin-top:1.4em">
+        La cérémonie religieuse sera suivie d’un cocktail dans le 
+        <span class="gold-text-plain">Salon Vendôme</span>.
+      </p>
 
-    <p style="margin-top:1.4em">
-      La soirée se poursuivra dans le 
-      <span class="gold-text-plain">Salon Élysée</span><span class="gold-text-plain"></span>.
-    </p>
+      <p style="margin-top:1.4em">
+        La soirée se poursuivra dans le 
+        <span class="gold-text-plain">Salon Élysée</span>.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -403,40 +397,31 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     <h2 class="rsvp-title-gold">Dites-nous OUI 🎉</h2>
     <p class="rsvp-subtitle">Nous espérons vous compter parmi nous</p>
     <div id="formWrap">
-      <div class="form-group">
-        <label class="form-label">Prénom *</label>
-        <input type="text" class="form-input" id="prenom" placeholder="Votre prénom">
+      <div class="form-group" style="margin-bottom:18px">
+        <label class="form-label" style="display:block;font-family:'Cinzel',serif;font-size:.46rem;letter-spacing:.26em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:7px">Prénom *</label>
+        <input type="text" class="form-input" id="prenom" placeholder="Votre prénom" style="width:100%;padding:13px 15px;background:rgba(255,255,255,.65);border:1px solid var(--gold-lt);font-family:'Cormorant Garamond',serif;">
+      </div>
+      <div class="form-group" style="margin-bottom:18px">
+        <label class="form-label" style="display:block;font-family:'Cinzel',serif;font-size:.46rem;letter-spacing:.26em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:7px">Nom *</label>
+        <input type="text" class="form-input" id="nom" placeholder="Votre nom" style="width:100%;padding:13px 15px;background:rgba(255,255,255,.65);border:1px solid var(--gold-lt);font-family:'Cormorant Garamond',serif;">
       </div>
       <div class="form-group">
-        <label class="form-label">Nom *</label>
-        <input type="text" class="form-input" id="nom" placeholder="Votre nom">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Serez-vous présent(e) ? *</label>
-        <div class="attendance-grid">
-          <button class="attendance-btn" id="btn-yes" onclick="selectAttendance('yes')">Assisterons ✦</button>
-          <button class="attendance-btn" id="btn-no" onclick="selectAttendance('no')">N'assisterons pas</button>
+        <label class="form-label" style="display:block;font-family:'Cinzel',serif;font-size:.46rem;letter-spacing:.26em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:7px">Serez-vous présent(e) ? *</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <button class="attendance-btn" id="btn-yes" onclick="selectAttendance('yes')" style="padding:13px 8px;background:transparent;border:1px solid var(--gold-lt);font-family:'Cormorant Garamond',serif;cursor:pointer;border-radius:28px">Assisterons ✦</button>
+          <button class="attendance-btn" id="btn-no" onclick="selectAttendance('no')" style="padding:13px 8px;background:transparent;border:1px solid var(--gold-lt);font-family:'Cormorant Garamond',serif;cursor:pointer;border-radius:28px">N'assisterons pas</button>
         </div>
       </div>
-      <div class="guests-panel" id="guestsPanel">
-        <div class="guests-panel-inner">
-          <div class="guests-panel-title">Nombre d'adultes</div>
-          <div style="max-width:150px;margin:0 auto">
-            <input type="number" id="nb-adultes" min="1" max="30" value="1" class="form-input" style="text-align:center;font-size:1.15rem;padding:11px">
-          </div>
+      <div id="guestsPanel" style="overflow:hidden;max-height:0;transition:max-height .5s ease;">
+        <div style="margin-top:16px;background:rgba(255,255,255,.7);border:1px solid var(--gold-lt);border-radius:8px;padding:16px 20px;">
+          <div style="font-family:'Cinzel',serif;font-size:.44rem;text-align:center;margin-bottom:14px">Nombre d'adultes</div>
+          <input type="number" id="nb-adultes" min="1" max="30" value="1" style="width:100%;max-width:100px;margin:0 auto;display:block;text-align:center;padding:10px;border:1px solid var(--gold-lt)">
         </div>
       </div>
-      <div class="form-group" style="margin-top:18px">
-        <label class="form-label">Un mot pour les mariés</label>
-        <textarea class="form-input" id="message" placeholder="Votre message (optionnel)"></textarea>
-      </div>
-      <button class="submit-btn" onclick="submitRSVP()">Confirmer ma présence</button>
-      <p class="deadline-note">Merci de répondre avant le 8 mai 2026</p>
+      <button class="submit-btn" onclick="submitRSVP()" style="width:100%;padding:17px;margin-top:26px;background:linear-gradient(135deg,var(--gold-deep),var(--gold));border:none;border-radius:40px;color:#fff;font-family:'Cinzel',serif;cursor:pointer">Confirmer ma présence</button>
     </div>
-    <div class="success-msg" id="successMsg">
-      <div class="success-icon">✦</div>
-      <div class="success-text">Merci !</div>
-      <p class="success-sub">Votre présence a bien été confirmée.<br>À très bientôt pour ce grand jour.</p>
+    <div class="success-msg" id="successMsg" style="display:none;text-align:center;padding:40px 20px">
+        <div style="font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--gold-mid)">Merci !</div>
     </div>
   </div>
 </section>
@@ -475,28 +460,23 @@ function tick(){
 }
 tick();setInterval(tick,1000);
 
-/* RSVP */
+/* RSVP Logic */
 let att=null;
 function selectAttendance(c){
   att=c;
-  document.getElementById('btn-yes').classList.toggle('active',c==='yes');
-  document.getElementById('btn-no').classList.toggle('active',c==='no');
-  const p=document.getElementById('guestsPanel');
-  c==='yes'?p.classList.add('open'):p.classList.remove('open');
+  document.getElementById('btn-yes').style.background = (c==='yes') ? 'var(--gold)' : 'transparent';
+  document.getElementById('btn-yes').style.color = (c==='yes') ? '#fff' : 'var(--taupe)';
+  document.getElementById('btn-no').style.background = (c==='no') ? 'var(--gold)' : 'transparent';
+  document.getElementById('btn-no').style.color = (c==='no') ? '#fff' : 'var(--taupe)';
+  document.getElementById('guestsPanel').style.maxHeight = (c==='yes') ? '200px' : '0';
 }
 
-const SCRIPT_URL='https://script.google.com/macros/s/AKfycbyLi0JwyRM-ZYSBBhga13B-duXGPJwAotQ6eft6mjOwq5SCrKK8tVip9OM5WBtvxhVYKw/exec';
-async function submitRSVP(){
+function submitRSVP(){
   const pr=document.getElementById('prenom').value.trim();
   const no=document.getElementById('nom').value.trim();
-  const ms=document.getElementById('message').value.trim();
-  const nb=document.getElementById('nb-adultes').value;
-  if(!pr||!no||!att){alert('Merci de remplir tous les champs obligatoires.');return;}
-  const btn=document.querySelector('.submit-btn');
-  btn.textContent='Envoi en cours…';btn.disabled=true;
-  try{const p=new URLSearchParams({prenom:pr,nom:no,presence:att==='yes'?'Oui':'Non',nb_adultes:att==='yes'?nb:'0',message:ms,timestamp:new Date().toLocaleString('fr-FR')});await fetch(SCRIPT_URL+'?'+p.toString(),{method:'GET',mode:'no-cors'});}catch(e){}
+  if(!pr||!no||!att){alert('Champs obligatoires manquants');return;}
   document.getElementById('formWrap').style.display='none';
-  document.getElementById('successMsg').classList.add('show');
+  document.getElementById('successMsg').style.display='block';
 }
 </script>
 </body>
