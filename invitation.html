@@ -25,20 +25,22 @@
 html{scroll-behavior:smooth}
 body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
 
-/* ── DORÉ CLASSIQUE (ENCADRÉ) ── */
+/* ── DORÉ CLASSIQUE ── */
 .gold-text-plain {
   color: var(--gold-classic);
   font-weight: 600;
 }
 
-/* ── TITRE RSVP (Même police que Lola & Yoran) ── */
+/* ── TITRE RSVP (Même police que "Le grand jour approche") ── */
 .rsvp-title-gold {
-  font-family: 'Frank Ruhl Libre', serif;
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
-  font-weight: 300;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.2rem, 5vw, 1.8rem);
+  font-weight: 400;
   color: var(--gold-classic);
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  letter-spacing: 0.4em; /* Même espacement que le hint de scroll */
+  text-transform: uppercase;
+  line-height: 1.4;
 }
 
 /* ── CURSOR ── */
@@ -364,8 +366,8 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 
 <section id="rsvp">
   <div class="rsvp-inner">
-    <p class="section-tag">RSVP</p>
-    <h2 class="rsvp-title-gold">Dites-nous OUI 🎉</h2>
+    <p class="section-tag">Réponse souhaitée</p>
+    <h2 class="rsvp-title-gold">Dites-nous oui 🎉</h2>
     <p class="rsvp-subtitle">Nous espérons vous compter parmi nous</p>
     <div id="formWrap">
       <div class="form-group">
