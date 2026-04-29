@@ -417,7 +417,7 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 const cur=document.getElementById('cursor'),fol=document.getElementById('cursorFollower');
 let mx=0,my=0,fx=0,fy=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-(function anim(){fx+=(mx-fx).12;fy+=(my-fy).12;fol.style.left=fx+'px';fol.style.top=fy+'px';requestAnimationFrame(anim)})();
+(function anim(){fx+=(mx-fx)*.12;fy+=(my-fy)*.12;fol.style.left=fx+'px';fol.style.top=fy+'px';requestAnimationFrame(anim)})();
  
 /* ── PARTICLES ── */
 const pc=document.getElementById('particles');
@@ -425,7 +425,7 @@ const colors=['#A8B88A','#6B7A4A','#C8D4B0','#8A9B6A'];
 for(let i=0;i<40;i++){
   const p=document.createElement('div');p.className='particle';
   const size=Math.random()*4+1;
-  p.style.cssText=left:${Math.random()*100}vw;width:${size}px;height:${size}px;background:${colors[Math.floor(Math.random()*colors.length)]};animation-duration:${Math.random()*14+9}s;animation-delay:${Math.random()*14}s;
+  p.style.cssText=`left:${Math.random()*100}vw;width:${size}px;height:${size}px;background:${colors[Math.floor(Math.random()*colors.length)]};animation-duration:${Math.random()*14+9}s;animation-delay:${Math.random()*14}s`;
   pc.appendChild(p);
 }
  
@@ -520,10 +520,10 @@ window.addEventListener('scroll',()=>{
   const sy=window.scrollY;
   const tl=document.querySelector('.botanical-tl'),tr=document.querySelector('.botanical-tr');
   const bl=document.querySelector('.botanical-bl'),br=document.querySelector('.botanical-br');
-  if(tl)tl.style.transform=translateY(${sy*.14}px);
-  if(tr)tr.style.transform=scaleX(-1) translateY(${sy*.14}px);
-  if(bl)bl.style.transform=scaleY(-1) translateY(${-sy*.07}px);
-  if(br)br.style.transform=scale(-1) translateY(${-sy*.07}px);
+  if(tl)tl.style.transform=`translateY(${sy*.14}px)`;
+  if(tr)tr.style.transform=`scaleX(-1) translateY(${sy*.14}px)`;
+  if(bl)bl.style.transform=`scaleY(-1) translateY(${-sy*.07}px)`;
+  if(br)br.style.transform=`scale(-1) translateY(${-sy*.07}px)`;
 },{passive:true});
 </script>
 </body>
