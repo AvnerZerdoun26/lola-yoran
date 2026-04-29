@@ -404,6 +404,7 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
   <img src="logo.png" alt="Logo LY" class="logo-img" style="width:90px;height:90px;opacity:.75;"/>
 </div>
 
+<!-- RSVP -->
 <section id="rsvp">
   <div class="rsvp-card">
     
@@ -411,23 +412,19 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 
     <div class="form-group">
       <label class="form-label">PRÉNOM *</label>
-      <input type="text" id="prenom" placeholder="Prénom" class="form-input modern">
+      <input type="text" id="prenom" placeholder="Prénom" class="form-input">
     </div>
 
     <div class="form-group">
       <label class="form-label">NOM *</label>
-      <input type="text" id="nom" placeholder="Nom" class="form-input modern">
+      <input type="text" id="nom" placeholder="Nom" class="form-input">
     </div>
 
     <div class="form-group">
       <label class="form-label">SEREZ-VOUS PRÉSENT(E) ? *</label>
       <div class="attendance-modern">
-        <button class="att-btn active" onclick="selectAttendance('yes')" id="btn-yes">
-          Assisterons
-        </button>
-        <button class="att-btn" onclick="selectAttendance('no')" id="btn-no">
-          N'assisterons pas
-        </button>
+        <button class="att-btn active" onclick="selectAttendance('yes')" id="btn-yes">Assisterons</button>
+        <button class="att-btn" onclick="selectAttendance('no')" id="btn-no">N'assisterons pas</button>
       </div>
     </div>
 
@@ -443,17 +440,70 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 
     <div class="form-group">
       <label class="form-label">UN MOT POUR LES MARIÉS</label>
-      <textarea id="message" placeholder="Votre message (optionnel)" class="form-input modern"></textarea>
+      <textarea id="message" placeholder="Votre message"></textarea>
     </div>
 
-    <button class="submit-btn modern" onclick="submitRSVP()">
-      Confirmer ma présence
-    </button>
+    <button class="submit-btn" onclick="submitRSVP()">Confirmer ma présence</button>
 
     <p class="deadline-note">Merci de répondre avant le 8 mai 2026</p>
 
   </div>
 </section>
+
+<script>
+
+/* RSVP */
+let attendance = "yes";
+let guestCount = 1;
+
+function selectAttendance(choice){
+  attendance = choice;
+
+  document.getElementById('btn-yes').classList.toggle('active', choice === 'yes');
+  document.getElementById('btn-no').classList.toggle('active', choice === 'no');
+
+  document.getElementById('guestsPanel').style.display = (choice === 'yes') ? 'block' : 'none';
+}
+
+function changeGuests(delta){
+  guestCount += delta;
+  if(guestCount < 1) guestCount = 1;
+  if(guestCount > 30) guestCount = 30;
+
+  document.getElementById('guestCount').textContent = guestCount;
+  document.getElementById('guestLabel').textContent =
+    guestCount === 1 ? "1 personne" : guestCount + " personnes";
+}
+
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbyLi0JwyRM-ZYSBBhga13B-duXGPJwAotQ6eft6mjOwq5SCrKK8tVip9OM5WBtvxhVYKw/exec';
+
+async function submitRSVP(){
+  const prenom = document.getElementById('prenom').value.trim();
+  const nom = document.getElementById('nom').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if(!prenom || !nom){
+    alert("Merci de remplir les champs obligatoires");
+    return;
+  }
+
+  const params = new URLSearchParams({
+    prenom,
+    nom,
+    presence: attendance === 'yes' ? 'Oui' : 'Non',
+    nb_adultes: attendance === 'yes' ? guestCount : 0,
+    message
+  });
+
+  try{
+    await fetch(SCRIPT_URL + '?' + params.toString(), {method:'GET', mode:'no-cors'});
+    alert("Réponse envoyée !");
+  }catch(e){
+    alert("Erreur lors de l'envoi");
+  }
+}
+
+</script>
 
 <footer>
   <div class="footer-names">Lola &amp; Yoran</div>
