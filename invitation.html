@@ -110,6 +110,8 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 .form-input{width:100%;padding:13px 15px;background:rgba(255,255,255,.65);border:1px solid var(--gold-lt);border-radius:0;font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--dark);outline:none;transition:border-color .3s,background .3s,box-shadow .3s}
 .form-input:focus{border-color:var(--gold);background:rgba(255,255,255,.92);box-shadow:0 0 0 3px rgba(122,140,82,.1)}
 textarea.form-input{min-height:90px;resize:vertical}
+/* Grille prénom / nom */
+.name-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
 .attendance-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .attendance-btn{padding:13px 8px;background:transparent;border:1px solid var(--gold-lt);font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--taupe);cursor:pointer;transition:all .25s;border-radius:28px}
 .attendance-btn:hover{border-color:var(--gold);color:var(--gold-deep)}
@@ -118,6 +120,11 @@ textarea.form-input{min-height:90px;resize:vertical}
 .guests-panel.open{max-height:180px;opacity:1;transform:translateY(0);margin-top:16px}
 .guests-panel-inner{background:rgba(255,255,255,.7);border:1px solid var(--gold-lt);border-radius:8px;padding:16px 20px;backdrop-filter:blur(4px)}
 .guests-panel-title{font-family:'Cinzel',serif;font-size:.44rem;letter-spacing:.26em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:14px;text-align:center}
+/* Compteur + / - */
+.counter-wrap{display:flex;align-items:center;justify-content:center;gap:22px}
+.counter-btn{width:48px;height:48px;border-radius:50%;background:#EDE5C8;border:1px solid #D4C89A;color:var(--gold-deep);font-size:1.5rem;font-family:'Cormorant Garamond',serif;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .15s;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;box-shadow:0 2px 10px rgba(180,160,100,.2)}
+.counter-btn:active{transform:scale(.91);background:#DDD0A8}
+.counter-value{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold-deep);min-width:36px;text-align:center;line-height:1}
 .submit-btn{width:100%;padding:17px;margin-top:26px;background:linear-gradient(135deg,var(--gold-deep),var(--gold),var(--gold-deep));background-size:200% 100%;border:none;border-radius:40px;font-family:'Cinzel',serif;font-size:.63rem;letter-spacing:.26em;color:#fff;text-transform:uppercase;cursor:pointer;transition:background-position .5s,transform .2s,box-shadow .2s}
 .submit-btn:hover{background-position:100% 0;transform:translateY(-2px);box-shadow:0 8px 26px rgba(122,140,82,.32)}
 .deadline-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.76rem;color:var(--taupe);margin-top:14px;opacity:.7}
@@ -134,6 +141,7 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
   .parents-families{flex-direction:row;align-items:stretch;padding:0 10px}
   .parents-families .family-block span{font-size:.68rem}
   .attendance-grid{grid-template-columns:1fr}
+  .name-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -141,11 +149,8 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 <div class="cursor" id="cursor"></div>
 <div class="cursor-follower" id="cursorFollower"></div>
 <div id="particles"></div>
-
 <section id="hero">
   <div class="hero-botanical">
-
-    <!-- ══ COIN HAUT GAUCHE — roses dorées ══ -->
     <svg class="botanical-tl" width="300" height="300" viewBox="0 0 300 300" fill="none">
       <path d="M-10,10 Q42,62 75,135 Q105,205 88,285" stroke="#C5A059" stroke-width="1.6" fill="none" opacity="0.75"/>
       <path d="M12,-5 Q58,42 95,95" stroke="#B8924A" stroke-width="1.2" fill="none" opacity="0.6"/>
@@ -206,8 +211,6 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
       <line x1="204" y1="193" x2="200" y2="183" stroke="#B89840" stroke-width="0.7" opacity="0.4"/>
       <line x1="186" y1="198" x2="188" y2="186" stroke="#B89840" stroke-width="0.7" opacity="0.4"/>
     </svg>
-
-    <!-- ══ COIN HAUT DROITE — miroir TL ══ -->
     <svg class="botanical-tr" width="300" height="300" viewBox="0 0 300 300" fill="none">
       <path d="M-10,10 Q42,62 75,135 Q105,205 88,285" stroke="#C5A059" stroke-width="1.6" fill="none" opacity="0.7"/>
       <path d="M12,-5 Q58,42 95,95" stroke="#B8924A" stroke-width="1.2" fill="none" opacity="0.55"/>
@@ -251,8 +254,6 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
       <circle cx="204" cy="193" r="3.5" fill="#D4B063" opacity="0.5"/>
       <circle cx="186" cy="198" r="4" fill="#C5A059" opacity="0.48"/>
     </svg>
-
-    <!-- ══ COIN BAS GAUCHE ══ -->
     <svg class="botanical-bl" width="260" height="220" viewBox="0 0 260 220" fill="none">
       <path d="M-10,215 Q55,182 100,158 Q158,132 215,142" stroke="#C5A059" stroke-width="1.5" fill="none" opacity="0.68"/>
       <path d="M30,218 Q42,195 55,178" stroke="#B8924A" stroke-width="1" fill="none" opacity="0.5"/>
@@ -290,8 +291,6 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
       <circle cx="228" cy="135" r="3" fill="#D4B063" opacity="0.5"/>
       <line x1="220" y1="143" x2="222" y2="132" stroke="#B89840" stroke-width="0.6" opacity="0.38"/>
     </svg>
-
-    <!-- ══ COIN BAS DROITE — miroir BL ══ -->
     <svg class="botanical-br" width="260" height="220" viewBox="0 0 260 220" fill="none">
       <path d="M-10,215 Q55,182 100,158 Q158,132 215,142" stroke="#C5A059" stroke-width="1.5" fill="none" opacity="0.62"/>
       <path d="M30,218 Q42,195 55,178" stroke="#B8924A" stroke-width="1" fill="none" opacity="0.46"/>
@@ -320,9 +319,7 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
       <circle cx="220" cy="143" r="4" fill="#C5A059" opacity="0.5"/>
       <circle cx="228" cy="135" r="3" fill="#D4B063" opacity="0.45"/>
     </svg>
-
   </div>
-
   <p class="bsm">בס"ד</p>
   <div class="parents-families">
     <div class="family-block">
@@ -367,7 +364,6 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     <span></span>
   </div>
 </section>
-
 <section id="countdown">
   <p class="countdown-label">Compte à rebours</p>
   <div class="countdown-script">Le grand jour approche dans…</div>
@@ -381,11 +377,9 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     <div class="count-block"><div class="count-number" id="seconds">00</div><div class="count-unit">Secondes</div></div>
   </div>
 </section>
-
 <section id="couple-section">
   <img src="logo.png" alt="Logo LY" class="logo-img"/>
 </section>
-
 <div id="programme-wrapper">
   <section id="programme">
     <h2 class="section-title">Programme</h2>
@@ -399,25 +393,28 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     </div>
   </section>
 </div>
-
 <div class="wax-divider">
   <img src="logo.png" alt="Logo LY" class="logo-img" style="width:90px;height:90px;opacity:.75;"/>
 </div>
-
 <section id="rsvp">
   <div class="rsvp-inner">
     <p class="section-tag">Réponse souhaitée</p>
     <h2 class="rsvp-title-gold">Dites-nous oui 🎉</h2>
     <p class="rsvp-subtitle">Nous espérons vous compter parmi nous</p>
     <div id="formWrap">
-      <div class="form-group">
-        <label class="form-label">Prénom *</label>
-        <input type="text" class="form-input" id="prenom" placeholder="Votre prénom">
+
+      <!-- ── Prénom & Nom côte à côte ── -->
+      <div class="name-grid">
+        <div>
+          <label class="form-label">Prénom *</label>
+          <input type="text" class="form-input" id="prenom" placeholder="Votre prénom">
+        </div>
+        <div>
+          <label class="form-label">Nom *</label>
+          <input type="text" class="form-input" id="nom" placeholder="Votre nom">
+        </div>
       </div>
-      <div class="form-group">
-        <label class="form-label">Nom *</label>
-        <input type="text" class="form-input" id="nom" placeholder="Votre nom">
-      </div>
+
       <div class="form-group">
         <label class="form-label">Serez-vous présent(e) ? *</label>
         <div class="attendance-grid">
@@ -425,14 +422,20 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
           <button class="attendance-btn" id="btn-no" onclick="selectAttendance('no')">N'assisterons pas</button>
         </div>
       </div>
+
+      <!-- ── Compteur + / - ── -->
       <div class="guests-panel" id="guestsPanel">
         <div class="guests-panel-inner">
           <div class="guests-panel-title">Nombre d'adultes</div>
-          <div style="max-width:150px;margin:0 auto">
-            <input type="number" id="nb-adultes" min="1" max="30" value="1" class="form-input" style="text-align:center;font-size:1.15rem;padding:11px">
+          <div class="counter-wrap">
+            <button class="counter-btn" id="guestMinus" type="button">−</button>
+            <span class="counter-value" id="guestCount">1</span>
+            <button class="counter-btn" id="guestPlus" type="button">+</button>
           </div>
+          <input type="hidden" id="nb-adultes" value="1">
         </div>
       </div>
+
       <div class="form-group" style="margin-top:18px">
         <label class="form-label">Un mot pour les mariés</label>
         <textarea class="form-input" id="message" placeholder="Votre message (optionnel)"></textarea>
@@ -447,12 +450,10 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     </div>
   </div>
 </section>
-
 <footer>
   <div class="footer-names">Lola &amp; Yoran</div>
   <div class="footer-date">7 Juin 2026 · כ״ב סיון תשפ״ו · Les Salons Hoche</div>
 </footer>
-
 <script>
 /* ── CURSOR ── */
 const cur=document.getElementById('cursor'),fol=document.getElementById('cursorFollower');
@@ -491,6 +492,17 @@ function selectAttendance(c){
   const p=document.getElementById('guestsPanel');
   c==='yes'?p.classList.add('open'):p.classList.remove('open');
 }
+
+/* ── COMPTEUR + / - ── */
+let guests=1;
+document.getElementById('guestMinus').addEventListener('click',()=>{
+  if(guests>1){guests--;document.getElementById('guestCount').textContent=guests;document.getElementById('nb-adultes').value=guests;}
+});
+document.getElementById('guestPlus').addEventListener('click',()=>{
+  if(guests<30){guests++;document.getElementById('guestCount').textContent=guests;document.getElementById('nb-adultes').value=guests;}
+});
+
+/* ── ENVOI ── */
 const SCRIPT_URL='https://script.google.com/macros/s/AKfycbyLi0JwyRM-ZYSBBhga13B-duXGPJwAotQ6eft6mjOwq5SCrKK8tVip9OM5WBtvxhVYKw/exec';
 async function submitRSVP(){
   const pr=document.getElementById('prenom').value.trim();
@@ -500,45 +512,42 @@ async function submitRSVP(){
   if(!pr||!no||!att){alert('Merci de remplir tous les champs obligatoires.');return;}
   const btn=document.querySelector('.submit-btn');
   btn.textContent='Envoi en cours…';btn.disabled=true;
-  try{const p=new URLSearchParams({prenom:pr,nom:no,presence:att==='yes'?'Oui':'Non',nb_adultes:att==='yes'?nb:'0',message:ms,timestamp:new Date().toLocaleString('fr-FR')});await fetch(SCRIPT_URL+'?'+p.toString(),{method:'GET',mode:'no-cors'});}catch(e){}
+  try{
+    const p=new URLSearchParams({prenom:pr,nom:no,presence:att==='yes'?'Oui':'Non',nb_adultes:att==='yes'?nb:'0',message:ms,timestamp:new Date().toLocaleString('fr-FR')});
+    await fetch(SCRIPT_URL+'?'+p.toString(),{method:'GET',mode:'no-cors'});
+  }catch(e){}
   document.getElementById('formWrap').style.display='none';
   document.getElementById('successMsg').classList.add('show');
 }
 
 /* ── MUSIC ── */
-const audio = new Audio('musique.mp3');
-audio.loop = true;
-audio.volume = 0.45;
-audio.play().catch(() => {
-  const unlock = () => {
-    audio.play().catch(() => {});
-    document.removeEventListener('touchstart', unlock);
-    document.removeEventListener('click', unlock);
-  };
-  document.addEventListener('touchstart', unlock, { once: true, passive: true });
-  document.addEventListener('click', unlock, { once: true });
+const audio=new Audio('musique.mp3');
+audio.loop=true;audio.volume=0.45;
+audio.play().catch(()=>{
+  const unlock=()=>{audio.play().catch(()=>{});document.removeEventListener('touchstart',unlock);document.removeEventListener('click',unlock);};
+  document.addEventListener('touchstart',unlock,{once:true,passive:true});
+  document.addEventListener('click',unlock,{once:true});
 });
-const muteBtn = document.createElement('button');
-muteBtn.innerHTML = '🎵';
-muteBtn.title = 'Couper / relancer la musique';
-muteBtn.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:1000;width:44px;height:44px;border-radius:50%;border:1px solid rgba(197,160,89,.4);background:rgba(255,255,255,.88);backdrop-filter:blur(8px);font-size:18px;cursor:pointer;box-shadow:0 4px 16px rgba(197,160,89,.2);transition:transform .2s;';
-muteBtn.onclick = () => { audio.muted = !audio.muted; muteBtn.innerHTML = audio.muted ? '🔇' : '🎵'; };
-muteBtn.onmouseenter = () => muteBtn.style.transform = 'scale(1.1)';
-muteBtn.onmouseleave = () => muteBtn.style.transform = 'scale(1)';
+const muteBtn=document.createElement('button');
+muteBtn.innerHTML='🎵';muteBtn.title='Couper / relancer la musique';
+muteBtn.style.cssText='position:fixed;bottom:24px;right:24px;z-index:1000;width:44px;height:44px;border-radius:50%;border:1px solid rgba(197,160,89,.4);background:rgba(255,255,255,.88);backdrop-filter:blur(8px);font-size:18px;cursor:pointer;box-shadow:0 4px 16px rgba(197,160,89,.2);transition:transform .2s;';
+muteBtn.onclick=()=>{audio.muted=!audio.muted;muteBtn.innerHTML=audio.muted?'🔇':'🎵';};
+muteBtn.onmouseenter=()=>muteBtn.style.transform='scale(1.1)';
+muteBtn.onmouseleave=()=>muteBtn.style.transform='scale(1)';
 document.body.appendChild(muteBtn);
 
-/* ── PARALLAX BOTANICAL ── */
-window.addEventListener('scroll', () => {
-  const sy = window.scrollY;
-  const tl = document.querySelector('.botanical-tl');
-  const tr = document.querySelector('.botanical-tr');
-  const bl = document.querySelector('.botanical-bl');
-  const br = document.querySelector('.botanical-br');
-  if(tl) tl.style.transform = `translateY(${sy * .12}px)`;
-  if(tr) tr.style.transform = `scaleX(-1) translateY(${sy * .12}px)`;
-  if(bl) bl.style.transform = `scaleY(-1) translateY(${-sy * .06}px)`;
-  if(br) br.style.transform = `scale(-1) translateY(${-sy * .06}px)`;
-}, { passive: true });
+/* ── PARALLAX ── */
+window.addEventListener('scroll',()=>{
+  const sy=window.scrollY;
+  const tl=document.querySelector('.botanical-tl');
+  const tr=document.querySelector('.botanical-tr');
+  const bl=document.querySelector('.botanical-bl');
+  const br=document.querySelector('.botanical-br');
+  if(tl)tl.style.transform=`translateY(${sy*.12}px)`;
+  if(tr)tr.style.transform=`scaleX(-1) translateY(${sy*.12}px)`;
+  if(bl)bl.style.transform=`scaleY(-1) translateY(${-sy*.06}px)`;
+  if(br)br.style.transform=`scale(-1) translateY(${-sy*.06}px)`;
+},{passive:true});
 </script>
 </body>
 </html>
