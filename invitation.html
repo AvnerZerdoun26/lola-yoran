@@ -404,106 +404,49 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
   <img src="logo.png" alt="Logo LY" class="logo-img" style="width:90px;height:90px;opacity:.75;"/>
 </div>
 
-<!-- RSVP -->
 <section id="rsvp">
-  <div class="rsvp-card">
-    
+  <div class="rsvp-inner">
+    <p class="section-tag">Réponse souhaitée</p>
+    <h2 class="rsvp-title-gold">Dites-nous oui 🎉</h2>
     <p class="rsvp-subtitle">Nous espérons vous compter parmi nous</p>
-
-    <div class="form-group">
-      <label class="form-label">PRÉNOM *</label>
-      <input type="text" id="prenom" placeholder="Prénom" class="form-input">
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">NOM *</label>
-      <input type="text" id="nom" placeholder="Nom" class="form-input">
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">SEREZ-VOUS PRÉSENT(E) ? *</label>
-      <div class="attendance-modern">
-        <button class="att-btn active" onclick="selectAttendance('yes')" id="btn-yes">Assisterons</button>
-        <button class="att-btn" onclick="selectAttendance('no')" id="btn-no">N'assisterons pas</button>
+    <div id="formWrap">
+      <div class="form-group">
+        <label class="form-label">Prénom *</label>
+        <input type="text" class="form-input" id="prenom" placeholder="Votre prénom">
       </div>
-    </div>
-
-    <div class="form-group guests-modern" id="guestsPanel">
-      <label class="form-label">NOMBRE DE PERSONNES</label>
-      <div class="counter">
-        <button onclick="changeGuests(-1)">−</button>
-        <span id="guestCount">1</span>
-        <button onclick="changeGuests(1)">+</button>
+      <div class="form-group">
+        <label class="form-label">Nom *</label>
+        <input type="text" class="form-input" id="nom" placeholder="Votre nom">
       </div>
-      <div class="guest-label" id="guestLabel">1 personne</div>
+      <div class="form-group">
+        <label class="form-label">Serez-vous présent(e) ? *</label>
+        <div class="attendance-grid">
+          <button class="attendance-btn" id="btn-yes" onclick="selectAttendance('yes')">Assisterons ✦</button>
+          <button class="attendance-btn" id="btn-no" onclick="selectAttendance('no')">N'assisterons pas</button>
+        </div>
+      </div>
+      <div class="guests-panel" id="guestsPanel">
+        <div class="guests-panel-inner">
+          <div class="guests-panel-title">Nombre d'adultes</div>
+          <div style="max-width:150px;margin:0 auto">
+            <input type="number" id="nb-adultes" min="1" max="30" value="1" class="form-input" style="text-align:center;font-size:1.15rem;padding:11px">
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="margin-top:18px">
+        <label class="form-label">Un mot pour les mariés</label>
+        <textarea class="form-input" id="message" placeholder="Votre message (optionnel)"></textarea>
+      </div>
+      <button class="submit-btn" onclick="submitRSVP()">Confirmer ma présence</button>
+      <p class="deadline-note">Merci de répondre avant le 8 mai 2026</p>
     </div>
-
-    <div class="form-group">
-      <label class="form-label">UN MOT POUR LES MARIÉS</label>
-      <textarea id="message" placeholder="Votre message"></textarea>
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">✦</div>
+      <div class="success-text">Merci !</div>
+      <p class="success-sub">Votre présence a bien été confirmée.<br>À très bientôt pour ce grand jour.</p>
     </div>
-
-    <button class="submit-btn" onclick="submitRSVP()">Confirmer ma présence</button>
-
-    <p class="deadline-note">Merci de répondre avant le 8 mai 2026</p>
-
   </div>
 </section>
-
-<script>
-
-/* RSVP */
-let attendance = "yes";
-let guestCount = 1;
-
-function selectAttendance(choice){
-  attendance = choice;
-
-  document.getElementById('btn-yes').classList.toggle('active', choice === 'yes');
-  document.getElementById('btn-no').classList.toggle('active', choice === 'no');
-
-  document.getElementById('guestsPanel').style.display = (choice === 'yes') ? 'block' : 'none';
-}
-
-function changeGuests(delta){
-  guestCount += delta;
-  if(guestCount < 1) guestCount = 1;
-  if(guestCount > 30) guestCount = 30;
-
-  document.getElementById('guestCount').textContent = guestCount;
-  document.getElementById('guestLabel').textContent =
-    guestCount === 1 ? "1 personne" : guestCount + " personnes";
-}
-
-const SCRIPT_URL='https://script.google.com/macros/s/AKfycbyLi0JwyRM-ZYSBBhga13B-duXGPJwAotQ6eft6mjOwq5SCrKK8tVip9OM5WBtvxhVYKw/exec';
-
-async function submitRSVP(){
-  const prenom = document.getElementById('prenom').value.trim();
-  const nom = document.getElementById('nom').value.trim();
-  const message = document.getElementById('message').value.trim();
-
-  if(!prenom || !nom){
-    alert("Merci de remplir les champs obligatoires");
-    return;
-  }
-
-  const params = new URLSearchParams({
-    prenom,
-    nom,
-    presence: attendance === 'yes' ? 'Oui' : 'Non',
-    nb_adultes: attendance === 'yes' ? guestCount : 0,
-    message
-  });
-
-  try{
-    await fetch(SCRIPT_URL + '?' + params.toString(), {method:'GET', mode:'no-cors'});
-    alert("Réponse envoyée !");
-  }catch(e){
-    alert("Erreur lors de l'envoi");
-  }
-}
-
-</script>
 
 <footer>
   <div class="footer-names">Lola &amp; Yoran</div>
