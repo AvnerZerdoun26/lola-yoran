@@ -279,8 +279,11 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
   <p class="bsm">בס"ד</p>
 
   <div class="parents-line">
-    <span class="simi-line">Madame Simi Bensimon ז"ל</span>
+    
     <span>Monsieur Patrick Journo &amp; Madame Judith Journo</span>
+    
+    <span class="simi-line">Madame Simi Bensimon</span>
+    
     <span>Thierry Hayoun &amp; Michelle Hayoun</span>
   </div>
 
@@ -312,7 +315,7 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
   <p class="date-heb">כ״ב סיון תשפ״ו</p>
 
   <div class="in-memoriam">
-    <div class="in-memoriam-title">En mémoire de nos grands-parents bien-aimés</div>
+    <div class="in-memoriam-title"></div>
     <p>Une pensée émue pour nos grands-parents,<br>qui nous manquent tellement en ces moments<br>importants de nos vies.</p>
   </div>
 
@@ -468,7 +471,7 @@ function selectAttendance(c){
   const p=document.getElementById('guestsPanel');
   c==='yes'?p.classList.add('open'):p.classList.remove('open');
 }
-const SCRIPT_URL='https://script.google.com/macros/s/VOTRE_SCRIPT_ID_ICI/exec';
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbyLi0JwyRM-ZYSBBhga13B-duXGPJwAotQ6eft6mjOwq5SCrKK8tVip9OM5WBtvxhVYKw/exec';
 async function submitRSVP(){
   const pr=document.getElementById('prenom').value.trim();
   const no=document.getElementById('nom').value.trim();
