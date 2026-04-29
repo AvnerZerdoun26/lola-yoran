@@ -235,9 +235,9 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 @keyframes fIn{from{opacity:0}to{opacity:1}}
 
 @media(max-width:600px){
-  .parents-families{flex-direction:column;align-items:center;gap:12px}
-  .family-sep{flex-direction:row;width:100%;max-width:200px}
-  .family-sep .sep-line{flex:1;height:1px;min-height:0;width:auto;background:linear-gradient(90deg,transparent,var(--gold-lt) 35%,var(--gold-lt) 65%,transparent)}
+  .parents-families{flex-direction:row;align-items:stretch;padding:0 10px}
+  .parents-families .family-block{padding:0 8px}
+  .parents-families .family-block span{font-size:.68rem}
   .names-subtitles{gap:22px}
   .attendance-grid{grid-template-columns:1fr}
 }
