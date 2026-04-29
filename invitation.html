@@ -41,11 +41,15 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 @keyframes floatUp{0%{opacity:0;transform:translateY(100vh) scale(0) rotate(0deg)}10%{opacity:.6}90%{opacity:.1}100%{opacity:0;transform:translateY(-10vh) scale(1) rotate(180deg)}}
 #hero{min-height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:linear-gradient(170deg,#F7F5EE 0%,#F2F4E8 50%,#EDE9D8 100%)}
 .hero-botanical{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.botanical-tl,.botanical-tr{position:absolute;opacity:0}
+.botanical-tl,.botanical-tr,.botanical-bl,.botanical-br{position:absolute;opacity:0}
 .botanical-tl{top:-10px;left:-10px;animation:bIn 2s ease .3s forwards}
 .botanical-tr{top:-10px;right:-10px;animation:bInR 2s ease .5s forwards}
-@keyframes bIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
-@keyframes bInR{from{opacity:0;transform:scaleX(-1) scale(.85)}to{opacity:1;transform:scaleX(-1) scale(1)}}
+.botanical-bl{bottom:-10px;left:-10px;animation:bInBL 2s ease .7s forwards}
+.botanical-br{bottom:-10px;right:-10px;animation:bInBR 2s ease .9s forwards}
+@keyframes bIn  {from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes bInR {from{opacity:0;transform:scaleX(-1) scale(.85)}to{opacity:1;transform:scaleX(-1) scale(1)}}
+@keyframes bInBL{from{opacity:0;transform:scaleY(-1) scale(.85)}to{opacity:1;transform:scaleY(-1) scale(1)}}
+@keyframes bInBR{from{opacity:0;transform:scale(-1) scale(.85)}to{opacity:1;transform:scale(-1) scale(1)}}
 .bsm{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.35em;color:var(--gold-deep);opacity:0;animation:fU 1s ease .2s forwards;margin-bottom:14px}
 .parents-families{display:flex;align-items:stretch;gap:0;max-width:560px;width:100%;opacity:0;animation:fU 1s ease .4s forwards;margin-bottom:6px;padding:0 24px}
 .parents-families .family-block{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:0 20px}
@@ -137,23 +141,188 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 <div class="cursor" id="cursor"></div>
 <div class="cursor-follower" id="cursorFollower"></div>
 <div id="particles"></div>
+
 <section id="hero">
   <div class="hero-botanical">
-    <svg class="botanical-tl" width="240" height="240" viewBox="0 0 240 240" fill="none">
-      <g opacity="0.75">
-        <path d="M12,12 Q48,38 72,80 Q96,122 82,168" stroke="#7A8C52" stroke-width="1.4" fill="none"/>
-        <path d="M72,80 Q108,72 132,90 Q158,108 150,145" stroke="#7A8C52" stroke-width="1.1" fill="none"/>
-        <ellipse cx="60" cy="50" rx="14" ry="7" fill="#7A8C52" opacity="0.55" transform="rotate(-32 60 50)"/>
-        <ellipse cx="88" cy="88" rx="16" ry="8" fill="#BDC89A" opacity="0.6" transform="rotate(18 88 88)"/>
+
+    <!-- ══ COIN HAUT GAUCHE — roses dorées ══ -->
+    <svg class="botanical-tl" width="300" height="300" viewBox="0 0 300 300" fill="none">
+      <path d="M-10,10 Q42,62 75,135 Q105,205 88,285" stroke="#C5A059" stroke-width="1.6" fill="none" opacity="0.75"/>
+      <path d="M12,-5 Q58,42 95,95" stroke="#B8924A" stroke-width="1.2" fill="none" opacity="0.6"/>
+      <path d="M75,135 Q125,118 165,140 Q200,158 190,205" stroke="#C5A059" stroke-width="1.1" fill="none" opacity="0.65"/>
+      <path d="M42,70 Q22,112 38,155" stroke="#B8924A" stroke-width="0.9" fill="none" opacity="0.5"/>
+      <path d="M95,95 Q116,82 138,92" stroke="#D4B06A" stroke-width="0.8" fill="none" opacity="0.5"/>
+      <path d="M165,140 Q180,124 198,130" stroke="#D4B06A" stroke-width="0.8" fill="none" opacity="0.5"/>
+      <path d="M28,115 Q12,100 18,82" stroke="#C5A059" stroke-width="0.7" fill="none" opacity="0.45"/>
+      <g transform="translate(66,55)">
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#D4B870" opacity="0.5" transform="rotate(-20)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#C8A855" opacity="0.5" transform="rotate(20)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#D4B870" opacity="0.45" transform="rotate(65)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#C8A855" opacity="0.45" transform="rotate(110)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#D4B870" opacity="0.45" transform="rotate(155)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#C8A855" opacity="0.45" transform="rotate(-65)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#E2C47A" opacity="0.65" transform="rotate(-10)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B063" opacity="0.65" transform="rotate(30)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#E2C47A" opacity="0.6" transform="rotate(80)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B063" opacity="0.6" transform="rotate(130)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#E2C47A" opacity="0.6" transform="rotate(-110)"/>
+        <ellipse cx="0" cy="-7" rx="6" ry="8" fill="#EDD07A" opacity="0.82" transform="rotate(5)"/>
+        <ellipse cx="0" cy="-5" rx="4.5" ry="6" fill="#F0D888" opacity="0.9"/>
+        <circle cx="0" cy="-4" r="2.8" fill="#E8CC70" opacity="0.95"/>
       </g>
-    </svg>
-    <svg class="botanical-tr" width="240" height="240" viewBox="0 0 240 240" fill="none">
-      <g opacity="0.75">
-        <path d="M12,12 Q48,38 72,80 Q96,122 82,168" stroke="#7A8C52" stroke-width="1.4" fill="none"/>
-        <path d="M72,80 Q108,72 132,90 Q158,108 150,145" stroke="#7A8C52" stroke-width="1.1" fill="none"/>
+      <g transform="translate(162,150)" opacity="0.88">
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#C8A855" opacity="0.52" transform="rotate(-20)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B870" opacity="0.52" transform="rotate(25)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#C8A855" opacity="0.48" transform="rotate(70)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B870" opacity="0.48" transform="rotate(115)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#C8A855" opacity="0.48" transform="rotate(-75)"/>
+        <ellipse cx="0" cy="-8" rx="6" ry="8" fill="#EDD07A" opacity="0.78" transform="rotate(10)"/>
+        <circle cx="0" cy="-5" r="2.2" fill="#E8CC70" opacity="0.9"/>
       </g>
+      <g transform="translate(38,152)" opacity="0.72">
+        <ellipse cx="0" cy="0" rx="5.5" ry="9" fill="#C8A855" opacity="0.58"/>
+        <ellipse cx="0" cy="-2" rx="3.8" ry="6" fill="#DDB86A" opacity="0.72"/>
+        <ellipse cx="0" cy="-5" rx="2.5" ry="3.5" fill="#EDD07A" opacity="0.8"/>
+      </g>
+      <g transform="translate(50,85)" opacity="0.78">
+        <ellipse cx="-13" cy="0" rx="15" ry="7.5" fill="#A89040" opacity="0.52" transform="rotate(-38 -13 0)"/>
+        <ellipse cx="17" cy="4" rx="14" ry="7" fill="#C5A840" opacity="0.48" transform="rotate(22 17 4)"/>
+        <ellipse cx="0" cy="-17" rx="11" ry="6.5" fill="#B89840" opacity="0.42" transform="rotate(-5 0 -17)"/>
+      </g>
+      <g transform="translate(135,112)" opacity="0.72">
+        <ellipse cx="-11" cy="0" rx="14" ry="6.5" fill="#B89840" opacity="0.5" transform="rotate(-28 -11 0)"/>
+        <ellipse cx="15" cy="2" rx="13" ry="6" fill="#C5A840" opacity="0.45" transform="rotate(30 15 2)"/>
+      </g>
+      <g transform="translate(182,180)" opacity="0.65">
+        <ellipse cx="-9" cy="0" rx="13" ry="6" fill="#A89040" opacity="0.52" transform="rotate(-18)"/>
+        <ellipse cx="11" cy="3" rx="12" ry="5.5" fill="#B89840" opacity="0.48" transform="rotate(36 11 3)"/>
+      </g>
+      <ellipse cx="13" cy="88" rx="7.5" ry="4.5" fill="#B89840" opacity="0.35" transform="rotate(-42 13 88)"/>
+      <ellipse cx="20" cy="104" rx="7" ry="4" fill="#B89840" opacity="0.35" transform="rotate(28 20 104)"/>
+      <circle cx="195" cy="202" r="4.5" fill="#C5A059" opacity="0.6"/>
+      <circle cx="204" cy="193" r="3.5" fill="#D4B063" opacity="0.55"/>
+      <circle cx="186" cy="198" r="4" fill="#C5A059" opacity="0.52"/>
+      <line x1="195" y1="202" x2="195" y2="190" stroke="#B89840" stroke-width="0.7" opacity="0.4"/>
+      <line x1="204" y1="193" x2="200" y2="183" stroke="#B89840" stroke-width="0.7" opacity="0.4"/>
+      <line x1="186" y1="198" x2="188" y2="186" stroke="#B89840" stroke-width="0.7" opacity="0.4"/>
     </svg>
+
+    <!-- ══ COIN HAUT DROITE — miroir TL ══ -->
+    <svg class="botanical-tr" width="300" height="300" viewBox="0 0 300 300" fill="none">
+      <path d="M-10,10 Q42,62 75,135 Q105,205 88,285" stroke="#C5A059" stroke-width="1.6" fill="none" opacity="0.7"/>
+      <path d="M12,-5 Q58,42 95,95" stroke="#B8924A" stroke-width="1.2" fill="none" opacity="0.55"/>
+      <path d="M75,135 Q125,118 165,140 Q200,158 190,205" stroke="#C5A059" stroke-width="1.1" fill="none" opacity="0.6"/>
+      <path d="M42,70 Q22,112 38,155" stroke="#B8924A" stroke-width="0.9" fill="none" opacity="0.48"/>
+      <path d="M95,95 Q116,82 138,92" stroke="#D4B06A" stroke-width="0.8" fill="none" opacity="0.45"/>
+      <g transform="translate(66,55)">
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#D4B870" opacity="0.48" transform="rotate(-20)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#C8A855" opacity="0.48" transform="rotate(20)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#D4B870" opacity="0.42" transform="rotate(65)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#C8A855" opacity="0.42" transform="rotate(110)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#D4B870" opacity="0.42" transform="rotate(155)"/>
+        <ellipse cx="0" cy="-16" rx="10" ry="15" fill="#C8A855" opacity="0.42" transform="rotate(-65)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#E2C47A" opacity="0.62" transform="rotate(-10)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B063" opacity="0.62" transform="rotate(30)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#E2C47A" opacity="0.58" transform="rotate(80)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B063" opacity="0.58" transform="rotate(130)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#E2C47A" opacity="0.58" transform="rotate(-110)"/>
+        <ellipse cx="0" cy="-7" rx="6" ry="8" fill="#EDD07A" opacity="0.8" transform="rotate(5)"/>
+        <ellipse cx="0" cy="-5" rx="4.5" ry="6" fill="#F0D888" opacity="0.88"/>
+        <circle cx="0" cy="-4" r="2.8" fill="#E8CC70" opacity="0.92"/>
+      </g>
+      <g transform="translate(162,150)" opacity="0.82">
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#C8A855" opacity="0.5" transform="rotate(-20)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B870" opacity="0.5" transform="rotate(25)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#C8A855" opacity="0.45" transform="rotate(70)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#D4B870" opacity="0.45" transform="rotate(115)"/>
+        <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#C8A855" opacity="0.45" transform="rotate(-75)"/>
+        <ellipse cx="0" cy="-8" rx="6" ry="8" fill="#EDD07A" opacity="0.75"/>
+        <circle cx="0" cy="-5" r="2.2" fill="#E8CC70" opacity="0.87"/>
+      </g>
+      <g transform="translate(50,85)" opacity="0.72">
+        <ellipse cx="-13" cy="0" rx="15" ry="7.5" fill="#A89040" opacity="0.48" transform="rotate(-38 -13 0)"/>
+        <ellipse cx="17" cy="4" rx="14" ry="7" fill="#C5A840" opacity="0.44" transform="rotate(22 17 4)"/>
+      </g>
+      <g transform="translate(135,112)" opacity="0.65">
+        <ellipse cx="-11" cy="0" rx="14" ry="6.5" fill="#B89840" opacity="0.46" transform="rotate(-28 -11 0)"/>
+        <ellipse cx="15" cy="2" rx="13" ry="6" fill="#C5A840" opacity="0.42" transform="rotate(30 15 2)"/>
+      </g>
+      <circle cx="195" cy="202" r="4.5" fill="#C5A059" opacity="0.55"/>
+      <circle cx="204" cy="193" r="3.5" fill="#D4B063" opacity="0.5"/>
+      <circle cx="186" cy="198" r="4" fill="#C5A059" opacity="0.48"/>
+    </svg>
+
+    <!-- ══ COIN BAS GAUCHE ══ -->
+    <svg class="botanical-bl" width="260" height="220" viewBox="0 0 260 220" fill="none">
+      <path d="M-10,215 Q55,182 100,158 Q158,132 215,142" stroke="#C5A059" stroke-width="1.5" fill="none" opacity="0.68"/>
+      <path d="M30,218 Q42,195 55,178" stroke="#B8924A" stroke-width="1" fill="none" opacity="0.5"/>
+      <path d="M100,158 Q95,138 110,124" stroke="#D4B06A" stroke-width="0.9" fill="none" opacity="0.48"/>
+      <g transform="translate(75,148)" opacity="0.82">
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#D4B870" opacity="0.48" transform="rotate(-18)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#C8A855" opacity="0.48" transform="rotate(22)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#D4B870" opacity="0.44" transform="rotate(68)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#C8A855" opacity="0.44" transform="rotate(115)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#D4B870" opacity="0.44" transform="rotate(-68)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="10" fill="#E2C47A" opacity="0.65" transform="rotate(5)"/>
+        <circle cx="0" cy="-5" r="3" fill="#E8CC70" opacity="0.88"/>
+      </g>
+      <g transform="translate(192,136)" opacity="0.72">
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#C8A855" opacity="0.5" transform="rotate(-15)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#D4B870" opacity="0.5" transform="rotate(25)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#C8A855" opacity="0.45" transform="rotate(75)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#D4B870" opacity="0.45" transform="rotate(-75)"/>
+        <ellipse cx="0" cy="-6" rx="5" ry="7" fill="#EDD07A" opacity="0.72"/>
+        <circle cx="0" cy="-4" r="2" fill="#E8CC70" opacity="0.85"/>
+      </g>
+      <g transform="translate(56,170)" opacity="0.68">
+        <ellipse cx="-12" cy="0" rx="14" ry="6.5" fill="#B89840" opacity="0.5" transform="rotate(-12 -12 0)"/>
+        <ellipse cx="14" cy="3" rx="13" ry="6" fill="#C5A840" opacity="0.45" transform="rotate(28 14 3)"/>
+      </g>
+      <g transform="translate(148,148)" opacity="0.62">
+        <ellipse cx="-10" cy="0" rx="13" ry="6" fill="#A89040" opacity="0.48" transform="rotate(-22)"/>
+        <ellipse cx="12" cy="2" rx="12" ry="5.5" fill="#B89840" opacity="0.44" transform="rotate(32 12 2)"/>
+      </g>
+      <g transform="translate(30,188)" opacity="0.65">
+        <ellipse cx="0" cy="0" rx="5" ry="8" fill="#C8A855" opacity="0.55"/>
+        <ellipse cx="0" cy="-2" rx="3.5" ry="5" fill="#DDB86A" opacity="0.7"/>
+      </g>
+      <circle cx="220" cy="143" r="4" fill="#C5A059" opacity="0.55"/>
+      <circle cx="228" cy="135" r="3" fill="#D4B063" opacity="0.5"/>
+      <line x1="220" y1="143" x2="222" y2="132" stroke="#B89840" stroke-width="0.6" opacity="0.38"/>
+    </svg>
+
+    <!-- ══ COIN BAS DROITE — miroir BL ══ -->
+    <svg class="botanical-br" width="260" height="220" viewBox="0 0 260 220" fill="none">
+      <path d="M-10,215 Q55,182 100,158 Q158,132 215,142" stroke="#C5A059" stroke-width="1.5" fill="none" opacity="0.62"/>
+      <path d="M30,218 Q42,195 55,178" stroke="#B8924A" stroke-width="1" fill="none" opacity="0.46"/>
+      <path d="M100,158 Q95,138 110,124" stroke="#D4B06A" stroke-width="0.9" fill="none" opacity="0.44"/>
+      <g transform="translate(75,148)" opacity="0.75">
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#D4B870" opacity="0.44" transform="rotate(-18)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#C8A855" opacity="0.44" transform="rotate(22)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#D4B870" opacity="0.4" transform="rotate(68)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#C8A855" opacity="0.4" transform="rotate(115)"/>
+        <ellipse cx="0" cy="-13" rx="9" ry="13" fill="#D4B870" opacity="0.4" transform="rotate(-68)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="10" fill="#E2C47A" opacity="0.6" transform="rotate(5)"/>
+        <circle cx="0" cy="-5" r="3" fill="#E8CC70" opacity="0.82"/>
+      </g>
+      <g transform="translate(192,136)" opacity="0.65">
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#C8A855" opacity="0.46" transform="rotate(-15)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#D4B870" opacity="0.46" transform="rotate(25)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#C8A855" opacity="0.42" transform="rotate(75)"/>
+        <ellipse cx="0" cy="-9" rx="7" ry="9" fill="#D4B870" opacity="0.42" transform="rotate(-75)"/>
+        <ellipse cx="0" cy="-6" rx="5" ry="7" fill="#EDD07A" opacity="0.68"/>
+        <circle cx="0" cy="-4" r="2" fill="#E8CC70" opacity="0.8"/>
+      </g>
+      <g transform="translate(56,170)" opacity="0.62">
+        <ellipse cx="-12" cy="0" rx="14" ry="6.5" fill="#B89840" opacity="0.46" transform="rotate(-12 -12 0)"/>
+        <ellipse cx="14" cy="3" rx="13" ry="6" fill="#C5A840" opacity="0.42" transform="rotate(28 14 3)"/>
+      </g>
+      <circle cx="220" cy="143" r="4" fill="#C5A059" opacity="0.5"/>
+      <circle cx="228" cy="135" r="3" fill="#D4B063" opacity="0.45"/>
+    </svg>
+
   </div>
+
   <p class="bsm">בס"ד</p>
   <div class="parents-families">
     <div class="family-block">
@@ -179,18 +348,14 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
       <span class="name-heb">Yoran</span>
     </div>
     <div class="names-subtitles">
-      <div class="name-subtitle-block">
-        <span class="name-hiv">חיה מושקא</span>
-      </div>
-      <div class="name-subtitle-block">
-        <span class="name-hiv">יעקב סעדיה</span>
-      </div>
+      <div class="name-subtitle-block"><span class="name-hiv">חיה מושקא</span></div>
+      <div class="name-subtitle-block"><span class="name-hiv">יעקב סעדיה</span></div>
     </div>
   </div>
   <div class="divider-ornament">
-    <svg width="55" height="1" viewBox="0 0 55 1"><line x1="0" y1=".5" x2="55" y2=".5" stroke="#7A8C52" stroke-width=".8"/></svg>
-    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M6 0L7.5 4.5L12 6L7.5 7.5L6 12L4.5 7.5L0 6L4.5 4.5Z" fill="#7A8C52"/></svg>
-    <svg width="55" height="1" viewBox="0 0 55 1"><line x1="0" y1=".5" x2="55" y2=".5" stroke="#7A8C52" stroke-width=".8"/></svg>
+    <svg width="55" height="1" viewBox="0 0 55 1"><line x1="0" y1=".5" x2="55" y2=".5" stroke="#C5A059" stroke-width=".8"/></svg>
+    <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M6 0L7.5 4.5L12 6L7.5 7.5L6 12L4.5 7.5L0 6L4.5 4.5Z" fill="#C5A059"/></svg>
+    <svg width="55" height="1" viewBox="0 0 55 1"><line x1="0" y1=".5" x2="55" y2=".5" stroke="#C5A059" stroke-width=".8"/></svg>
   </div>
   <p class="date-main">Dimanche 7 Juin 2026</p>
   <p class="date-heb">כ״ב סיון תשפ״ו</p>
@@ -199,9 +364,10 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
   </div>
   <div class="scroll-hint">
     <div class="scroll-line"></div>
-    <span></span>
+    <span>Le grand jour approche</span>
   </div>
 </section>
+
 <section id="countdown">
   <p class="countdown-label">Compte à rebours</p>
   <div class="countdown-script">Le grand jour approche dans…</div>
@@ -215,9 +381,11 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     <div class="count-block"><div class="count-number" id="seconds">00</div><div class="count-unit">Secondes</div></div>
   </div>
 </section>
+
 <section id="couple-section">
   <img src="logo.png" alt="Logo LY" class="logo-img"/>
 </section>
+
 <div id="programme-wrapper">
   <section id="programme">
     <h2 class="section-title">Programme</h2>
@@ -231,9 +399,11 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     </div>
   </section>
 </div>
+
 <div class="wax-divider">
   <img src="logo.png" alt="Logo LY" class="logo-img" style="width:90px;height:90px;opacity:.75;"/>
 </div>
+
 <section id="rsvp">
   <div class="rsvp-inner">
     <p class="section-tag">Réponse souhaitée</p>
@@ -277,10 +447,12 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     </div>
   </div>
 </section>
+
 <footer>
   <div class="footer-names">Lola &amp; Yoran</div>
   <div class="footer-date">7 Juin 2026 · כ״ב סיון תשפ״ו · Les Salons Hoche</div>
 </footer>
+
 <script>
 /* ── CURSOR ── */
 const cur=document.getElementById('cursor'),fol=document.getElementById('cursorFollower');
@@ -290,7 +462,7 @@ document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.le
 
 /* ── PARTICLES ── */
 const pc=document.getElementById('particles');
-const gc=['#7A8C52','#BDC89A','#6B7A45','#A8BB78','#8FA060'];
+const gc=['#C5A059','#D4B870','#B8924A','#E2C47A','#A89040'];
 for(let i=0;i<38;i++){
   const p=document.createElement('div');p.className='particle';
   const s=Math.random()*3.5+1;
@@ -333,14 +505,11 @@ async function submitRSVP(){
   document.getElementById('successMsg').classList.add('show');
 }
 
-/* ── MUSIC — démarre dès l'ouverture du site ── */
+/* ── MUSIC ── */
 const audio = new Audio('musique.mp3');
 audio.loop = true;
 audio.volume = 0.45;
-
-// Tentative autoplay immédiate
 audio.play().catch(() => {
-  // Sur mobile les navigateurs bloquent — on débloque au 1er tap
   const unlock = () => {
     audio.play().catch(() => {});
     document.removeEventListener('touchstart', unlock);
@@ -349,16 +518,27 @@ audio.play().catch(() => {
   document.addEventListener('touchstart', unlock, { once: true, passive: true });
   document.addEventListener('click', unlock, { once: true });
 });
-
-// Bouton mute/unmute
 const muteBtn = document.createElement('button');
 muteBtn.innerHTML = '🎵';
 muteBtn.title = 'Couper / relancer la musique';
-muteBtn.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:1000;width:44px;height:44px;border-radius:50%;border:1px solid rgba(122,140,82,.4);background:rgba(255,255,255,.88);backdrop-filter:blur(8px);font-size:18px;cursor:pointer;box-shadow:0 4px 16px rgba(122,140,82,.18);transition:transform .2s;';
+muteBtn.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:1000;width:44px;height:44px;border-radius:50%;border:1px solid rgba(197,160,89,.4);background:rgba(255,255,255,.88);backdrop-filter:blur(8px);font-size:18px;cursor:pointer;box-shadow:0 4px 16px rgba(197,160,89,.2);transition:transform .2s;';
 muteBtn.onclick = () => { audio.muted = !audio.muted; muteBtn.innerHTML = audio.muted ? '🔇' : '🎵'; };
 muteBtn.onmouseenter = () => muteBtn.style.transform = 'scale(1.1)';
 muteBtn.onmouseleave = () => muteBtn.style.transform = 'scale(1)';
 document.body.appendChild(muteBtn);
+
+/* ── PARALLAX BOTANICAL ── */
+window.addEventListener('scroll', () => {
+  const sy = window.scrollY;
+  const tl = document.querySelector('.botanical-tl');
+  const tr = document.querySelector('.botanical-tr');
+  const bl = document.querySelector('.botanical-bl');
+  const br = document.querySelector('.botanical-br');
+  if(tl) tl.style.transform = `translateY(${sy * .12}px)`;
+  if(tr) tr.style.transform = `scaleX(-1) translateY(${sy * .12}px)`;
+  if(bl) bl.style.transform = `scaleY(-1) translateY(${-sy * .06}px)`;
+  if(br) br.style.transform = `scale(-1) translateY(${-sy * .06}px)`;
+}, { passive: true });
 </script>
 </body>
 </html>
