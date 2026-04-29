@@ -18,132 +18,58 @@
   --gold-pale:#F2F4E8;
   --taupe:    #7A7660;
   --dark:     #1E2010;
-  --gold-classic: #C5A059; 
-  --khaki-bg: linear-gradient(135deg,#F2F4E8,#E8EDCC); /* Le dégradé du compte à rebours */
+  --gold-classic: #C5A059;
+  --khaki-bg: linear-gradient(135deg,#F2F4E8,#E8EDCC);
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
 
-/* ── DORÉ CLASSIQUE ── */
-.gold-text-plain {
-  color: var(--gold-classic);
-  font-weight: 600;
+.gold-text-plain{color:var(--gold-classic);font-weight:600}
+
+/* ── TITRE RSVP — même police que "Le grand jour approche" ── */
+.rsvp-title-gold{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(1.8rem,6vw,2.8rem);
+  font-weight:400;
+  color:var(--gold-classic);
+  margin-bottom:20px;
+  letter-spacing:0;
+  line-height:1.3;
 }
 
-/* ── TITRE RSVP ── */
-.rsvp-title-gold {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(1.2rem, 5vw, 1.8rem);
-  font-weight: 400;
-  color: var(--gold-classic);
-  margin-bottom: 20px;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  line-height: 1.4;
-}
-
-/* ── CURSOR ── */
 .cursor{width:10px;height:10px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:multiply}
 .cursor-follower{width:30px;height:30px;border:1px solid var(--gold-lt);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .35s ease;opacity:.5}
 
-/* ── PARTICLES ── */
 #particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .particle{position:absolute;border-radius:50%;opacity:0;animation:floatUp linear infinite}
 @keyframes floatUp{0%{opacity:0;transform:translateY(100vh) scale(0) rotate(0deg)}10%{opacity:.6}90%{opacity:.1}100%{opacity:0;transform:translateY(-10vh) scale(1) rotate(180deg)}}
 
-/* ── HERO ── */
 #hero{min-height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:linear-gradient(170deg,#F7F5EE 0%,#F2F4E8 50%,#EDE9D8 100%)}
 
 .hero-botanical{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .botanical-tl,.botanical-tr{position:absolute;opacity:0}
 .botanical-tl{top:-10px;left:-10px;animation:bIn 2s ease .3s forwards}
 .botanical-tr{top:-10px;right:-10px;animation:bInR 2s ease .5s forwards}
-@keyframes bIn  {from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
-@keyframes bInR {from{opacity:0;transform:scaleX(-1) scale(.85)}to{opacity:1;transform:scaleX(-1) scale(1)}}
+@keyframes bIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes bInR{from{opacity:0;transform:scaleX(-1) scale(.85)}to{opacity:1;transform:scaleX(-1) scale(1)}}
 
 .bsm{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.35em;color:var(--gold-deep);opacity:0;animation:fU 1s ease .2s forwards;margin-bottom:14px}
 
-.parents-families{
-  display:flex;
-  align-items:stretch;
-  gap:0;
-  max-width:560px;
-  width:100%;
-  opacity:0;
-  animation:fU 1s ease .4s forwards;
-  margin-bottom:6px;
-  padding:0 24px;
-}
-.parents-families .family-block{
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:4px;
-  padding:0 20px;
-}
-.parents-families .family-block span{
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  font-size:.8rem;
-  color:var(--taupe);
-  text-align:center;
-  letter-spacing:.05em;
-  line-height:1.75;
-  display:block;
-}
-.family-sep{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:5px;
-  flex-shrink:0;
-  padding:0 4px;
-}
-.family-sep .sep-line{
-  width:1px;
-  flex:1;
-  min-height:14px;
-  background:linear-gradient(180deg,transparent,var(--gold-lt) 35%,var(--gold-lt) 65%,transparent);
-}
-.family-sep .sep-diamond{
-  width:6px;
-  height:6px;
-  background:var(--gold);
-  transform:rotate(45deg);
-  flex-shrink:0;
-}
+.parents-families{display:flex;align-items:stretch;gap:0;max-width:560px;width:100%;opacity:0;animation:fU 1s ease .4s forwards;margin-bottom:6px;padding:0 24px}
+.parents-families .family-block{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:0 20px}
+.parents-families .family-block span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.8rem;color:var(--taupe);text-align:center;letter-spacing:.05em;line-height:1.75;display:block}
+.family-sep{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;flex-shrink:0;padding:0 4px}
+.family-sep .sep-line{width:1px;flex:1;min-height:14px;background:linear-gradient(180deg,transparent,var(--gold-lt) 35%,var(--gold-lt) 65%,transparent)}
+.family-sep .sep-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
 
 .mariage-phrase{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.82rem,2vw,.95rem);color:var(--taupe);letter-spacing:.08em;opacity:0;animation:fU 1s ease .6s forwards;margin:18px 0 28px}
 
 .hero-names{position:relative;z-index:2}
 .names-inline{display:flex;align-items:center;justify-content:center;gap:.02em;flex-wrap:nowrap;padding:8px 20px;overflow:visible}
-
-.name-heb{
-  font-family:'Frank Ruhl Libre',serif;
-  font-size:clamp(2.8rem,11vw,8rem);
-  font-weight:300;
-  background:linear-gradient(135deg,#8A9B6A 0%,#5A6B3A 30%,#A8B88A 55%,#6B7A4A 75%,#4A5A32 100%);
-  background-size:250% auto;
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  opacity:0;
-  animation:nReveal 1.4s cubic-bezier(.16,1,.3,1) .5s forwards, nSweep 7s ease-in-out 2s infinite;
-  line-height:1;
-  filter:drop-shadow(0 4px 28px rgba(107,122,74,.25));
-}
-.name-amp{
-  font-family:'Great Vibes',cursive;
-  font-size:clamp(2rem,7vw,5rem);
-  color:#8A9B6A;
-  opacity:0;
-  animation:nReveal 1.4s cubic-bezier(.16,1,.3,1) .75s forwards;
-  line-height:1;padding:0 .08em;
-  text-shadow:0 2px 20px rgba(107,122,74,.25);
-}
-
+.name-heb{font-family:'Frank Ruhl Libre',serif;font-size:clamp(2.8rem,11vw,8rem);font-weight:300;background:linear-gradient(135deg,#8A9B6A 0%,#5A6B3A 30%,#A8B88A 55%,#6B7A4A 75%,#4A5A32 100%);background-size:250% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:0;animation:nReveal 1.4s cubic-bezier(.16,1,.3,1) .5s forwards,nSweep 7s ease-in-out 2s infinite;line-height:1;filter:drop-shadow(0 4px 28px rgba(107,122,74,.25))}
+.name-amp{font-family:'Great Vibes',cursive;font-size:clamp(2rem,7vw,5rem);color:#8A9B6A;opacity:0;animation:nReveal 1.4s cubic-bezier(.16,1,.3,1) .75s forwards;line-height:1;padding:0 .08em;text-shadow:0 2px 20px rgba(107,122,74,.25)}
 @keyframes nReveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes nSweep{0%,100%{background-position:0% center}50%{background-position:100% center}}
 
@@ -163,7 +89,6 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 .scroll-line{width:1px;height:46px;background:linear-gradient(180deg,var(--gold),transparent);animation:sPulse 2s ease infinite}
 @keyframes sPulse{0%,100%{opacity:.4}50%{opacity:1}}
 
-/* ── COUNTDOWN ── */
 #countdown{background:var(--khaki-bg);padding:56px 20px;text-align:center;position:relative;overflow:hidden}
 #countdown::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%237A8C52' stroke-width='.3' opacity='.1'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3Ccircle cx='30' cy='30' r='10'/%3E%3C/g%3E%3C/svg%3E") repeat;opacity:.6}
 .countdown-label{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.4em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:10px;position:relative;z-index:1}
@@ -176,13 +101,11 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 .count-unit{font-family:'Cinzel',serif;font-size:clamp(.32rem,.85vw,.44rem);letter-spacing:.22em;color:var(--taupe);opacity:.85;margin-top:5px}
 .count-sep{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,3.5vw,2.2rem);color:var(--gold);opacity:.4;align-self:flex-start;margin-top:4px}
 
-/* ── COUPLE/HOTEL (MODIFIÉ : FOND KAKI) ── */
 #couple-section{padding:56px 20px;text-align:center;background:var(--khaki-bg);position:relative}
 .logo-img{width:110px;height:110px;object-fit:contain;mix-blend-mode:multiply;animation:sealPulse 3.5s ease-in-out infinite}
 @keyframes sealPulse{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.05) rotate(2deg)}}
 
-/* ── PROGRAMME (MODIFIÉ : FOND KAKI) ── */
-#programme-wrapper{background:var(--khaki-bg); width: 100%;}
+#programme-wrapper{background:var(--khaki-bg);width:100%}
 #programme{padding:72px 20px;max-width:660px;margin:0 auto;text-align:center}
 .section-tag{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.42em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:10px}
 .section-title{font-family:'Great Vibes',cursive;font-size:clamp(2.2rem,7vw,3.8rem);color:var(--dark);margin-bottom:8px}
@@ -190,13 +113,11 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 .section-address{font-family:'Lato',sans-serif;font-size:.76rem;color:var(--taupe);letter-spacing:.05em;margin-bottom:14px}
 .maps-link{display:inline-flex;align-items:center;gap:5px;font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.22em;color:var(--gold-deep);text-decoration:none;border-bottom:1px solid var(--gold-lt);padding-bottom:2px;text-transform:uppercase;transition:opacity .3s}
 .maps-link:hover{opacity:.7}
-
 .prog-box{margin-top:40px;max-width:480px;margin-left:auto;margin-right:auto;text-align:center;padding:26px 30px;border:1px solid var(--gold-lt);background:rgba(255,255,255,0.45);backdrop-filter:blur(6px)}
 .prog-box p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.98rem,2.6vw,1.15rem);color:var(--dark);line-height:2.1}
 
-.wax-divider{text-align:center;padding:32px; background:var(--khaki-bg);}
+.wax-divider{text-align:center;padding:32px;background:var(--khaki-bg)}
 
-/* ── RSVP ── */
 #rsvp{background:var(--cream2);padding:72px 20px;position:relative;overflow:hidden}
 #rsvp::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-lt),transparent)}
 #rsvp::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-lt),transparent)}
@@ -206,6 +127,7 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 .form-label{display:block;font-family:'Cinzel',serif;font-size:.46rem;letter-spacing:.26em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:7px}
 .form-input{width:100%;padding:13px 15px;background:rgba(255,255,255,.65);border:1px solid var(--gold-lt);border-radius:0;font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--dark);outline:none;transition:border-color .3s,background .3s,box-shadow .3s}
 .form-input:focus{border-color:var(--gold);background:rgba(255,255,255,.92);box-shadow:0 0 0 3px rgba(122,140,82,.1)}
+textarea.form-input{min-height:90px;resize:vertical}
 
 .attendance-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .attendance-btn{padding:13px 8px;background:transparent;border:1px solid var(--gold-lt);font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--taupe);cursor:pointer;transition:all .25s;border-radius:28px}
@@ -224,8 +146,8 @@ body{background:var(--cream);color:var(--dark);font-family:'Lato',sans-serif;fon
 .success-msg{display:none;text-align:center;padding:40px 20px}
 .success-msg.show{display:block;animation:fIn .6s ease forwards}
 .success-text{font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--gold-mid)}
+.success-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;color:var(--taupe);margin-top:8px}
 
-/* ── FOOTER ── */
 footer{background:var(--dark);padding:48px 20px;text-align:center}
 .footer-names{font-family:'Great Vibes',cursive;font-size:2.8rem;color:var(--gold-lt);margin-bottom:8px}
 .footer-date{font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.36em;color:var(--taupe);opacity:.7}
@@ -283,7 +205,7 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     </div>
   </div>
 
-  <p class="mariage-phrase">ont la joie de vous faire part du mariage de leurs enfants et petites enfants</p>
+  <p class="mariage-phrase">ont la joie de vous faire part du mariage de : </p>
 
   <div class="hero-names">
     <div class="names-inline">
@@ -344,22 +266,10 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
     <p class="section-venue">Les Salons Hoche</p>
     <p class="section-address">9 Avenue Hoche, 75008 Paris</p>
     <a class="maps-link" href="https://waze.com/ul?q=Les+Salons+Hoche+Paris&navigate=yes" target="_blank">Voir sur Waze ↗</a>
-    
     <div class="prog-box">
-      <p>
-        Lola et Yoran seraient heureux de vous recevoir sur le rooftop des 
-        <span class="gold-text-plain">Salons Hoche</span> pour la Houppa à <span class="gold-text-plain">17h30</span>.
-      </p>
-      
-      <p style="margin-top:1.4em">
-        La cérémonie religieuse sera suivie d’un cocktail dans le 
-        <span class="gold-text-plain">Salon Vendôme</span>.
-      </p>
-
-      <p style="margin-top:1.4em">
-        La soirée se poursuivra dans le 
-        <span class="gold-text-plain">Salon Élysée</span>.
-      </p>
+      <p>Lola et Yoran seraient heureux de vous recevoir sur le rooftop des <span class="gold-text-plain">Salons Hoche</span> pour la Houppa à <span class="gold-text-plain">17h30</span>.</p>
+      <p style="margin-top:1.4em">La cérémonie religieuse sera suivie d'un cocktail dans le <span class="gold-text-plain">Salon Vendôme</span>.</p>
+      <p style="margin-top:1.4em">La soirée se poursuivra dans le <span class="gold-text-plain">Salon Élysée</span>.</p>
     </div>
   </section>
 </div>
@@ -418,13 +328,11 @@ footer{background:var(--dark);padding:48px 20px;text-align:center}
 </footer>
 
 <script>
-/* CURSOR */
 const cur=document.getElementById('cursor'),fol=document.getElementById('cursorFollower');
 let mx=0,my=0,fx=0,fy=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
 (function a(){fx+=(mx-fx)*.12;fy+=(my-fy)*.12;fol.style.left=fx+'px';fol.style.top=fy+'px';requestAnimationFrame(a)})();
 
-/* PARTICLES */
 const pc=document.getElementById('particles');
 const gc=['#7A8C52','#BDC89A','#6B7A45','#A8BB78','#8FA060'];
 for(let i=0;i<38;i++){
@@ -434,7 +342,6 @@ for(let i=0;i<38;i++){
   pc.appendChild(p);
 }
 
-/* COUNTDOWN */
 const wd=new Date('2026-06-07T17:30:00');
 const el={d:document.getElementById('days'),h:document.getElementById('hours'),m:document.getElementById('minutes'),s:document.getElementById('seconds')};
 let pv={d:'',h:'',m:'',s:''};
@@ -446,7 +353,6 @@ function tick(){
 }
 tick();setInterval(tick,1000);
 
-/* RSVP */
 let att=null;
 function selectAttendance(c){
   att=c;
